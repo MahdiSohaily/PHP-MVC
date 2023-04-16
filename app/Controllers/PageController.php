@@ -8,7 +8,7 @@ use Symfony\Component\Routing\RouteCollection;
 class PageController
 {
     // Homepage action
-	public function indexAction(RouteCollection $routes)
+	public function index(RouteCollection $routes)
 	{
 		$routeToProduct = str_replace('{id}', 1, $routes->get('product')->getPath());
 
