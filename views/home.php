@@ -35,17 +35,29 @@
                     </a>
                 </li>
                 <li class="nav-link">
+                    <a href="goods">
+                        <i class="material-icons">book</i>
+                        <span>Goods List</span>
+                    </a>
+                </li>
+                <li class="nav-link">
                     <a href="rates">
                         <i class="material-icons">monetization_on</i>
                         <span>Register Rates</span>
                     </a>
                 </li>
                 <li class="nav-link">
+                    <a href="rates">
+                        <i class="material-icons">monetization_on</i>
+                        <span>Rates List</span>
+                    </a>
+                </li>
+                <!-- <li class="nav-link">
                     <a href="profile">
                         <i class="material-icons">person</i>
                         <span>User Account</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </aside>
