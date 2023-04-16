@@ -15,17 +15,11 @@ class User
 
     public function login($email, $password)
     {
-        $user = $this->getUser($email);
+        $user = $this->checkUser($email,$password);
         if($user) {
-            $match= $this->checkPass($password, $user);
-            if($match) {
-                header("Location: https://mysite.com
-                /members/index.php");
-            } else {
-                echo "didn't matched";
-            }
+			return true;
         } else {
-            return 'Either your email or password is wrong!';
+            return false;
         }
     }
 	
@@ -84,7 +78,7 @@ class User
 		
 	}
 	
-	public function getUser($email)
+	public function checkUser($email, $pass)
 	{
         $servername = "localhost";
         $username = "root";
@@ -96,22 +90,15 @@ class User
 
         $sql = "SELECT * FROM users WHERE email='$email'";
 		$user = $conn->query($sql)->fetch_assoc();
+		$password = $user['password'];
 
-        if (count($user)> 0) {
-            return $user;
+        if (count($user)> 0 && $password === $pass) {
+			return true;
           } else {
             return false;
           }
 	}
 
-    public function checkPass(string $pass, array $user)
-    {
-        if ($pass === $user['password']) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 	public function update(int $id, array $data)
 	{
 		

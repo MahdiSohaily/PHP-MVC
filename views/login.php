@@ -10,6 +10,12 @@
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
     <link rel="stylesheet" href="./public/css/partials/login.css">
+    <style>
+    .warning {
+        margin-bottom: 0.5rem;
+        color: red;
+    }
+    </style>
 </head>
 
 <body>
@@ -18,6 +24,7 @@
             <form method="post" action class="login-form">
                 <input name="email" type="text" placeholder="Email" required />
                 <input name="password" type="password" placeholder="Password" required />
+                <?php echo "<small class='warning'>$message</small>" ?>
                 <input type="submit" name="submit">
             </form>
         </section>
