@@ -21,7 +21,7 @@
 <body>
     <main class="login-page">
         <section class="form">
-            <form method="post" action class="login-form">
+            <form method="post" action class="login-form" autocomplete="off">
                 <input name="email" type="text" placeholder="Email" required />
                 <input name="password" type="password" placeholder="Password" required />
                 <?php echo "<small class='warning'>$message</small>" ?>

@@ -3,7 +3,8 @@
 @import url('https://v1.fontapi.ir/css/Vazir');
 
 p,
-span {
+span
+label {
   font-family: Roboto, sans-serif !important;
 }
 
