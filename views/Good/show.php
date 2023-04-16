@@ -17,7 +17,7 @@
     <aside id="side">
         <div class="logo">
             <p>مینوی سیستم</p>
-            <i class="material-icons">close</i>
+            <i class="material-icons" id="close">close</i>
         </div>
         <nav>
             <ul>
@@ -32,12 +32,30 @@
     </aside>
     <main class="login-page">
         <section class="content-nav">
-        <i class="material-icons">menu</i>
+            <i class="material-icons" id="open">menu</i>
             <i class="material-icons">power_settings_new</i>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
+    <script>
+    const side = document.getElementById('side'); /**sidebar instance */
+    const open = document.getElementById('open'); /**open sidebar button instance */
+    const close = document.getElementById('close'); /**close sidebar button instance */
+
+    open.addEventListener('click', openSidebar);
+    close.addEventListener('click', closeSidebar);
+
+    function openSidebar() {
+        side.classList.add('open');
+        alert('clicked')
+    }
+
+    function closeSidebar() {
+        side.classList.remove('open');
+        alert('clicked')
+    }
+    </script>
 </body>
 
 </html>
