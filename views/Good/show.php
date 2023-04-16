@@ -10,14 +10,32 @@
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
     <link rel="stylesheet" href="./public/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-<main class="login-page">
-  <section class="form">
-    Goods
-  </section>
-</main>
+    <aside>
+        <div>
+            <p>Menu</p>
+            <i class="material-icons">close</i>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="login-page">
+        <section>
+            <i class="material-icons">menu</i>
+            <i>exit</i>
+        </section>
+    </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
 </body>

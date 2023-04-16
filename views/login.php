@@ -9,8 +9,7 @@
     <meta name="author" content="Mahdi Rezaei">
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
-    <link rel="stylesheet" href="./public/css/styles.css">
-    <link rel="stylesheet" href="./public/css/styles.css">
+    <link rel="stylesheet" href="./public/css/partials/login.css">
 </head>
 
 <body>
