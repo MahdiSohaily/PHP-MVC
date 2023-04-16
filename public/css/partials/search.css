@@ -13,3 +13,25 @@
     text-align: center;
     font-size: 18px;
 }
+
+.resposive {
+    width: 80%;
+    padding-block: 2rem;
+}
+
+.search-table {
+    width: 100%;
+}
+
+thead {
+    background-color: seagreen;
+}
+
+th{
+    padding-block:1rem;
+    border: 1px solid black;
+}
+
+td{
+    text-align: center;
+}
