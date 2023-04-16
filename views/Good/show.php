@@ -60,8 +60,8 @@
                  placeholder="... کد فنی قطعه را وارد کنید">
                 <input type="checkbox" name="super" id="super">
             </form>
-            <table>
-                <tr>
+            <table class="search-table">
+                <thead>
                     <th class="first-th fa">شماره فنی</th>
                     <th class="fa">دلار پایه</th>
                     <th class="border">+10%</th>
@@ -76,8 +76,22 @@
                     <th>61</th>
                     <th>62</th>
                     <th class="Action"></th>
-                    <th></th>
-                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </main>
