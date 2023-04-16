@@ -4,10 +4,8 @@ namespace App\Models;
 class Rate
 {
 	protected $id;
-	protected $name;
-	protected $last_name;
-	protected $email;
-	protected $password;
+	protected $rate;
+	protected $status;
 
     public function __construct(Type $var = null) {
        
