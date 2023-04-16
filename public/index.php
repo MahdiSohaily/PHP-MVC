@@ -12,3 +12,4 @@ require_once '../config/config.php';
 // Routes
 require_once '../routes/web.php';
 require_once '../app/Router.php';
+require_once '../database/connect.php';
