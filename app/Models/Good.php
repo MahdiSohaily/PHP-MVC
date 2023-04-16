@@ -4,10 +4,10 @@ namespace App\Models;
 class Good
 {
 	protected $id;
-	protected $name;
-	protected $last_name;
-	protected $email;
-	protected $password;
+	protected $partnumber;
+	protected $price;
+	protected $weight;
+	protected $mobis;
 
     public function __construct(Type $var = null) {
        
