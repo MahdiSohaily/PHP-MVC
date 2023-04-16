@@ -13,8 +13,8 @@ class GoodController
 		$good = new Good();
 		$message = null;
 
-		if(isset($_POST['send'])){ // Check if form was submitted
-			$partnumber = $_POST['partnumber'];
+		if(isset($_POST['submit'])){ // Check if form was submitted
+			$partnumber = $_POST['pname'];
 			$price = $_POST['price'];
 			$weight= $_POST['weight'];
 			$mobis= $_POST['mobis'];

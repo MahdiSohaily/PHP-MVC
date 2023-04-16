@@ -23,10 +23,15 @@ class Good
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
+        if ($mobis) {
+            $sql = "INSERT INTO nisha (partnumber, price, weight, mobis) 
+            VALUES ('$partnumber', '$price', '$weight', '$mobis')";
+        } else {
+            $sql = "INSERT INTO nisha (partnumber, price, weight) 
+                VALUES ('$partnumber', '$price', '$weight')";
+        }
 
-        $sql = "INSERT INTO nisha (partnumber, price, weight, mobis) 
-                VALUES ('$partnumber', '$price', '$weight', '$mobis')";
-
+        //check if insertion was successful
 		if ($conn->query($sql) === TRUE) {
             return true;
           } else {

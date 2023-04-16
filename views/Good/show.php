@@ -14,6 +14,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
+<style>
+.message {
+    color: green !important;
+    font-size:16px !important;
+}
+</style>
 
 <body>
     <aside id="side">
@@ -64,14 +70,14 @@
                     <p>Please fill out the following information inorder to trgister a new good in the database.</p>
 
                     <!-- Start Here: Web Form tutorial -->
-                    <form class="subscribeForm" method="post" action="#" enctype="text/plain">
+                    <form class="subscribeForm" method="post" action="#">
 
                         <input id="pname" type="text" placeholder="Part Number*" Name="pname" required>
                         <input id="price" type="text" placeholder="Price*" name="price" required>
                         <input id="weight" type="text" placeholder="Weight*" name="weight" required>
                         <input id="mobis" type="text" placeholder="Mobis" name="mobis">
-                        <input id="submit" type="submit" value="Submit" name="send">
-
+                        <?php echo "<p class='message'>$message</p>" ?>
+                        <input id="submit" type="submit" value="Submit" name="submit">
                     </form>
 
                 </div>
