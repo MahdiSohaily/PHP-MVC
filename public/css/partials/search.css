@@ -1,8 +1,15 @@
 .search-form {
-    width: 300px;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 360px;
 }
 
 .search-form input[type='text'] {
     padding: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 2px solid lightgray;
+    text-align: center;
+    font-size: 18px;
 }

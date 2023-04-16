@@ -1,9 +1,14 @@
 @import url("./partials/reset.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url('https://v1.fontapi.ir/css/Vazir');
 
 p,
 span {
   font-family: Roboto, sans-serif !important;
+}
+
+.fa {
+    font-family: Vazir, sans-serif !important;
 }
 
 .material-icons {
@@ -58,4 +63,5 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 }

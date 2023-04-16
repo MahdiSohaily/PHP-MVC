@@ -56,13 +56,14 @@
         </section>
         <section class="main-content">
             <form action="" method="post" class='search-form'>
-                <input type="text" name="serial" id="serial" placeholder="کد فنی قطعه را وارد کنید ...">
+                <input type="text" name="serial" id="serial" class="fa"
+                 placeholder="... کد فنی قطعه را وارد کنید">
                 <input type="checkbox" name="super" id="super">
             </form>
             <table>
                 <tr>
-                    <th class="first-th">شماره فنی</th>
-                    <th>دلار پایه</th>
+                    <th class="first-th fa">شماره فنی</th>
+                    <th class="fa">دلار پایه</th>
                     <th class="border">+10%</th>
                     <th>40</th>
                     <th>45</th>
