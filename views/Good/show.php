@@ -28,27 +28,27 @@
             <i class="material-icons" id="close">close</i>
         </div>
         <nav>
-            <ul class="nav">
+        <ul class="nav">
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="search">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="goods">
                         <i class="material-icons">book</i>
                         <span>Register Goods</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="rates">
                         <i class="material-icons">monetization_on</i>
                         <span>Register Rates</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="profile">
                         <i class="material-icons">person</i>
                         <span>User Account</span>
                     </a>
