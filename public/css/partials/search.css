@@ -1,0 +1,8 @@
+.search-form {
+    width: 300px;
+    background-color: red;
+}
+
+.search-form input[type='text'] {
+    padding: 1rem;
+}

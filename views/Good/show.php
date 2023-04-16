@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
     <link rel="stylesheet" href="./public/css/styles.css">
+    <link rel="stylesheet" href="./public/css/partials/search.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -54,10 +55,29 @@
             <i class="material-icons">power_settings_new</i>
         </section>
         <section class="main-content">
-            <form action="" method="post">
+            <form action="" method="post" class='search-form'>
                 <input type="text" name="serial" id="serial" placeholder="کد فنی قطعه را وارد کنید ...">
                 <input type="checkbox" name="super" id="super">
             </form>
+            <table>
+                <tr>
+                    <th class="first-th">شماره فنی</th>
+                    <th>دلار پایه</th>
+                    <th class="border">+10%</th>
+                    <th>40</th>
+                    <th>45</th>
+                    <th>50</th>
+                    <th>56</th>
+                    <th class="red">57</th>
+                    <th>58</th>
+                    <th>59</th>
+                    <th class="red2">60</th>
+                    <th>61</th>
+                    <th>62</th>
+                    <th class="Action"></th>
+                    <th></th>
+                </tr>
+            </table>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
