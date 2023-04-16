@@ -1,10 +1,9 @@
 @import url("./partials/reset.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 
-
 p,
 span {
-    font-family: Roboto, sans-serif !important;
+  font-family: Roboto, sans-serif !important;
 }
 
 .material-icons {
@@ -53,4 +52,9 @@ aside {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
 }

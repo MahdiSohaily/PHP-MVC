@@ -53,6 +53,12 @@
             <i class="material-icons" id="open">menu</i>
             <i class="material-icons">power_settings_new</i>
         </section>
+        <section class="main-content">
+            <form action="" method="post">
+                <input type="text" name="serial" id="serial" placeholder="کد فنی قطعه را وارد کنید ...">
+                <input type="checkbox" name="super" id="super">
+            </form>
+        </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
@@ -61,6 +67,7 @@
     const open = document.getElementById('open'); /**open sidebar button instance */
     const close = document.getElementById('close'); /**close sidebar button instance */
 
+    // Event Listeners to toggle between open and close
     open.addEventListener('click', openSidebar);
     close.addEventListener('click', closeSidebar);
 
