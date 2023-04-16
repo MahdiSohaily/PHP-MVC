@@ -10,16 +10,110 @@
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
     <link rel="stylesheet" href="./public/css/styles.css">
+    <link rel="stylesheet" href="./public/css/partials/good.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-<main class="login-page">
-  <section class="form">
-    Show
-  </section>
-</main>
+    <aside id="side">
+        <div class="logo">
+            <p>System Menu</p>
+            <i class="material-icons" id="close">close</i>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="material-icons">search</i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="material-icons">book</i>
+                        <span>Register Goods</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="material-icons">monetization_on</i>
+                        <span>Register Rates</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="material-icons">person</i>
+                        <span>User Account</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="login-page">
+        <section class="content-nav">
+            <i class="material-icons" id="open">menu</i>
+            <i class="material-icons">power_settings_new</i>
+        </section>
+        <section class="main-content">
+
+            <div id="wrapper">
+
+                <div id="subscribeBox">
+                    <h2><span class="thin">Register</span> Rate</h2>
+                    <p>Please fill out the following information inorder to trgister a new Rate in the database.</p>
+
+                    <!-- Start Here: Web Form tutorial -->
+                    <form class="subscribeForm" method="post" action="#" enctype="text/plain">
+                        <input id="rate" type="text" placeholder="Rate*" Name="rate" required>
+                        <select id="status" name="status" required>
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+                          <option value="E">E</option>
+                          <option value="F">F</option>
+                          <option value="G">G</option>
+                          <option value="N" selected>N</option>
+                        </select>
+                        <input id="submit" type="submit" value="Submit" name="send">
+
+                    </form>
+
+                </div>
+
+
+        </section>
+    </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
+    <script>
+    const side = document.getElementById('side'); /**sidebar instance */
+    const open = document.getElementById('open'); /**open sidebar button instance */
+    const close = document.getElementById('close'); /**close sidebar button instance */
+
+    // Event Listeners to toggle between open and close
+    open.addEventListener('click', openSidebar);
+    close.addEventListener('click', closeSidebar);
+
+    function openSidebar() {
+        side.classList.add('open');
+    }
+
+    function closeSidebar() {
+        side.classList.remove('open');
+    }
+
+    $('input').on('focusin', function() {
+        $(this).parent().find('label').addClass('active');
+    });
+
+    $('input').on('focusout', function() {
+        if (!this.value) {
+            $(this).parent().find('label').removeClass('active');
+        }
+    });
+    </script>
 </body>
 
 </html>
