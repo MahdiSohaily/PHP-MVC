@@ -24,12 +24,11 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql = "INSERT INTO nisha * FROM users WHERE email='$email'";
-		$user = $conn->query($sql)->fetch_assoc();
-		$password = $user['password'];
+        $sql = "INSERT INTO nisha (partnumber, price, weight, mobis) 
+                VALUES ('$partnumber', '$price', '$weight', '$mobis')";
 
-        if (count($user)> 0 && $password === $pass) {
-			return true;
+		if ($conn->query($sql) === TRUE) {
+            return true;
           } else {
             return false;
           }
