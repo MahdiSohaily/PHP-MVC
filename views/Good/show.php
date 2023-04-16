@@ -23,8 +23,26 @@
             <ul>
                 <li>
                     <a href="#">
-                        <i class="material-icons">home</i>
+                        <i class="material-icons">search</i>
                         <span>جستجوی اجناس</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">book</i>
+                        <span>ثبت اجناس</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">monetization_on</i>
+                        <span>ثبت نرخ ارز</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">person</i>
+                        <span>حساب کاربری</span>
                     </a>
                 </li>
             </ul>
