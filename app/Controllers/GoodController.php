@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\Product;
+use App\Models\Good;
 use Symfony\Component\Routing\RouteCollection;
 
 class GoodController
@@ -10,6 +10,24 @@ class GoodController
     // Homepage action
 	public function index(RouteCollection $routes)
 	{
-        require_once APP_ROOT . '/views/Good/show.php';
+		$good = new Good();
+		$message = null;
+
+		if(isset($_POST['send'])){ // Check if form was submitted
+			$partnumber = $_POST['partnumber'];
+			$price = $_POST['price'];
+			$weight= $_POST['weight'];
+			$mobis= $_POST['mobis'];
+
+			$result = $good->create($partnumber, $price, $weight, $mobis);
+
+			if($result) {
+				$message = 'Data saved successfuly';
+			} else {
+				$message = 'An Error occurred while saving data';
+			}
+		}
+
+		require_once APP_ROOT . '/views/Good/show.php';
 	}
 }
