@@ -3,6 +3,9 @@
 * {
   direction: rtl;
 }
+.material-icons {
+    cursor: pointer;
+}
 
 aside {
   position: fixed;
@@ -20,4 +23,11 @@ aside {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 3rem;
+}
+
+/* main section styles */
+.content-nav {
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem;
 }

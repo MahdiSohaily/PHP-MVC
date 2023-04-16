@@ -31,9 +31,9 @@
         </nav>
     </aside>
     <main class="login-page">
-        <section>
-            <i class="material-icons">اجناس سیستم</i>
-            <i class="material-icons">exit</i>
+        <section class="content-nav">
+        <i class="material-icons">menu</i>
+            <i class="material-icons">power_settings_new</i>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
