@@ -16,33 +16,33 @@
 <body>
     <aside id="side">
         <div class="logo">
-            <p>مینوی سیستم</p>
+            <p>System Menu</p>
             <i class="material-icons" id="close">close</i>
         </div>
         <nav>
-            <ul>
-                <li>
+            <ul class="nav">
+                <li class="nav-link">
                     <a href="#">
                         <i class="material-icons">search</i>
-                        <span>جستجوی اجناس</span>
+                        <span>Search</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-link">
                     <a href="#">
                         <i class="material-icons">book</i>
-                        <span>ثبت اجناس</span>
+                        <span>Register Goods</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-link">
                     <a href="#">
                         <i class="material-icons">monetization_on</i>
-                        <span>ثبت نرخ ارز</span>
+                        <span>Register Rates</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-link">
                     <a href="#">
                         <i class="material-icons">person</i>
-                        <span>حساب کاربری</span>
+                        <span>User Account</span>
                     </a>
                 </li>
             </ul>

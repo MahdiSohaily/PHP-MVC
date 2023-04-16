@@ -14,7 +14,6 @@ time, mark, audio, video {
   margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -116,12 +115,6 @@ audio:not([controls]) {
  *    user zoom.
  */
 
-html {
-    font-size: 100%; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 2 */
-}
-
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
@@ -199,7 +192,6 @@ button,
 input,
 select,
 textarea {
-    font-size: 100%; /* 1 */
     margin: 0; /* 2 */
     vertical-align: baseline; /* 3 */
     *vertical-align: middle; /* 3 */
