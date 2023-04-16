@@ -13,15 +13,15 @@
 </head>
 
 <body>
-<main class="login-page">
-  <section class="form">
-    <form method="post" action class="login-form">
-      <input type="text" placeholder="username" required/>
-      <input type="password" placeholder="password" required/>
-      <button type="submit">login</button>
-    </form>
-  </section>
-</main>
+    <main class="login-page">
+        <section class="form">
+            <form method="post" action class="login-form">
+                <input name="email" type="text" placeholder="Email" required />
+                <input name="password" type="password" placeholder="Password" required />
+                <input type="submit" name="submit">
+            </form>
+        </section>
+    </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
 </body>

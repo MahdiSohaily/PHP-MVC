@@ -1,14 +1,33 @@
 <?php 
 namespace App\Models;
 
-class Product
+class User
 {
 	protected $id;
-	protected $title;
-	protected $description;
-	protected $price;
-	protected $sku;
-	protected $image;
+	protected $name;
+	protected $last_name;
+	protected $email;
+	protected $password;
+
+    public function __construct(Type $var = null) {
+       
+    }
+
+    public function login($email, $password)
+    {
+        $user = $this->getUser($email);
+        if($user) {
+            $match= $this->checkPass($password, $user);
+            if($match) {
+                header("Location: https://mysite.com
+                /members/index.php");
+            } else {
+                echo "didn't matched";
+            }
+        } else {
+            return 'Either your email or password is wrong!';
+        }
+    }
 	
     // GET METHODS
 	public function getId()
@@ -16,56 +35,48 @@ class Product
 		return $this->id;
 	}
 	
-	public function getTitle()
+	public function getName()
 	{
-		return $this->title;
+		return $this->name;
 	}
 	
-	public function getDescription()
+	public function getLast_name()
 	{
-		return $this->description;
+		return $this->last_name;
 	}
 	
-	public function getPrice()
+	public function getEmail()
 	{
-		return $this->price;
+		return $this->email;
 	}
 	
-	public function getSku()
+	public function getPassword()
 	{
-		return $this->sku;
+		return $this->password;
 	}
 	
-	public function getImage()
-	{
-		return $this->image;
-	}
 	
     // SET METHODS
-    public function setTitle(string $title)
+    public function setName(string $name)
 	{
-		$this->title = $title;
+		$this->name = $name;
 	}
 	
-	public function setDescription(string $description)
+	public function setLast_name(string $last_name)
 	{
-		$this->description = $description;
+		$this->last_name = $last_name;
 	}
 	
-	public function setPrice(string $price)
+	public function setEmail(string $email)
 	{
-		$this->price = $price;
+		$this->email = $email;
 	}
 	
-	public function setSku(string $sku)
+	public function setPassword(string $password)
 	{
-		$this->sku = $sku;
+		$this->password = $password;
 	}
 	
-	public function setImage(string $image)
-	{
-		$this->image = $image;
-	}
 
     // CRUD OPERATIONS
 	public function create(array $data)
@@ -73,17 +84,34 @@ class Product
 		
 	}
 	
-	public function read(int $id)
+	public function getUser($email)
 	{
-		$this->title = 'My first Product';
-		$this->description = 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ';
-		$this->price = 2.56;
-		$this->sku = 'MVC-SP-PHP-01';
-		$this->image = 'https://via.placeholder.com/150';
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
-		return $this;
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM users WHERE email='$email'";
+		$user = $conn->query($sql)->fetch_assoc();
+
+        if (count($user)> 0) {
+            return $user;
+          } else {
+            return false;
+          }
 	}
-	
+
+    public function checkPass(string $pass, array $user)
+    {
+        if ($pass === $user['password']) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 	public function update(int $id, array $data)
 	{
 		
