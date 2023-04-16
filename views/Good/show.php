@@ -48,12 +48,10 @@
 
     function openSidebar() {
         side.classList.add('open');
-        alert('clicked')
     }
 
     function closeSidebar() {
         side.classList.remove('open');
-        alert('clicked')
     }
     </script>
 </body>
