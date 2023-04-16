@@ -63,24 +63,24 @@
            <div class="resposive">
            <table class="search-table">
                 <thead>
-                    <th class="fa">شماره فنی</th>
-                    <th class="fa">دلار پایه</th>
-                    <th class="border">+10%</th>
-                    <th>40</th>
-                    <th>45</th>
-                    <th>50</th>
-                    <th>56</th>
-                    <th class="red">57</th>
-                    <th>58</th>
-                    <th>59</th>
-                    <th class="red2">60</th>
-                    <th>61</th>
-                    <th>62</th>
-                    <th class="Action"></th>
+                    <th class="fa txt-white black txt-white">شماره فنی</th>
+                    <th class="fa txt-white">دلار پایه</th>
+                    <th class="txt-white">+10%</th>
+                    <th class="txt-white">40</th>
+                    <th class="txt-white">45</th>
+                    <th class="txt-white">50</th>
+                    <th class="txt-white">56</th>
+                    <th class="txt-white">57</th>
+                    <th class="txt-white">58</th>
+                    <th class="txt-white">59</th>
+                    <th class="txt-white">60</th>
+                    <th class="txt-white">61</th>
+                    <th class="txt-white">62</th>
+                    <th class="txt-white fa">عملیات</th>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <td class="blue txt-white">147383438478</td>
                         <td>2</td>
                         <td>3</td>
                         <td>4</td>

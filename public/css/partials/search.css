@@ -15,7 +15,7 @@
 }
 
 .resposive {
-    width: 80%;
+    width: 90%;
     padding-block: 2rem;
 }
 
@@ -24,14 +24,29 @@
 }
 
 thead {
-    background-color: seagreen;
+    background-color: green;
 }
 
-th{
+th,
+td {
     padding-block:1rem;
-    border: 1px solid black;
+    text-align: center;
 }
 
-td{
-    text-align: center;
+th:nth-child(3),
+td:nth-child(3) {
+    border-right: 2px solid black;
+}
+
+
+.txt-white {
+    color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+.blue {
+    background-color: blue;
 }
