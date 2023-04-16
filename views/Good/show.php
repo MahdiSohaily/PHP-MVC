@@ -15,8 +15,8 @@
 
 <body>
     <aside>
-        <div>
-            <p>Menu</p>
+        <div class="logo">
+            <p>مینوی سیستم</p>
             <i class="material-icons">close</i>
         </div>
         <nav>
@@ -24,7 +24,7 @@
                 <li>
                     <a href="#">
                         <i class="material-icons">home</i>
-                        <span>Home</span>
+                        <span>جستجوی اجناس</span>
                     </a>
                 </li>
             </ul>
@@ -32,8 +32,8 @@
     </aside>
     <main class="login-page">
         <section>
-            <i class="material-icons">menu</i>
-            <i>exit</i>
+            <i class="material-icons">اجناس سیستم</i>
+            <i class="material-icons">exit</i>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -1,11 +1,23 @@
 @import url("./partials/reset.css");
 /* Sidebar styles */
+* {
+  direction: rtl;
+}
+
 aside {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 250px;
-    background-color: aqua;
-    overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 250px;
+  padding: 1rem;
+  background-color: aqua;
+  overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
 }
