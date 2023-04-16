@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <aside>
+    <aside id="side">
         <div class="logo">
             <p>مینوی سیستم</p>
             <i class="material-icons">close</i>
