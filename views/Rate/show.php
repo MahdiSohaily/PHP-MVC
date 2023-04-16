@@ -14,6 +14,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
+<style>
+.message {
+    color: green !important;
+    font-size:16px !important;
+}
+</style>
 
 <body>
     <aside id="side">
@@ -64,8 +70,8 @@
                     <p>Please fill out the following information inorder to trgister a new Rate in the database.</p>
 
                     <!-- Start Here: Web Form tutorial -->
-                    <form class="subscribeForm" method="post" action="#" enctype="text/plain">
-                        <input id="rate" type="text" placeholder="Rate*" Name="rate" required>
+                    <form class="subscribeForm" method="post" action="#">
+                        <input id="rate" type="text" placeholder="Rate*" name="rate" required>
                         <select id="status" name="status" required>
                           <option value="A">A</option>
                           <option value="B">B</option>
@@ -76,8 +82,8 @@
                           <option value="G">G</option>
                           <option value="N" selected>N</option>
                         </select>
-                        <input id="submit" type="submit" value="Submit" name="send">
-
+                        <?php echo "<p class='message'>$message</p>" ?>
+                        <input id="submit" type="submit" value="Submit" name="submit">
                     </form>
 
                 </div>

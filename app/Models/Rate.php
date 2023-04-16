@@ -18,7 +18,7 @@ class Rate
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql = "INSERT INTO rates (amount, status) VALUES ($amount, $status)";
+        $sql = "INSERT INTO rates (amount, status) VALUES ('$amount', '$status')";
 		 //check if insertion was successful
 		if ($conn->query($sql) === TRUE) {
             return true;
