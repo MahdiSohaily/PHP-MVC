@@ -56,48 +56,53 @@
         </section>
         <section class="main-content">
             <form action="" method="post" class='search-form'>
-                <input type="text" name="serial" id="serial" class="fa"
-                 placeholder="... کد فنی قطعه را وارد کنید">
+                <input type="text" name="serial" id="serial" class="fa" placeholder="... کد فنی قطعه را وارد کنید">
                 <input type="checkbox" name="super" id="super">
             </form>
-           <div class="resposive">
-           <table class="search-table">
-                <thead>
-                    <th class="fa txt-white black txt-white">شماره فنی</th>
-                    <th class="fa txt-white">دلار پایه</th>
-                    <th class="txt-white">+10%</th>
-                    <th class="txt-white">40</th>
-                    <th class="txt-white">45</th>
-                    <th class="txt-white">50</th>
-                    <th class="txt-white">56</th>
-                    <th class="txt-white">57</th>
-                    <th class="txt-white">58</th>
-                    <th class="txt-white">59</th>
-                    <th class="txt-white">60</th>
-                    <th class="txt-white">61</th>
-                    <th class="txt-white">62</th>
-                    <th class="txt-white fa">عملیات</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="blue txt-white">147383438478</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                    </tr>
-                </tbody>
-            </table>
-           </div>
+            <div class="resposive">
+                <table class="search-table">
+                    <thead>
+                        <th class="fa txt-white black txt-white">شماره فنی</th>
+                        <th class="fa txt-white">دلار پایه</th>
+                        <th class="txt-white">+10%</th>
+                        <th class="txt-white">40</th>
+                        <th class="txt-white">45</th>
+                        <th class="txt-white">50</th>
+                        <th class="txt-white">56</th>
+                        <th class="txt-white">57</th>
+                        <th class="txt-white">58</th>
+                        <th class="txt-white">59</th>
+                        <th class="txt-white">60</th>
+                        <th class="txt-white">61</th>
+                        <th class="txt-white">62</th>
+                        <th class="txt-white fa">عملیات</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="blue txt-white">147383438478</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>
+                                <a class="Google" target="_blank"
+                                    href="https://www.google.com/search?tbm=isch&q=<?php echo '754857' ?>">d</a>
+                                <a class="Save" msg="<?php echo $partnumber ?>">e</a>
+                                <a class="PartSouq" target="_blank"
+                                    href="https://partsouq.com/en/search/all?q=<?php echo '347848' ?>">w</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
