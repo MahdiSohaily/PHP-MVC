@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 	<section>
 		<h1>lOGIN PAGE</h1>
 		<p>
