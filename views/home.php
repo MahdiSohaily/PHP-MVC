@@ -98,8 +98,8 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
-    <script>
-    import axios from "axios";
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script >
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
     const close = document.getElementById('close'); /**close sidebar button instance */
@@ -116,39 +116,38 @@
         side.classList.remove('open');
     }
 
-    function search(pattern) {
-        let pattern = pattern;
+    function search(val) {
+        let pattern = val;
         let supermode = 0;
-        const resultBox = document.getElementById('supermode')
+        const resultBox = document.getElementById('s-result')
 
         if (document.getElementById('mode').checked) {
             supermode = 1;
         }
 
-        if (str == "") {
+        if (pattern == "") {
             resultBox.innerHTML = "";
             return;
-        } else if ((str.length > 4) && (supermode == 1)) {
+        } else if ((pattern.length > 4) && (supermode == 1)) {
             resultBox.innerHTML = "";
             axios.get('getResult.php', {
-                key: pattrn
+                key: pattern
             }).then(response => {
-                resultBox.innerHTML = response;
+                resultBox.innerHTML = response.date;
             }).catch(err => {
                 console.log(err)
             })
            
         } else {
 
-            document.getElementById("txtHint").innerHTML = "";
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("txtHint").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET", "get.php?q=" + str, true);
-            xmlhttp.send();
+            resultBox.innerHTML = "";
+            axios.get('getResult.php', {
+                key: pattern
+            }).then(response => {
+                resultBox.innerHTML = response.data;
+            }).catch(err => {
+                console.log(err)
+            })
         }
     }
     </script>
