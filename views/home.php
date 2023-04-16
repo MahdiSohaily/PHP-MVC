@@ -21,7 +21,7 @@
             <i class="material-icons" id="close">close</i>
         </div>
         <nav>
-        <ul class="nav">
+            <ul class="nav">
                 <li class="nav-link">
                     <a href="search">
                         <i class="material-icons">search</i>
@@ -68,8 +68,9 @@
         </section>
         <section class="main-content">
             <form action="" method="post" class='search-form'>
-                <input type="text" name="serial" id="serial" class="fa" placeholder="... کد فنی قطعه را وارد کنید">
-                <input type="checkbox" name="super" id="super">
+                <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
+                    placeholder="... کد فنی قطعه را وارد کنید">
+                <input type="checkbox" name="super" id="mode">
             </form>
             <div class="resposive">
                 <table class="search-table">
@@ -89,29 +90,7 @@
                         <th class="txt-white">62</th>
                         <th class="txt-white fa">عملیات</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="blue txt-white">147383438478</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>
-                                <a class="Google" target="_blank"
-                                    href="https://www.google.com/search?tbm=isch&q=<?php echo '754857' ?>">d</a>
-                                <a class="Save" msg="<?php echo $partnumber ?>">e</a>
-                                <a class="PartSouq" target="_blank"
-                                    href="https://partsouq.com/en/search/all?q=<?php echo '347848' ?>">w</a>
-                            </td>
-                        </tr>
+                    <tbody id="s-result">
                     </tbody>
                 </table>
             </div>
@@ -120,6 +99,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
     <script>
+    import axios from "axios";
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
     const close = document.getElementById('close'); /**close sidebar button instance */
@@ -134,6 +114,42 @@
 
     function closeSidebar() {
         side.classList.remove('open');
+    }
+
+    function search(pattern) {
+        let pattern = pattern;
+        let supermode = 0;
+        const resultBox = document.getElementById('supermode')
+
+        if (document.getElementById('mode').checked) {
+            supermode = 1;
+        }
+
+        if (str == "") {
+            resultBox.innerHTML = "";
+            return;
+        } else if ((str.length > 4) && (supermode == 1)) {
+            resultBox.innerHTML = "";
+            axios.get('getResult.php', {
+                key: pattrn
+            }).then(response => {
+                resultBox.innerHTML = response;
+            }).catch(err => {
+                console.log(err)
+            })
+           
+        } else {
+
+            document.getElementById("txtHint").innerHTML = "";
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "get.php?q=" + str, true);
+            xmlhttp.send();
+        }
     }
     </script>
 </body>
