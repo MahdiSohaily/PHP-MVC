@@ -58,3 +58,7 @@ aside {
 
 /* .main-content {
 } */
+
+.content-nav {
+  position: fixed;
+}
