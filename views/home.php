@@ -77,6 +77,7 @@
                     <label for="mode">Super Mode</label>
                 </div>
             </form>
+            <div class="con-wrap">
             <div class="resposive">
                 <table class="search-table">
                     <thead>
@@ -84,12 +85,13 @@
                         <th class="fa txt-white dollar">دلار پایه</th>
                         <th class="txt-white dollar">+10%</th>
                         <?php echo $rates ?>
-                        <th class="txt-white fa">عملیات</th>
-                        <th class="txt-white"></th>
+                        <th class="txt-white fa action">عملیات</th>
+                        <th class="txt-white kg"></th>
                     </thead>
                     <tbody id="s-result">
                     </tbody>
                 </table>
+            </div>
             </div>
         </section>
     </main>

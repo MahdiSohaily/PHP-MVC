@@ -14,11 +14,21 @@
   font-size: 18px;
 }
 
-.resposive {
-  width: 90%;
+.con-wrap {
+  width: 95%;
+  display: flex;
+  justify-content: center;
   padding-block: 2rem;
 }
 
+.resposive {
+  width: 1250px;
+}
+@media screen and (max-width:1000px) {
+    .con-wrap {
+        overflow-x: scroll;
+    }
+}
 .search-table {
   width: 100%;
 }
@@ -29,8 +39,9 @@ thead {
 
 th,
 td {
-  padding-block: 1rem;
+  padding-block: 0.6rem;
   text-align: center;
+  vertical-align: middle;
 }
 
 th:nth-child(3),
@@ -53,9 +64,9 @@ td:nth-child(3) {
 }
 
 .fix {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .weight {
   background-color: rgb(107, 106, 106);
@@ -78,69 +89,77 @@ td:nth-child(3) {
 }
 
 .Requset {
-    background-color: seagreen;
+  background-color: seagreen;
 }
 
 .NO-Price,
 .NO-Mobis {
-    background-color: red;
-}
-
-.part{
-    width: 30px !important;
-    height: 30px !important;
-}
-
-.weight {
-    background-color: rgb(231, 98, 98);
-    display: inline-block;
-    font-size: 12px;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: white;
-}
-
-.input-controll {
-    display: flex;
-    justify-content: center;
-}
-
-.input-controll label {
-    padding-inline: 0.5rem;
-}
-
-.mobis {
-    background-color: rgb(107, 106, 106);
-    color: white;
-}
-
-#error {
-    text-align: center;
-    background-color: rgb(107, 106, 106);
-    color: white;
-    font-family: Vazir, sans-serif !important;
-}
-
-th {
-    color: white;
-}
-
-.A {
-    background-color: red;
-}
-
-.B {
-    background-color: brown;
+  background-color: red;
 }
 
 .part {
-    width: 300px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.weight {
+  background-color: rgb(231, 98, 98);
+  display: inline-block;
+  font-size: 12px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.input-controll {
+  display: flex;
+  justify-content: center;
+}
+
+.input-controll label {
+  padding-inline: 0.5rem;
+}
+
+.mobis {
+  background-color: rgb(107, 106, 106);
+  color: white;
+}
+
+#error {
+  text-align: center;
+  background-color: rgb(107, 106, 106);
+  color: white;
+  font-family: Vazir, sans-serif !important;
+}
+
+th {
+  color: white;
+}
+
+.A {
+  background-color: red;
+}
+
+.B {
+  background-color: brown;
+}
+
+.part {
+  width: 250px !important;
 }
 
 .dollar {
-    width: 80px !important;
+  width: 80px !important;
 }
 
 .social {
-    width: 20px;
+  width: 20px;
+}
+
+.action {
+  width: 150px;
+}
+
+.kg {
+  width: 50px;
 }
