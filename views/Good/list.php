@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
     <link rel="stylesheet" href="./public/css/styles.css">
-    <link rel="stylesheet" href="./public/css/partials/good.css">
+    <link rel="stylesheet" href="./public/css/partials/list.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
@@ -76,28 +76,26 @@
         <section class="main-content">
 
             <div id="wrapper">
-                <table>
-                    <thead>
-                        <th>Part Number</th>
-                        <th>Price</th>
-                        <th>Weight</th>
-                        <th>Mobis</th>
-                        <th>
-                            <i class="material-icons">setting</i>
-                        </th>
-                        <th>6</th>
-                    </thead>
-                    <tbody>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                    </tbody>
-                </table>
+            <table >
+                <thead>
+                    <th>Part Number</th>
+                    <th>Price</th>
+                    <th>Weight</th>
+                    <th>Mobis</th>
+                    <th>
+                        <i class="material-icons">setting</i>
+                    </th>
+                </thead>
+                <tbody id="result">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tbody>
+            </table>
             </div>
-
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
