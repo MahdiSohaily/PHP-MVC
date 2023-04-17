@@ -125,6 +125,11 @@
             $(this).parent().find('label').removeClass('active');
         }
     });
+    $(document).ready(function() {
+        $('.delete').on('click',function(e){
+            alert(e.target.getAttribute('data-delete'));
+        })
+    })
     </script>
 </body>
 
