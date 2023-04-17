@@ -22,13 +22,13 @@
 </style>
 
 <body>
-    <aside id="side">
+<aside id="side">
         <div class="logo">
             <p>System Menu</p>
             <i class="material-icons" id="close">close</i>
         </div>
         <nav>
-        <ul class="nav">
+            <ul class="nav">
                 <li class="nav-link">
                     <a href="search">
                         <i class="material-icons">search</i>
@@ -42,17 +42,29 @@
                     </a>
                 </li>
                 <li class="nav-link">
+                    <a href="goods">
+                        <i class="material-icons">book</i>
+                        <span>Goods List</span>
+                    </a>
+                </li>
+                <li class="nav-link">
                     <a href="rates">
                         <i class="material-icons">monetization_on</i>
                         <span>Register Rates</span>
                     </a>
                 </li>
                 <li class="nav-link">
+                    <a href="rates">
+                        <i class="material-icons">monetization_on</i>
+                        <span>Rates List</span>
+                    </a>
+                </li>
+                <!-- <li class="nav-link">
                     <a href="profile">
                         <i class="material-icons">person</i>
                         <span>User Account</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </aside>
