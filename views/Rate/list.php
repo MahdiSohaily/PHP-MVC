@@ -124,7 +124,7 @@
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
 
-            axios.get('removegood/' + id )
+            axios.get('removereat/' + id )
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
