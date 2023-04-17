@@ -15,15 +15,16 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
 <style>
-    #serial {
-        padding: 0.5rem 1rem;
-        width:300px;
-        text-align: center;
-    }
-    .message {
-        color: green !important;
-        font-size: 16px !important;
-    }
+#serial {
+    padding: 0.5rem 1rem;
+    width: 300px;
+    text-align: center;
+}
+
+.message {
+    color: green !important;
+    font-size: 16px !important;
+}
 </style>
 
 <body>
@@ -82,8 +83,7 @@
 
             <div id="wrapper">
                 <form action="" method="post" class='search-form'>
-                    <input type="text" name="serial" id="serial" class="fa"
-                        placeholder="... کد فنی قطعه را وارد کنید">
+                    <input type="text" name="serial" id="serial" class="fa" placeholder="... کد فنی قطعه را وارد کنید">
                 </form>
                 <table>
                     <thead>
@@ -143,16 +143,18 @@
                 })
         });
 
-        $('#serial').on('keyup', function (e) {
+        $('#serial').on('keyup', function(e) {
             const value = e.target.value;
             const resultBox = document.getElementById('resultbox')
 
-            axios.get('searchGood/' + value)
-                .then(response => {
-                    resultBox.innerHTML = response.data;
-                }).catch(error => {
-                    console.log(error);
-                })
+            if (value.length > 0) {
+                axios.get('searchGood/' + value)
+                    .then(response => {
+                        resultBox.innerHTML = response.data;
+                    }).catch(error => {
+                        console.log(error);
+                    })
+            }
         });
     })
     </script>
