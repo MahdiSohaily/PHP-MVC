@@ -79,7 +79,7 @@ class Rate
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql = "SELECT * FROM nisha";
+        $sql = "SELECT * FROM rates";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 

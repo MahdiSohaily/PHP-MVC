@@ -76,16 +76,10 @@
         <section class="main-content">
 
             <div id="wrapper">
-            <form action="" method="post" class='search-form'>
-                <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
-                    placeholder="... کد فنی قطعه را وارد کنید">
-            </form>
             <table >
                 <thead>
-                    <th>Part Number</th>
-                    <th>Price</th>
-                    <th>Weight</th>
-                    <th>Mobis</th>
+                    <th>Pate</th>
+                    <th>status</th>
                     <th>
                         operation
                     </th>
