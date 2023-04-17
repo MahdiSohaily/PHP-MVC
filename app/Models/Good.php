@@ -117,7 +117,9 @@ class Good
             echo $template;
             }
         } else {
-            echo '<div id="error">کد فنی اشتباه یا ناقص می باشد</div>';
+            echo '<tr id="error">
+                <td colspan="15 fa">کد فنی اشتباه یا ناقص می باشد</td>
+            </tr>';
         }
           
         $conn->close();

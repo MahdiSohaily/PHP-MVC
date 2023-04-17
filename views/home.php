@@ -52,6 +52,13 @@
 .telegram {}
 
 .part {}
+
+#error {
+    text-align: center;
+    background-color: rgb(107, 106, 106);
+    color: white;
+    font-family: Vazir, sans-serif !important;
+}
 </style>
 
 <body>
