@@ -17,4 +17,11 @@ class SearchController
 
 		$result = $good->search($key, $mode, $rates);
 	}
+
+	public function search($patt, RouteCollection $routes)
+	{
+		$good = new Good();
+
+		$result = $good->searchGood($patt);
+	}
 }
