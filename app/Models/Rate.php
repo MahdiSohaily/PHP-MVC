@@ -51,6 +51,24 @@ class Rate
 		}
 		 return $result;
 	}
+
+	public function getRates()
+	{
+		$servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM rates";
+		 //check if insertion was successful
+		$rates = $conn->query($sql)->fetch_assoc();
+
+		return $rates;
+
+	}
 	
 	public function checkUser($email, $pass)
 	{

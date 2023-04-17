@@ -36,7 +36,7 @@ class Good
           $conn->close();
 	}
 
-    public function search($key, $mode)
+    public function search($key, $mode,$rates)
     {
         $servername = "localhost";
         $username = "root";
@@ -123,6 +123,16 @@ class Good
         }
           
         $conn->close();
+    }
+
+    public function getPrice($rates)
+    {
+        
+    }
+    
+    public function getPriceMobis($rates)
+    {
+
     }
 	
 	public function update(int $id, array $data)
