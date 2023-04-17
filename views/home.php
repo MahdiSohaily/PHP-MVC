@@ -14,55 +14,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <style>
-.weight {
-    background-color: rgb(231, 98, 98);
-    display: inline-block;
-    font-size: 12px;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: white;
-}
-
-.input-controll {
-    display: flex;
-    justify-content: center;
-}
-
-.input-controll label {
-    padding-inline: 0.5rem;
-}
-
-.mobis {
-    background-color: rgb(107, 106, 106);
-    color: white;
-}
-
-#error {
-    text-align: center;
-    background-color: rgb(107, 106, 106);
-    color: white;
-    font-family: Vazir, sans-serif !important;
-}
-
-th {
-    color: white;
-}
-
-.A {
-    background-color: red;
-}
-
-.B {
-    background-color: brown;
-}
-
-.part {
-    width: 300px !important;
-}
-
-.dollar {
-    width: 80px !important;
-}
 </style>
 
 <body>

@@ -91,7 +91,7 @@ class Good
                 $template .="
                 <td  class='Action'>
                 <a class='Google' target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
-                <img class='part' src='https://logos-download.com/wp-content/uploads/2016/05/Google_Chrome_Logo_2014.png' alt='google'>
+                <img class='social' src='./public/img/google.png' alt='google'>
                 </a>
                 <a class='Save' msg='$partnumber'></a>
                 <a class='PartSouq' target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'></a>
