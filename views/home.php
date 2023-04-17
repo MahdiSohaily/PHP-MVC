@@ -24,7 +24,7 @@
 }
 
 .input-controll {
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -73,11 +73,24 @@ th {
 }
 
 .part {
-    width:300px !important;
+    width: 300px !important;
 }
 
 .dollar {
     width: 80px !important;
+}
+
+a.link {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: seagreen;
+    text-decoration: none;
+    color: white;
+}
+
+.Request {
+    background-color: seagreen !important;
 }
 </style>
 
@@ -138,8 +151,8 @@ th {
                 <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
                     placeholder="... کد فنی قطعه را وارد کنید">
                 <div class="input-controll">
-                <input type="checkbox" name="super" id="mode">
-                <label for="mode">Super Mode</label>
+                    <input type="checkbox" name="super" id="mode">
+                    <label for="mode">Super Mode</label>
                 </div>
             </form>
             <div class="resposive">
@@ -190,7 +203,7 @@ th {
 
         if (pattern.length > 4) {
             resultBox.innerHTML = "";
-            axios.get('getdata/' + pattern +'/'+supermode)
+            axios.get('getdata/' + pattern + '/' + supermode)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {

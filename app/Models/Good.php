@@ -70,7 +70,7 @@ class Good
                 }
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
-                <td class='blue part'>";
+                <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
                     $template .= "
                     <a class='link Requset' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>?</a>";
@@ -83,7 +83,7 @@ class Good
                 }
 
 
-                $template.="$partnumber</td>
+                $template.="$partnumber</div></td>
                 <td >".round($avgprice*1.1)."</td>
                 <td >".round($avgprice*1.2)."</td>";
 
