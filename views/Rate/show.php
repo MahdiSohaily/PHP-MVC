@@ -43,7 +43,7 @@
                 </li>
                 <li class="nav-link">
                     <a href="goods">
-                        <i class="material-icons">clear_all</i>
+                        <i class="material-icons">format_list_bulleted</i>
                         <span>Goods List</span>
                     </a>
                 </li>
