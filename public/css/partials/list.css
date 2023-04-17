@@ -1,0 +1,31 @@
+#wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    margin-block: 2rem;
+    width: 100%;
+}
+
+th {
+    padding-block: 1rem;
+    background-color: seagreen;
+}
+
+td {
+    padding-block: 1rem;
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(243, 243, 243);
+}
+
+
+@media screen and (min-width: 600px) {
+    table {
+        width: 700px;
+    }
+}

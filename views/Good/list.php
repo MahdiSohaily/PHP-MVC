@@ -76,6 +76,10 @@
         <section class="main-content">
 
             <div id="wrapper">
+            <form action="" method="post" class='search-form'>
+                <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
+                    placeholder="... کد فنی قطعه را وارد کنید">
+            </form>
             <table >
                 <thead>
                     <th>Part Number</th>
@@ -83,7 +87,7 @@
                     <th>Weight</th>
                     <th>Mobis</th>
                     <th>
-                        <i class="material-icons">setting</i>
+                        operation
                     </th>
                 </thead>
                 <tbody id="result">
@@ -92,7 +96,6 @@
                     <td>3</td>
                     <td>4</td>
                     <td>5</td>
-                    <td>6</td>
                 </tbody>
             </table>
             </div>
