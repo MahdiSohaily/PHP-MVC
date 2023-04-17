@@ -239,7 +239,7 @@ class Good
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
 		// sql to delete a record
-        $sql = "DELETE FROM goods WHERE id='$id'";
+        $sql = "DELETE FROM nisha WHERE id='$id'";
 
         if ($conn->query($sql) === TRUE) {
             return $this->all();

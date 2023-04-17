@@ -42,5 +42,6 @@ class GoodController
 	{
 		$good = new Good();
 		$data = $good->delete($id);
+		echo $data;
 	}
 }
