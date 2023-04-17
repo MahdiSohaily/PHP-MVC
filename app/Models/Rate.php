@@ -116,6 +116,22 @@ class Rate
 	
 	public function delete(int $id)
 	{
-		
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+		// sql to delete a record
+        $sql = "DELETE FROM rates WHERE id='$id'";
+
+        if ($conn->query($sql) === TRUE) {
+            return $this->allRates();
+        } else {
+            return "Error deleting record: " . $conn->error;
+        }
+        $conn->close();
 	}
 }
