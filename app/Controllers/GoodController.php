@@ -30,4 +30,9 @@ class GoodController
 
 		require_once APP_ROOT . '/views/Good/show.php';
 	}
+
+	public function list(RouteCollection $routes)
+	{
+		require_once APP_ROOT . '/views/Good/list.php';
+	}
 }

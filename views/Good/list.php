@@ -78,11 +78,13 @@
             <div id="wrapper">
                 <table>
                     <thead>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
+                        <th>Part Number</th>
+                        <th>Price</th>
+                        <th>Weight</th>
+                        <th>Mobis</th>
+                        <th>
+                            <i class="material-icons">setting</i>
+                        </th>
                         <th>6</th>
                     </thead>
                     <tbody>
