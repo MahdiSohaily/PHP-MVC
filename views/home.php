@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goods">
+                    <a href="goodslist">
                         <i class="material-icons">format_list_bulleted</i>
                         <span>Goods List</span>
                     </a>
