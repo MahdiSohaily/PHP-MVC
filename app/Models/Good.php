@@ -178,7 +178,7 @@ class Good
             // output data of each row
             while($row = $rates->fetch_assoc()) {
                 $result.="
-                <td> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+                <td class='b-".$row['status']."'> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
                 ";
             }
         }
