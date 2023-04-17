@@ -82,7 +82,7 @@
 
             <div id="wrapper">
                 <form action="" method="post" class='search-form'>
-                    <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
+                    <input type="text" name="serial" id="serial" class="fa"
                         placeholder="... کد فنی قطعه را وارد کنید">
                 </form>
                 <table>
@@ -141,7 +141,19 @@
                 }).catch(error => {
                     console.log(error);
                 })
-        })
+        });
+
+        $('#serial').on('keyup', function (e) {
+            const value = e.target.value;
+            const resultBox = document.getElementById('resultbox')
+
+            axios.get('searchGood/' + value);
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+        });
     })
     </script>
 </body>
