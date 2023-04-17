@@ -36,4 +36,12 @@ class RateController
 		$data = $rate->allRates();
 		require_once APP_ROOT . '/views/Rate/list.php';
 	}
+
+	public function delete($id, RouteCollection $routes)
+	{
+		$rate = new Rate();
+		$data = $rate->delete($id);
+		echo $data;
+	}
+
 }
