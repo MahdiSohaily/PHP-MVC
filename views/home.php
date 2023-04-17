@@ -38,7 +38,7 @@
                 </li>
                 <li class="nav-link">
                     <a href="goods">
-                        <i class="material-icons">book</i>
+                        <i class="material-icons">format_list_bulleted</i>
                         <span>Goods List</span>
                     </a>
                 </li>
@@ -50,7 +50,7 @@
                 </li>
                 <li class="nav-link">
                     <a href="rates">
-                        <i class="material-icons">monetization_on</i>
+                        <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
                 </li>
@@ -78,20 +78,20 @@
                 </div>
             </form>
             <div class="con-wrap">
-            <div class="resposive">
-                <table class="search-table">
-                    <thead>
-                        <th class="fa txt-white black txt-white part">شماره فنی</th>
-                        <th class="fa txt-white dollar">دلار پایه</th>
-                        <th class="txt-white dollar">+10%</th>
-                        <?php echo $rates ?>
-                        <th class="txt-white fa action">عملیات</th>
-                        <th class="txt-white kg"></th>
-                    </thead>
-                    <tbody id="s-result">
-                    </tbody>
-                </table>
-            </div>
+                <div class="resposive">
+                    <table class="search-table">
+                        <thead>
+                            <th class="fa txt-white black txt-white part">شماره فنی</th>
+                            <th class="fa txt-white dollar">دلار پایه</th>
+                            <th class="txt-white dollar">+10%</th>
+                            <?php echo $rates ?>
+                            <th class="txt-white fa action">عملیات</th>
+                            <th class="txt-white kg"></th>
+                        </thead>
+                        <tbody id="s-result">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     </main>

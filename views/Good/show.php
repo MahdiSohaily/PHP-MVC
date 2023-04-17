@@ -17,12 +17,12 @@
 <style>
 .message {
     color: green !important;
-    font-size:16px !important;
+    font-size: 16px !important;
 }
 </style>
 
 <body>
-<aside id="side">
+    <aside id="side">
         <div class="logo">
             <p>System Menu</p>
             <i class="material-icons" id="close">close</i>
@@ -43,7 +43,7 @@
                 </li>
                 <li class="nav-link">
                     <a href="goods">
-                        <i class="material-icons">book</i>
+                        <i class="material-icons">clear_all</i>
                         <span>Goods List</span>
                     </a>
                 </li>
@@ -55,7 +55,7 @@
                 </li>
                 <li class="nav-link">
                     <a href="rates">
-                        <i class="material-icons">monetization_on</i>
+                        <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
                 </li>

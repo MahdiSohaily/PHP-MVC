@@ -22,7 +22,7 @@ aside {
   background-color: white;
   overflow: hidden;
   transition: all 0.5s ease;
-  box-shadow: 10px 10px 5px black;
+  box-shadow: 2px 2px 5px black;
 }
 
 .open {
