@@ -46,7 +46,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '".$key."%'";
+        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '$key'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -60,7 +60,9 @@ class Good
 
                 if($mobis=="0.00"){$status = "NO-Price";}
                 elseif ($mobis=="-"){$status = "NO-Mobis";}
-                elseif ($mobis==NULL){$status = "Requset";}
+                elseif ($mobis==NULL){
+                    $status = "Requset";
+                }
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
                 <td class='blue'>$partnumber</td>
@@ -83,6 +85,31 @@ class Good
                 </td>
                 <td><div class='weight'>$Weight KG</div></td>
             </tr> ";
+
+            if($status == "YES-Mobis"){
+                $price = $row['mobis'];
+                $price = str_replace(",","",$price);
+                $avgprice = round($price*110/243.5);
+                $template .= "<tr class='itsmobis'>
+                <td class='blue'><div class='empty'>
+                </div> $partnumber-M</td>
+                <td class='gold'>".round($avgprice)."</td>
+                <td class='border'>".round($avgprice*1.1)."</td>
+                <td > ".round($avgprice*40*1.25*1.3)."</td>
+                <td> ".round($avgprice*45*1.25*1.3)."</td>
+                <td> ".round($avgprice*50*1.25*1.3)."</td>
+                <td> ".round($avgprice*56*1.25*1.3)."</td>
+                <td> ".round($avgprice*57*1.25*1.3)."</td>
+                <td> ".round($avgprice*58*1.25*1.3)."</td>
+                <td> ".round($avgprice*59*1.25*1.3)."</td>
+                <td> ".round($avgprice*60*1.25*1.3)."</td>
+                <td> ".round($avgprice*61*1.25*1.3)."</td>
+                <td>". round($avgprice*62*1.25*1.3)."</td>
+                <td  class='Action'></td>
+                <td></td>
+            </tr>";
+            }
+
             echo $template;
             }
         } else {

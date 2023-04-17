@@ -19,9 +19,25 @@
     display: inline-block;
     font-size: 12px;
     padding: 0.5rem;
-    border-radius:0.5rem;
+    border-radius: 0.5rem;
     color: white;
 }
+
+.google,
+.telegram,
+.part {
+    width: 30px;
+    height: 30px;
+    margin-inline: 0.3rem;
+}
+
+.google {
+    background-image: url('../public/img/google.png');
+}
+
+.telegram {}
+
+.part {}
 </style>
 
 <body>
@@ -98,7 +114,7 @@
                         <th class="txt-white">60</th>
                         <th class="txt-white">61</th>
                         <th class="txt-white">62</th>
-                        <th class="txt-white fa">عملیات</th>
+                        <th class="txt-white">عملیات</th>
                         <th class="txt-white"></th>
                     </thead>
                     <tbody id="s-result">
@@ -137,10 +153,7 @@
             supermode = 1;
         }
 
-        if (pattern == "") {
-            resultBox.innerHTML = "";
-            return;
-        } else if ((pattern.length > 4) && (supermode == 1)) {
+        if (pattern.length > 4) {
             resultBox.innerHTML = "";
             axios.get('getdata/' + pattern)
                 .then(response => {
@@ -149,14 +162,7 @@
                     console.log(error);
                 })
         } else {
-
             resultBox.innerHTML = "";
-            axios.get('getdata/' + pattern)
-                .then(response => {
-                    resultBox.innerHTML = response.data;
-                }).catch(error => {
-                    console.log(error);
-                })
         }
     }
     </script>
