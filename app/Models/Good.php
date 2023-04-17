@@ -93,9 +93,11 @@ class Good
                 <a class='Google' target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                 <img class='social' src='./public/img/google.png' alt='google'>
                 </a>
-                <a class='Save' msg='$partnumber'></a>
+                <a class='Save' msg='$partnumber'>
+                <img class='social' src='./public/img/tel.png' alt='part'>
+                </a>
                 <a class='PartSouq' target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
-                <img class='social' src='./public/img/part' alt='part'>
+                <img class='social' src='./public/img/part.png' alt='part'>
                 </a>
                 </td>
                 <td><div class='weight'>$Weight KG</div></td>
