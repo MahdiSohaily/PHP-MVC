@@ -154,12 +154,52 @@ td.G {
   background-color: red;
 }
 
+.C {
+  background-color: #b68f3a;
+}
+
+.D {
+  background-color: #b63a95;
+}
+
+.E {
+  background-color: #3a86b6;
+}
+
+.F {
+  background-color: #de6ffa;
+}
+
+.G {
+  background-color: #fc8ea0;
+}
+
 td.A {
   background-color: rgb(224, 84, 3);
 }
 
 td.B {
   background-color: rgb(255, 145, 0);
+}
+
+td.C {
+  background-color: #d8a943;
+}
+
+td.D {
+  background-color: #e449ba;
+}
+
+td.E {
+  background-color: #47b0f1;
+}
+
+td.F {
+  background-color: #e58ffa;
+}
+
+td.G {
+  background-color: #f8b6c1;
 }
 
 .b-A,
@@ -169,9 +209,8 @@ td.B {
 .b-E,
 .b-F,
 .b-G {
-    font-weight: bold !important;
+  font-weight: bold !important;
 }
-
 
 .part {
   width: 250px !important;
