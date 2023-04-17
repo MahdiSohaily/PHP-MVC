@@ -88,3 +88,8 @@ td {
 .NO-Mobis {
     background-color: red;
 }
+
+.part{
+    width: 30px !important;
+    height: 30px !important;
+}

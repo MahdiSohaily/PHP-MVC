@@ -37,22 +37,6 @@
     color: white;
 }
 
-.google,
-.telegram,
-.part {
-    width: 30px;
-    height: 30px;
-    margin-inline: 0.3rem;
-}
-
-.google {
-    background-image: url('../public/img/google.png');
-}
-
-.telegram {}
-
-.part {}
-
 #error {
     text-align: center;
     background-color: rgb(107, 106, 106);
