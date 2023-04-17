@@ -23,6 +23,11 @@
     color: white;
 }
 
+.mobis {
+    background-color: rgb(107, 106, 106);
+    color: white;
+}
+
 .google,
 .telegram,
 .part {

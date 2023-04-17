@@ -95,12 +95,11 @@ class Good
                 $price = $row['mobis'];
                 $price = str_replace(",","",$price);
                 $avgprice = round($price*110/243.5);
-                $template .= "<tr class='itsmobis'>
-                <td class='blue'><div class='empty'>
-                </div> $partnumber-M</td>
-                <td class='gold'>".round($avgprice)."</td>
-                <td class='border'>".round($avgprice*1.1)."</td>
-                <td > ".round($avgprice*40*1.25*1.3)."</td>
+                $template .= "<tr class='mobis'>
+                <td> $partnumber-M</td>
+                <td>".round($avgprice)."</td>
+                <td>".round($avgprice*1.1)."</td>
+                <td> ".round($avgprice*40*1.25*1.3)."</td>
                 <td> ".round($avgprice*45*1.25*1.3)."</td>
                 <td> ".round($avgprice*50*1.25*1.3)."</td>
                 <td> ".round($avgprice*56*1.25*1.3)."</td>
@@ -110,7 +109,7 @@ class Good
                 <td> ".round($avgprice*60*1.25*1.3)."</td>
                 <td> ".round($avgprice*61*1.25*1.3)."</td>
                 <td>". round($avgprice*62*1.25*1.3)."</td>
-                <td  class='Action'></td>
+                <td></td>
                 <td></td>
             </tr>";
             }
