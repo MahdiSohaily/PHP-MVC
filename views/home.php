@@ -23,6 +23,15 @@
     color: white;
 }
 
+.input-controll {
+    display:flex;
+    justify-content: center;
+}
+
+.input-controll label {
+    padding-inline: 0.5rem;
+}
+
 .mobis {
     background-color: rgb(107, 106, 106);
     color: white;
@@ -101,7 +110,10 @@
             <form action="" method="post" class='search-form'>
                 <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
                     placeholder="... کد فنی قطعه را وارد کنید">
+                <div class="input-controll">
                 <input type="checkbox" name="super" id="mode">
+                <label for="mode">Super Mode</label>
+                </div>
             </form>
             <div class="resposive">
                 <table class="search-table">
