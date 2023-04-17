@@ -37,4 +37,10 @@ class GoodController
 		$data = $good->all();
 		require_once APP_ROOT . '/views/Good/list.php';
 	}
+
+	public function delete($id, RouteCollection $routes)
+	{
+		$good = new Good();
+		$data = $good->delete($id);
+	}
 }
