@@ -94,7 +94,9 @@ class Good
                 <img class='social' src='./public/img/google.png' alt='google'>
                 </a>
                 <a class='Save' msg='$partnumber'></a>
-                <a class='PartSouq' target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'></a>
+                <a class='PartSouq' target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
+                <img class='social' src='./public/img/part' alt='part'>
+                </a>
                 </td>
                 <td><div class='weight'>$Weight KG</div></td>
             </tr> ";
