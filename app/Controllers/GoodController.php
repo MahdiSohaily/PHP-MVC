@@ -34,7 +34,7 @@ class GoodController
 	public function list(RouteCollection $routes)
 	{
 		$good = new Good();
-		$result = $good->all();
+		$data = $good->all();
 		require_once APP_ROOT . '/views/Good/list.php';
 	}
 }
