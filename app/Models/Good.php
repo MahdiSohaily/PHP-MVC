@@ -185,6 +185,33 @@ class Good
 
         return $result;
     }
+
+    public function all()
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM nisha";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
+        $result = '';
+        if ($rates->num_rows > 0) {
+            // output data of each row
+            while($row = $rates->fetch_assoc()) {
+                $result.="
+                <td class='b-".$row['status']."'> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+                ";
+            }
+        }
+
+        return $result;   
+    }
 	
 	public function update(int $id, array $data)
 	{
