@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rates">
+                    <a href="rateslist">
                         <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
@@ -76,24 +76,24 @@
         <section class="main-content">
 
             <div id="wrapper">
-            <form action="" method="post" class='search-form'>
-                <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
-                    placeholder="... کد فنی قطعه را وارد کنید">
-            </form>
-            <table >
-                <thead>
-                    <th>Part Number</th>
-                    <th>Price</th>
-                    <th>Weight</th>
-                    <th>Mobis</th>
-                    <th>
-                        operation
-                    </th>
-                </thead>
-                <tbody id="resultbox">
-                    <?php echo $data ?>
-                </tbody>
-            </table>
+                <form action="" method="post" class='search-form'>
+                    <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
+                        placeholder="... کد فنی قطعه را وارد کنید">
+                </form>
+                <table>
+                    <thead>
+                        <th>Part Number</th>
+                        <th>Price</th>
+                        <th>Weight</th>
+                        <th>Mobis</th>
+                        <th>
+                            operation
+                        </th>
+                    </thead>
+                    <tbody id="resultbox">
+                        <?php echo $data ?>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
@@ -126,11 +126,11 @@
         }
     });
     $(document).ready(function() {
-        $('.delete').on('click',function(e){
+        $('.delete').on('click', function(e) {
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
 
-            axios.get('removegood/' + id )
+            axios.get('removegood/' + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {

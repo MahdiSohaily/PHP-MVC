@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rates">
+                    <a href="rateslist">
                         <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
