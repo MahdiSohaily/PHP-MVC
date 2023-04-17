@@ -63,14 +63,22 @@ td:nth-child(3) {
   font-size: 12px;
   padding: 1rem;
 }
-.Requset {
+.link-s {
     display: inline-block;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: seagreen;
   text-decoration: none;
   color: white;
   margin-right: 0.5rem;
   padding: 0.1rem
+}
+
+.Request {
+    background-color: seagreen;
+}
+
+.NO-Price,
+.NO-Mobis {
+    background-color: red;
 }

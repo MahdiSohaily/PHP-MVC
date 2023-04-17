@@ -73,13 +73,13 @@ class Good
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
                     $template .= "
-                    <a class='link Requset' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>?</a>";
+                    <a class='link-s Requset' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
                     $template .= "
-                    <a class='link NO-Price' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>!</a>";
+                    <a class='link-s NO-Price' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
                     $template .= "
-                    <a class='link NO-Mobis' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>x</a>";
+                    <a class='link-s NO-Mobis' target='_blank' href='https://yadakinfo.com/projects/price/mobis-get.php?q=".$partnumber."'>x</a>";
                 }
 
 

@@ -79,19 +79,6 @@ th {
 .dollar {
     width: 80px !important;
 }
-
-a.link {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: seagreen;
-    text-decoration: none;
-    color: white;
-}
-
-.Request {
-    background-color: seagreen !important;
-}
 </style>
 
 <body>
