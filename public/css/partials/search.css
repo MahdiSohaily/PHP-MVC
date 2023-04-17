@@ -24,10 +24,10 @@
 .resposive {
   width: 1250px;
 }
-@media screen and (max-width:1000px) {
-    .con-wrap {
-        overflow-x: scroll;
-    }
+@media screen and (max-width: 1000px) {
+  .con-wrap {
+    overflow-x: scroll;
+  }
 }
 .search-table {
   width: 100%;
@@ -122,7 +122,6 @@ td:nth-child(3) {
 
 .mobis {
   background-color: rgb(107, 106, 106);
-  color: white;
 }
 
 #error {
@@ -132,8 +131,19 @@ td:nth-child(3) {
   font-family: Vazir, sans-serif !important;
 }
 
-th {
+th,
+.text-white {
   color: white;
+}
+
+td.A,
+td.B,
+td.C,
+td.D,
+td.E,
+td.F,
+td.G {
+  font-weight: bold;
 }
 
 .A {
@@ -162,4 +172,13 @@ th {
 
 .kg {
   width: 70px;
+}
+
+.orange {
+  background-color: orange;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
 }

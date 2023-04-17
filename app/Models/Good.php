@@ -85,7 +85,7 @@ class Good
 
                 $template.="$partnumber</div></td>
                 <td >".round($avgprice*1.1)."</td>
-                <td >".round($avgprice*1.2)."</td>";
+                <td class='orange' >".round($avgprice*1.2)."</td>";
 
                 $template.=$this->getPrice($avgprice,$rates);
                 $template .="
@@ -110,8 +110,8 @@ class Good
                 $price = str_replace(",","",$price);
                 $avgprice = round($price*110/243.5);
                 $template .= "<tr class='mobis'>
-                <td class='part'> $partnumber-M</td>
-                <td>".round($avgprice)."</td>
+                <td class='part text-white'> $partnumber-M</td>
+                <td class='bold'>".round($avgprice)."</td>
                 <td>".round($avgprice*1.1)."</td>
                 ";
                 $template .= $this-> getPriceMobis($avgprice, $rates);
@@ -132,8 +132,20 @@ class Good
         $conn->close();
     }
 
-    public function getPrice($avgprice, $rates)
+    public function getPrice($avgprice)
     {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM rates";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
