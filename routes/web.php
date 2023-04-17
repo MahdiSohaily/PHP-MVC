@@ -48,6 +48,12 @@ $routes->add('rateslist',
     'method'=>'list'), array())
 );
 
+$routes->add('removereat',
+    new Route(constant('URL_SUBFOLDER') . '/removereat/{id}',
+    array('controller' => 'RateController',
+    'method'=>'delete'), array('id' => '[0-9]+'))
+);
+
 $routes->add('product',
     new Route(constant('URL_SUBFOLDER') . '/product/{id}',
     array('controller' => 'ProductController',
