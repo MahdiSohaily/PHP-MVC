@@ -155,7 +155,7 @@ class Good
                 ";
             }
         }
-
+        $conn->close();
         return $result;
     }
     
@@ -182,7 +182,7 @@ class Good
                 ";
             }
         }
-
+        $conn->close();
         return $result;
     }
 
@@ -219,7 +219,7 @@ class Good
         } else {
             $result .= "<tr><td colspan='4'>Nothing to show</td></tr>";
         }
-
+        $conn->close();
         return $result;   
     }
 	
