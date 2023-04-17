@@ -147,12 +147,24 @@ td.G {
 }
 
 .A {
-  background-color: red;
+  background-color: brown;
 }
 
 .B {
-  background-color: brown;
+  background-color: red;
 }
+
+td.A {
+  background-color: rgb(224, 84, 3);
+  font-weight: bold;
+}
+
+td.B {
+  background-color: rgb(255, 145, 0);
+  font-weight: bold;
+}
+
+
 
 .part {
   width: 250px !important;
