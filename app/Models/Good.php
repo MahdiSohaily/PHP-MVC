@@ -200,22 +200,27 @@ class Good
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
-        $result = '<tr>';
+        $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
             while($row = $rates->fetch_assoc()) {
                 $result.="
-                <td>".$row['partnumber']."</td>
-                <td>".$row['price']."</td>
-                <td>".$row['weight']."</td>
-                <td>".$row['mobis']."</td>
+                <tr>
+                    <td>".$row['partnumber']."</td>
+                    <td>".$row['price']."</td>
+                    <td>".$row['weight']."</td>
+                    <td>".$row['mobis']."</td>
+                    <td>
+                    <i class='delete material-icons' data-delete='".$row['id']."'>delete</i>
+                    </td>
+                </tr>
                 ";
             }
         } else {
-            $result .= "<td colspan='4'>Nothing to show</td>";
+            $result .= "<tr><td colspan='4'>Nothing to show</td></tr>";
         }
 
-        return $result.'</tr>';   
+        return $result;   
     }
 	
 	public function update(int $id, array $data)
