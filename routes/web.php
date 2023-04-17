@@ -42,6 +42,12 @@ $routes->add('rates',
     'method'=>'index'), array())
 );
 
+$routes->add('rateslist',
+    new Route(constant('URL_SUBFOLDER') . '/rateslist',
+    array('controller' => 'RateController',
+    'method'=>'list'), array())
+);
+
 $routes->add('product',
     new Route(constant('URL_SUBFOLDER') . '/product/{id}',
     array('controller' => 'ProductController',

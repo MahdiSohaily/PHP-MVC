@@ -68,6 +68,41 @@ class Rate
 
 		return $result;
 	}
+
+	public function allRates()
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM nisha";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
+        $result = '';
+        if ($rates->num_rows > 0) {
+            // output data of each row
+            while($row = $rates->fetch_assoc()) {
+                $result.="
+                <tr>
+                    <td>".$row['amount']."</td>
+                    <td>".$row['status']."</td>
+                    <td>
+                    <i class='delete material-icons' data-delete='".$row['id']."'>delete</i>
+                    </td>
+                </tr>
+                ";
+            }
+        } else {
+            $result .= "<tr><td colspan='3'>Nothing to show</td></tr>";
+        }
+        $conn->close();
+        return $result;   
+    }
 	
 	public function checkUser($email, $pass)
 	{

@@ -29,4 +29,11 @@ class RateController
 
         require_once APP_ROOT . '/views/Rate/show.php';
 	}
+
+	public function list(RouteCollection $routes)
+	{
+		$rate = new Rate();
+		$data = $rate->allRates();
+		require_once APP_ROOT . '/views/Rate/list.php';
+	}
 }
