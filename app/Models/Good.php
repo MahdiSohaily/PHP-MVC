@@ -46,7 +46,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '".$q."%'";
+        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '".$key."%'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -63,27 +63,19 @@ class Good
                 elseif ($mobis==NULL){$status = "Requset";}
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
-                <td class='blue'>
-                $partnumber</td>
-              
-                <td >round($avgprice*1.1)</td>
-                <td class='border gold'>round($avgprice*1.2)</td>
-    
-     
-            
-                <td>round($avgprice*40*1.2*1.2*1.3)</td>
-                <td >round($avgprice*45*1.2*1.2*1.3)</td>
-                <td>round($avgprice*50*1.2*1.2*1.3)</td>
-                <td>round($avgprice*56*1.2*1.2*1.3)</td>
-                <td class='gold'>round($avgprice*57*1.2*1.2*1.3)</td>
-                <td>round($avgprice*58*1.2*1.2*1.3)</td>
-                <td>round($avgprice*59*1.2*1.2*1.3)</td>
-                <td class='gold2'>round($avgprice*60*1.2*1.2*1.3)</td>
-                <td>round($avgprice*61*1.2*1.2*1.3)</td>
-                <td>round($avgprice*62*1.2*1.2*1.3)</td>
-     
-          
-    
+                <td class='blue'>$partnumber</td>
+                <td >".round($avgprice*1.1)."</td>
+                <td >".round($avgprice*1.2)."</td>        
+                <td >".round($avgprice*40*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*45*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*50*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*56*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*57*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*58*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*59*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*60*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*61*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*62*1.2*1.2*1.3)."</td>
                 <td  class='Action'>
                 <a class='Google' target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'></a>
                 <a class='Save' msg='$partnumber'></a>
@@ -91,9 +83,10 @@ class Good
                 </td>
                 <td><div class='weight'>$Weight KG</div></td>
             </tr> ";
+            echo $template;
             }
         } else {
-
+            echo '<div id="error">کد فنی اشتباه یا ناقص می باشد</div>';
         }
           
         $conn->close();

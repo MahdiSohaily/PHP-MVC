@@ -89,6 +89,7 @@
                         <th class="txt-white">61</th>
                         <th class="txt-white">62</th>
                         <th class="txt-white fa">عملیات</th>
+                        <th class="txt-white"></th>
                     </thead>
                     <tbody id="s-result">
                     </tbody>
