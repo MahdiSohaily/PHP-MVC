@@ -64,10 +64,9 @@ class Rate
 
         $sql = "SELECT * FROM rates";
 		 //check if insertion was successful
-		$rates = $conn->query($sql)->fetch_assoc();
+		$result = $conn->query($sql);
 
-		return $rates;
-
+		return $result;
 	}
 	
 	public function checkUser($email, $pass)

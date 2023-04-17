@@ -13,9 +13,7 @@ class SearchController
 		$good = new Good();
 		$rate = new Rate();
 
-		$rates->getRates();
-
-		foreach($)
+		$rates = $rate->getRates();
 
 		$result = $good->search($key, $mode, $rates);
 	}
