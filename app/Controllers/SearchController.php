@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\Good;
+use App\Models\Rate;
 use Symfony\Component\Routing\RouteCollection;
 
 class SearchController

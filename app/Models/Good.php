@@ -217,7 +217,7 @@ class Good
                 ";
             }
         } else {
-            $result .= "<tr><td colspan='4'>Nothing to show</td></tr>";
+            $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
         return $result;   
