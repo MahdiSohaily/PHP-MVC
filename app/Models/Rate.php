@@ -26,6 +26,31 @@ class Rate
         	return false;
         }
 	}
+
+	public function all()
+	{
+		$servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM rates";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+		$result = '';
+
+		 
+		if ($rates->num_rows > 0) {
+            // output data of each row
+            while($item = $rates->fetch_assoc()) {
+				$result .= "<th class='txt-white ".$item['status']."'>".$item['amount']."</th>";
+			}
+		}
+		 return $result;
+	}
 	
 	public function checkUser($email, $pass)
 	{

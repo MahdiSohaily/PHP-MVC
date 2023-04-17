@@ -59,6 +59,18 @@
     color: white;
     font-family: Vazir, sans-serif !important;
 }
+
+th {
+    color: white;
+}
+
+.A {
+    background-color: red;
+}
+
+.B {
+    background-color: brown;
+}
 </style>
 
 <body>
@@ -128,16 +140,7 @@
                         <th class="fa txt-white black txt-white">شماره فنی</th>
                         <th class="fa txt-white">دلار پایه</th>
                         <th class="txt-white">+10%</th>
-                        <th class="txt-white">40</th>
-                        <th class="txt-white">45</th>
-                        <th class="txt-white">50</th>
-                        <th class="txt-white">56</th>
-                        <th class="txt-white">57</th>
-                        <th class="txt-white">58</th>
-                        <th class="txt-white">59</th>
-                        <th class="txt-white">60</th>
-                        <th class="txt-white">61</th>
-                        <th class="txt-white">62</th>
+                        <?php echo $rates ?>
                         <th class="txt-white fa">عملیات</th>
                         <th class="txt-white"></th>
                     </thead>
