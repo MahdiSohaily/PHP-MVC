@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="./public/css/partials/search.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<style>
+.weight {
+    background-color: rgb(231, 98, 98);
+    display: inline-block;
+    font-size: 12px;
+    padding: 0.5rem;
+    border-radius:0.5rem;
+    color: white;
+}
+</style>
 
 <body>
     <aside id="side">

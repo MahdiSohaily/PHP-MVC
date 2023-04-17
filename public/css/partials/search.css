@@ -50,3 +50,10 @@ td:nth-child(3) {
 .blue {
     background-color: blue;
 }
+
+.weight {
+    background-color: rgb(231, 98, 98);
+    display: inline-block;
+    font-size: 12px;
+    padding: 1rem;
+}
