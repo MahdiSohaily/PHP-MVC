@@ -147,7 +147,7 @@
             const value = e.target.value;
             const resultBox = document.getElementById('resultbox')
 
-            axios.get('searchGood/' + value);
+            axios.get('searchGood/' + value)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {

@@ -67,7 +67,7 @@ $routes->add('getdata',
 );
 
 $routes->add('searchGood',
-    new Route(constant('URL_SUBFOLDER') .'/searchGood/{key}',
+    new Route(constant('URL_SUBFOLDER') .'/searchGood/{value}',
     array('controller' => 'SearchController', 'method'=>'search'),
-    array('key' => '[a-zA-Z0-9]+'))
+    array('value' => '[a-zA-Z0-9]+'))
 );

@@ -222,6 +222,43 @@ class Good
         $conn->close();
         return $result;   
     }
+
+    public function searchGood($patt)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '%".$patt."%'";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
+        $result = '';
+        if ($rates->num_rows > 0) {
+            // output data of each row
+            while($row = $rates->fetch_assoc()) {
+                $result.="
+                <tr>
+                    <td>".$row['partnumber']."</td>
+                    <td>".$row['price']."</td>
+                    <td>".$row['weight']."</td>
+                    <td>".$row['mobis']."</td>
+                    <td>
+                    <i class='delete material-icons' data-delete='".$row['id']."'>delete</i>
+                    </td>
+                </tr>
+                ";
+            }
+        } else {
+            $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
+        }
+        $conn->close();
+        echo $result;   
+    }
 	
 	public function update(int $id, array $data)
 	{

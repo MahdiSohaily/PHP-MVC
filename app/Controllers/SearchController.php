@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 use App\Models\Good;
-use App\Models\Rate;
 use Symfony\Component\Routing\RouteCollection;
 
 class SearchController
@@ -18,10 +17,10 @@ class SearchController
 		$result = $good->search($key, $mode, $rates);
 	}
 
-	public function search($patt, RouteCollection $routes)
+	public function search($value, RouteCollection $routes)
 	{
 		$good = new Good();
 
-		$result = $good->searchGood($patt);
+		$result = $good->searchGood($value);
 	}
 }
