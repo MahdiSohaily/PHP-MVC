@@ -142,7 +142,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql = "SELECT * FROM rates";
+        $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
@@ -169,7 +169,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql = "SELECT * FROM rates";
+        $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
