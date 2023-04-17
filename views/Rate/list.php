@@ -30,7 +30,7 @@
         <nav>
             <ul class="nav">
                 <li class="nav-link">
-                    <a href="search">
+                    <a href="">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rates">
+                    <a href="rateslist">
                         <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
@@ -76,18 +76,18 @@
         <section class="main-content">
 
             <div id="wrapper">
-            <table >
-                <thead>
-                    <th>Pate</th>
-                    <th>status</th>
-                    <th>
-                        operation
-                    </th>
-                </thead>
-                <tbody id="resultbox">
-                    <?php echo $data ?>
-                </tbody>
-            </table>
+                <table>
+                    <thead>
+                        <th>Pate</th>
+                        <th>status</th>
+                        <th>
+                            operation
+                        </th>
+                    </thead>
+                    <tbody id="resultbox">
+                        <?php echo $data ?>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
@@ -120,11 +120,11 @@
         }
     });
     $(document).ready(function() {
-        $('.delete').on('click',function(e){
+        $('.delete').on('click', function(e) {
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
 
-            axios.get('removereat/' + id )
+            axios.get('removereat/' + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {

@@ -30,7 +30,7 @@
         <nav>
             <ul class="nav">
                 <li class="nav-link">
-                    <a href="search">
+                    <a href="">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
