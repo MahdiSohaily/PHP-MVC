@@ -96,8 +96,7 @@
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./public/js/index.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./public/js/axios.js"></script>
     <script>
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
