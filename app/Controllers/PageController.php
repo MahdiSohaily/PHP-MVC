@@ -10,8 +10,6 @@ class PageController
     // Homepage action
 	public function index(RouteCollection $routes)
 	{
-		$routeToProduct = str_replace('{id}', 1, $routes->get('product')->getPath());
-
         require_once APP_ROOT . '/views/home.php';
 	}
 }

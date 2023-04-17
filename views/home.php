@@ -99,7 +99,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/index.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script >
+    <script>
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
     const close = document.getElementById('close'); /**close sidebar button instance */
@@ -121,6 +121,7 @@
         let supermode = 0;
         const resultBox = document.getElementById('s-result')
 
+
         if (document.getElementById('mode').checked) {
             supermode = 1;
         }
@@ -130,24 +131,21 @@
             return;
         } else if ((pattern.length > 4) && (supermode == 1)) {
             resultBox.innerHTML = "";
-            axios.get('getResult.php', {
-                key: pattern
-            }).then(response => {
-                resultBox.innerHTML = response.date;
-            }).catch(err => {
-                console.log(err)
-            })
-           
+            axios.get('getdata/' + pattern)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
         } else {
 
             resultBox.innerHTML = "";
-            axios.get('getResult.php', {
-                key: pattern
-            }).then(response => {
-                resultBox.innerHTML = response.data;
-            }).catch(err => {
-                console.log(err)
-            })
+            axios.get('getdata/' + pattern)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
         }
     }
     </script>
