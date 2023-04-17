@@ -71,6 +71,14 @@ th {
 .B {
     background-color: brown;
 }
+
+.part {
+    width:300px !important;
+}
+
+.dollar {
+    width: 80px !important;
+}
 </style>
 
 <body>
@@ -137,9 +145,9 @@ th {
             <div class="resposive">
                 <table class="search-table">
                     <thead>
-                        <th class="fa txt-white black txt-white">شماره فنی</th>
-                        <th class="fa txt-white">دلار پایه</th>
-                        <th class="txt-white">+10%</th>
+                        <th class="fa txt-white black txt-white part">شماره فنی</th>
+                        <th class="fa txt-white dollar">دلار پایه</th>
+                        <th class="txt-white dollar">+10%</th>
                         <?php echo $rates ?>
                         <th class="txt-white fa">عملیات</th>
                         <th class="txt-white"></th>

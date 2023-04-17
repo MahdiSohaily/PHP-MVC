@@ -70,19 +70,12 @@ class Good
                 }
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
-                <td class='blue'>$partnumber</td>
+                <td class='blue part'>$partnumber</td>
                 <td >".round($avgprice*1.1)."</td>
-                <td >".round($avgprice*1.2)."</td>        
-                <td >".round($avgprice*40*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*45*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*50*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*56*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*57*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*58*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*59*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*60*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*61*1.2*1.2*1.3)."</td>
-                <td >".round($avgprice*62*1.2*1.2*1.3)."</td>
+                <td >".round($avgprice*1.2)."</td>";
+
+                $template.=$this->getPrice($avgprice,$rates);
+                $template .="
                 <td  class='Action'>
                 <a class='Google' target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'></a>
                 <a class='Save' msg='$partnumber'></a>
@@ -96,19 +89,12 @@ class Good
                 $price = str_replace(",","",$price);
                 $avgprice = round($price*110/243.5);
                 $template .= "<tr class='mobis'>
-                <td> $partnumber-M</td>
+                <td class='part'> $partnumber-M</td>
                 <td>".round($avgprice)."</td>
                 <td>".round($avgprice*1.1)."</td>
-                <td> ".round($avgprice*40*1.25*1.3)."</td>
-                <td> ".round($avgprice*45*1.25*1.3)."</td>
-                <td> ".round($avgprice*50*1.25*1.3)."</td>
-                <td> ".round($avgprice*56*1.25*1.3)."</td>
-                <td> ".round($avgprice*57*1.25*1.3)."</td>
-                <td> ".round($avgprice*58*1.25*1.3)."</td>
-                <td> ".round($avgprice*59*1.25*1.3)."</td>
-                <td> ".round($avgprice*60*1.25*1.3)."</td>
-                <td> ".round($avgprice*61*1.25*1.3)."</td>
-                <td>". round($avgprice*62*1.25*1.3)."</td>
+                ";
+                $template .= $this-> getPriceMobis($avgprice, $rates);
+                $template .= "
                 <td></td>
                 <td></td>
             </tr>";
@@ -132,7 +118,7 @@ class Good
             // output data of each row
             while($row = $rates->fetch_assoc()) {
                 $result.="
-                <td> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+                <td> ".round($avgprice*$row['amount']*1.2*1.2*1.3)."</td>
                 ";
             }
         }
@@ -140,9 +126,31 @@ class Good
         return $result;
     }
     
-    public function getPriceMobis($rates)
+    public function getPriceMobis($avgprice)
     {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM rates";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
+        $result = '';
+        if ($rates->num_rows > 0) {
+            // output data of each row
+            while($row = $rates->fetch_assoc()) {
+                $result.="
+                <td> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+                ";
+            }
+        }
+
+        return $result;
     }
 	
 	public function update(int $id, array $data)
