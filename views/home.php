@@ -155,7 +155,7 @@
 
         if (pattern.length > 4) {
             resultBox.innerHTML = "";
-            axios.get('getdata/' + pattern)
+            axios.get('getdata/' + pattern +'/'+supermode)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {

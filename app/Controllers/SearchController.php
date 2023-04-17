@@ -7,9 +7,9 @@ use Symfony\Component\Routing\RouteCollection;
 class SearchController
 {
     // Homepage action
-	public function index($key, RouteCollection $routes)
+	public function index($key,$mode, RouteCollection $routes)
 	{
 		$good = new Good();
-		$result = $good->search($key);
+		$result = $good->search($key, $mode);
 	}
 }

@@ -36,7 +36,7 @@ class Good
           $conn->close();
 	}
 
-    public function search($key)
+    public function search($key, $mode)
     {
         $servername = "localhost";
         $username = "root";
@@ -46,7 +46,12 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '$key'";
+        if ($mode) {
+            $sql="SELECT * FROM Nisha WHERE partnumber LIKE '".$key."%'";
+        } else {
+            $sql="SELECT * FROM Nisha WHERE partnumber LIKE '$key'";
+        }
+
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
