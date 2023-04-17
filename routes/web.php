@@ -29,6 +29,12 @@ $routes->add('goodslist',
     'method'=>'list'), array())
 );
 
+$routes->add('removegood',
+    new Route(constant('URL_SUBFOLDER') . '/removegood/{id}',
+    array('controller' => 'GoodController',
+    'method'=>'delete'), array('id' => '[0-9]+'))
+);
+
 
 $routes->add('rates',
     new Route(constant('URL_SUBFOLDER') . '/rates',

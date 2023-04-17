@@ -90,7 +90,7 @@
                         operation
                     </th>
                 </thead>
-                <tbody id="result">
+                <tbody id="resultbox">
                     <?php echo $data ?>
                 </tbody>
             </table>
@@ -98,7 +98,7 @@
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./public/js/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
@@ -127,7 +127,15 @@
     });
     $(document).ready(function() {
         $('.delete').on('click',function(e){
-            alert(e.target.getAttribute('data-delete'));
+            const id = e.target.getAttribute('data-delete');
+            const resultBox = document.getElementById('resultbox')
+
+            axios.get('removegood/' + id )
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
         })
     })
     </script>
