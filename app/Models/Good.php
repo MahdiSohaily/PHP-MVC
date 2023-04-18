@@ -296,6 +296,21 @@ class Good
         </script>"; ;   
     }
 
+    public function count()
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql="SELECT COUNT(id) as sum FROM nisha";
+		$goods = $conn->query($sql)->fetch_assoc();
+        return $goods['sum'];
+    }
+
     public function find(int $id)
     {
         $servername = "localhost";

@@ -35,7 +35,7 @@ class GoodController
 	{
 		$good = new Good();
 		$data = $good->all();
-		$pages = $goods->count();
+		$pages = $good->count();
 		require_once APP_ROOT . '/views/Good/list.php';
 	}
 
