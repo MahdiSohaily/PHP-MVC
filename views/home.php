@@ -146,7 +146,7 @@
             supermode = 1;
         }
 
-        if (pattern.length > 4) {
+        if (((pattern.length > 5) && (supermode == 1)) || ((pattern.length > 7) && (supermode == 0))) {
             resultBox.innerHTML = "";
             axios.get('getdata/' + pattern + '/' + supermode)
                 .then(response => {
