@@ -14,7 +14,7 @@ class LoginController
 			header('Location: search');
 				exit;
 		} else {
-			
+
 		$user = new User(); // user class instance for database interaction
 		$message = null;
 		$result = null;
@@ -43,6 +43,6 @@ class LoginController
 
 	public function logout(RouteCollection $routes)
 	{
-		
+		setcookie('login-user','',time()-(86400*60));
 	}
 }
