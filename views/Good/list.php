@@ -126,7 +126,7 @@ td {
     <main class="login-page">
         <section class="content-nav">
             <i class="material-icons" id="open">menu</i>
-            <i class="material-icons">power_settings_new</i>
+            <i class="material-icons" id="out">power_settings_new</i>
         </section>
         <section class="main-content">
 
@@ -199,6 +199,18 @@ td {
                 $(this).parent().find('label').removeClass('active');
             }
         });
+
+        function logout() {
+            let text = "آیا از سیستم خارج میشوید؟";
+            if (confirm(text) == true) {
+                axios.get('logout').
+                then(response => {
+                    window.location.assign('<?php echo URL_ROOT.URL_SUBFOLDER ?>')
+                }).catch(error => {
+                    console.log(error);
+                });
+            }
+        }
 
         // $('.delete').on('click', function(e) {
         //     const id = e.target.getAttribute('data-delete');
