@@ -16,7 +16,6 @@
 </head>
 
 <style>
-
 table {
     margin-block: 1rem;
     width: 100%;
@@ -60,17 +59,17 @@ td {
 }
 
 .page {
-    display:flex;
+    display: flex;
 }
 
 .page-item {
-    width:15px;
-    height:15px;
+    width: 15px;
+    height: 15px;
     padding: 0.5rem;
-    margin:0.2rem;
+    margin: 0.2rem;
     border-radius: 0.3rem;
-    background-color:brown;
-    display:flex;
+    background-color: brown;
+    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -86,31 +85,31 @@ td {
         <nav>
             <ul class="nav">
                 <li class="nav-link">
-                    <a href="">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goods">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/goods">
                         <i class="material-icons">book</i>
                         <span>Register Goods</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goodslist">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/goodslist">
                         <i class="material-icons">format_list_bulleted</i>
                         <span>Goods List</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rates">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/rates">
                         <i class="material-icons">monetization_on</i>
                         <span>Register Rates</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rateslist">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/rateslist">
                         <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
@@ -152,7 +151,7 @@ td {
 
                 <ul class='page'>
                     <li class="page-item">
-                    <i class="material-icons">fast_rewind</i>
+                        <i class="material-icons">fast_rewind</i>
                     </li>
                     <li class="page-item">1</li>
                     <li class="page-item">2</li>
@@ -165,7 +164,7 @@ td {
                     <li class="page-item">9</li>
                     <li class="page-item">10</li>
                     <li class="page-item">
-                    <i class="material-icons">fast_forward</i>
+                        <i class="material-icons">fast_forward</i>
                     </li>
                 </ul>
             </div>
