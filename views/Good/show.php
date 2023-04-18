@@ -9,8 +9,8 @@
     <meta name="author" content="Mahdi Rezaei">
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
-    <link rel="stylesheet" href="./public/css/styles.css">
-    <link rel="stylesheet" href="./public/css/partials/good.css">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/styles.css">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/partials/good.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
@@ -98,7 +98,7 @@
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./public/js/index.js"></script>
+    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/index.js"></script>
     <script>
     $(document).ready(function() {
         const side = document.getElementById('side'); /**sidebar instance */
