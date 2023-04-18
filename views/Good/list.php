@@ -135,12 +135,19 @@
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
 
-            axios.get('removegood/' + id)
-                .then(response => {
-                    resultBox.innerHTML = response.data;
-                }).catch(error => {
-                    console.log(error);
-                })
+            let text = "Press a button!\nEither OK or Cancel.";
+            if (confirm(text) == true) {
+                axios.get('removegood/' + id)
+                    .then(response => {
+                        resultBox.innerHTML = response.data;
+                    }).catch(error => {
+                        console.log(error);
+                    })
+            } else {
+                text = "You canceled!";
+
+            }
+
         });
 
         $('#serial').on('keyup', function(e) {
