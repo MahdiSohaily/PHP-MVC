@@ -10,6 +10,7 @@ class GoodController
     // Homepage action
 	public function index(RouteCollection $routes)
 	{
+		if(isset($_COOKIE['login-user'])) {
 		$good = new Good();
 		$message = null;
 
@@ -29,25 +30,40 @@ class GoodController
 		}
 
 		require_once APP_ROOT . '/views/Good/show.php';
+	} else {
+		header('Location: /yadak');
+		exit;
+	}
 	}
 
 	public function list(RouteCollection $routes)
 	{
-		$good = new Good();
-		$data = $good->all();
-		$pages = $good->count();
-		require_once APP_ROOT . '/views/Good/list.php';
+		if(isset($_COOKIE['login-user'])) {
+			$good = new Good();
+			$data = $good->all();
+			$pages = $good->count();
+			require_once APP_ROOT . '/views/Good/list.php';
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
 	}
 
 	public function delete($id, RouteCollection $routes)
 	{
-		$good = new Good();
-		$data = $good->delete($id);
-		echo $data;
+		if(isset($_COOKIE['login-user'])) {
+			$good = new Good();
+			$data = $good->delete($id);
+			echo $data;
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
 	}
 
 	public function edit($id, RouteCollection $routes)
 	{
+		if(isset($_COOKIE['login-user'])) {
 		$good = new Good();
 		$edit = $good->find($id);
 		$message = null;
@@ -67,6 +83,10 @@ class GoodController
 			}
 		}
 
-		require_once APP_ROOT . '/views/Good/edit.php';
+			require_once APP_ROOT . '/views/Good/edit.php';
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
 	}
 }
