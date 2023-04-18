@@ -25,6 +25,21 @@
     color: green !important;
     font-size: 16px !important;
 }
+
+.delete {
+    color: red;
+    padding-inline:0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
+.edit i{
+    color: rgb(118, 182, 207)!important;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
 </style>
 
 <body>
