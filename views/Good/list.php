@@ -15,6 +15,67 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
 
+<style>
+
+table {
+    margin-block: 1rem;
+    width: 100%;
+}
+
+th {
+    padding-block: 0.5rem;
+    background-color: seagreen;
+}
+
+td {
+    padding-block: 0.5rem;
+    text-align: center;
+}
+
+#serial {
+    padding: 0.5rem 1rem;
+    width: 300px;
+    text-align: center;
+}
+
+.message {
+    color: green !important;
+    font-size: 16px !important;
+}
+
+.delete {
+    color: rgb(161, 19, 19) !important;
+    ;
+    padding-inline: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
+.edit i {
+    color: rgb(93, 95, 194) !important;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
+.page {
+    display:flex;
+}
+
+.page-item {
+    width:15px;
+    height:15px;
+    padding: 0.5rem;
+    margin:0.2rem;
+    border-radius: 0.3rem;
+    background-color:brown;
+    display:flex;
+    justify-content: center;
+    cursor: pointer;
+}
+</style>
+
 <body>
     <aside id="side">
         <div class="logo">
@@ -87,6 +148,21 @@
                         <?php echo $data ?>
                     </tbody>
                 </table>
+
+                <ul class='page'>
+                    <li class="page-item"><<</li>
+                    <li class="page-item">1</li>
+                    <li class="page-item">2</li>
+                    <li class="page-item">3</li>
+                    <li class="page-item">4</li>
+                    <li class="page-item">5</li>
+                    <li class="page-item">6</li>
+                    <li class="page-item">7</li>
+                    <li class="page-item">8</li>
+                    <li class="page-item">9</li>
+                    <li class="page-item">10</li>
+                    <li class="page-item">>></li>
+                </ul>
             </div>
         </section>
     </main>
