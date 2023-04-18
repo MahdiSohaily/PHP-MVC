@@ -8,7 +8,7 @@ use Symfony\Component\Routing\RouteCollection;
 class LoginController
 {
     // Homepage action
-	public function index(RouteCollection $routes)
+	public function login(RouteCollection $routes)
 	{
 		$user = new User(); // user class instance for database interaction
 		$message = null;
@@ -29,5 +29,10 @@ class LoginController
 		} else {
 			require_once APP_ROOT . '/views/login.php';
 		}
+	}
+
+	public function logout(RouteCollection $routes)
+	{
+		require_once APP_ROOT . '/views/login.php';	
 	}
 }
