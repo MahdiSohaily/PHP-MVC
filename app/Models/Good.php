@@ -186,7 +186,7 @@ class Good
         return $result;
     }
 
-    public function all()
+    public function all(int $page = 1)
     {
         $servername = "localhost";
         $username = "root";
@@ -241,7 +241,7 @@ class Good
         </script>";   
     }
 
-    public function searchGood($patt)
+    public function searchGood(string $patt, int $page = 1)
     {
         $servername = "localhost";
         $username = "root";
