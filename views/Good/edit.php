@@ -83,10 +83,10 @@
 
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
-                        <input value="<?php $edit['id'] ?>" id="id" type="text" name="id" required hidden>
-                        <input value="<?php $edit['price'] ?>" id="price" type="text" placeholder="Price*" name="price" required>
-                        <input value="<?php $edit['weight'] ?>" id="weight" type="text" placeholder="Weight*" name="weight" required>
-                        <input value="<?php $edit['mobis'] ?>" id="mobis" type="text" placeholder="Mobis" name="mobis">
+                        <input value="<?php echo $edit['id'] ?>" id="id" type="text" name="id" required hidden>
+                        <input value="<?php echo $edit['price'] ?>" id="price" type="text" placeholder="Price*" name="price" required>
+                        <input value="<?php echo $edit['weight'] ?>" id="weight" type="text" placeholder="Weight*" name="weight" required>
+                        <input value="<?php echo $edit['mobis'] ?>" id="mobis" type="text" placeholder="Mobis" name="mobis">
                         <?php echo "<p class='message'>$message</p>" ?>
                         <input id="submit" type="submit" value="Submit" name="submit">
                     </form>

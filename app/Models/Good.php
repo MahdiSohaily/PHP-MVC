@@ -288,9 +288,9 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE id = '$id";
+        $sql="SELECT * FROM Nisha WHERE id = '$id'";
 		 //check if insertion was successful
-		$good = $conn->query($sql);
+		$good = $conn->query($sql)->fetch_assoc();
 
         return $good;
     }

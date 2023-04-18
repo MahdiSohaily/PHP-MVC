@@ -50,6 +50,22 @@ class GoodController
 		$good = new Good();
 		$edit = $good->find($id);
 		$message = null;
+
+		if(isset($_POST['submit'])){ // Check if form was submitted
+			$id = $_POST['id'];
+			$price = $_POST['price'];
+			$weight= $_POST['weight'];
+			$mobis= $_POST['mobis'];
+
+			$result = $good->update($id, $price, $weight, $mobis);
+
+			if($result) {
+				$message = 'Data edited successfuly';
+			} else {
+				$message = 'An Error occurred while saving data';
+			}
+		}
+
 		require_once APP_ROOT . '/views/Good/edit.php';
 	}
 }
