@@ -9,7 +9,14 @@
     <meta name="author" content="Mahdi Rezaei">
     <link rel="shortcut icon" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/YadakShop.png">
     <title>Yadak Shop</title>
+
+    <!-- css -->
     <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/partials/login.css">
+
+    <!-- js -->
+    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/jquery.js"></script>
+    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
+
     <style>
     .warning {
         margin-bottom: 0.5rem;
@@ -29,7 +36,6 @@
             </form>
         </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

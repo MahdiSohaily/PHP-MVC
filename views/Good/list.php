@@ -9,13 +9,18 @@
     <meta name="author" content="Mahdi Rezaei">
     <link rel="shortcut icon" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/YadakShop.png">
     <title>Yadak Shop</title>
+
+    <!-- css -->
     <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/styles.css">
     <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/partials/list.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-</head>
 
-<style>
+    <!-- js -->
+    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/jquery.js"></script>
+    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
+
+    <style>
 table {
     margin-block: 1rem;
     width: 100%;
@@ -76,6 +81,7 @@ td {
 }
 </style>
 
+</head>
 <body>
     <aside id="side">
         <div class="logo">
@@ -170,8 +176,6 @@ td {
             </div>
         </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
     <script>
     $(document).ready(function() {
         const side = document.getElementById('side'); /**sidebar instance */
