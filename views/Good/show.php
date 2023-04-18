@@ -30,31 +30,31 @@
         <nav>
             <ul class="nav">
                 <li class="nav-link">
-                    <a href="">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goods">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/goods">
                         <i class="material-icons">book</i>
                         <span>Register Goods</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goodslist">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/goodslist">
                         <i class="material-icons">format_list_bulleted</i>
                         <span>Goods List</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rates">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/rates">
                         <i class="material-icons">monetization_on</i>
                         <span>Register Rates</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rateslist">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/rateslist">
                         <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
