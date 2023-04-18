@@ -9,8 +9,8 @@
     <meta name="author" content="Mahdi Rezaei">
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
-    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>./public/css/styles.css">
-    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>./public/css/partials/good.css">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/styles.css">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/css/partials/good.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
