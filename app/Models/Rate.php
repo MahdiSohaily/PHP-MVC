@@ -92,7 +92,9 @@ class Rate
                     <td>".$row['amount']."</td>
                     <td>".$row['status']."</td>
                     <td>
-                    <i class='delete material-icons' data-delete='".$row['id']."'>delete</i>
+                    <i class='delete material-icons' data-delete='".$row['id']."' 
+                        onclick='myfun(".$row['id'].")'>
+                    delete</i>
                     </td>
                 </tr>
                 ";
@@ -101,7 +103,17 @@ class Rate
             $result .= "<tr><td colspan='3'>Nothing to show</td></tr>";
         }
         $conn->close();
-        return $result;   
+        return $result."<script>
+        function myfun(id){
+            const resultBox = document.getElementById("."'resultbox'".");
+            axios.get("."'removereat/'"." + id)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+        }
+        </script>";   
     }
 	
 	public function checkUser($email, $pass)

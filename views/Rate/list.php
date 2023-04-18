@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="./public/css/partials/list.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./public/js/axios.js"></script>
 </head>
 <style>
 .message {
@@ -91,8 +94,6 @@
             </div>
         </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./public/js/axios.js"></script>
     <script>
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
@@ -123,7 +124,8 @@
         $('.delete').on('click', function(e) {
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
-
+            
+            alert(id)
             axios.get('removereat/' + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
