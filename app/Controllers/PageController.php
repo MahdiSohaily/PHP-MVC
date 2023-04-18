@@ -10,8 +10,13 @@ class PageController
     // Homepage action
 	public function index(RouteCollection $routes)
 	{
-		$rate = new Rate();
-		$rates = $rate->all();
-        require_once APP_ROOT . '/views/home.php';
+		if(isset($_COOKIE['login-user'])) {
+			$rate = new Rate();
+			$rates = $rate->all();
+			require_once APP_ROOT . '/views/home.php';
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
 	}
 }
