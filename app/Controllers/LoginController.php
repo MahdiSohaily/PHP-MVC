@@ -43,6 +43,6 @@ class LoginController
 
 	public function logout(RouteCollection $routes)
 	{
-		setcookie('login-user','',time()-(86400*60));
+		setcookie('login-user', '', time()-(86400*30  +1),'/');
 	}
 }
