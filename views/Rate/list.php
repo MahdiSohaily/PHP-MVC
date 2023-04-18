@@ -124,14 +124,16 @@
         $('.delete').on('click', function(e) {
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
-            
-            alert(id)
-            axios.get('removereat/' + id)
-                .then(response => {
-                    resultBox.innerHTML = response.data;
-                }).catch(error => {
-                    console.log(error);
-                })
+
+            let text = "آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟";
+            if (confirm(text) == true) {
+                axios.get('removereat/' + id)
+                    .then(response => {
+                        resultBox.innerHTML = response.data;
+                    }).catch(error => {
+                        console.log(error);
+                    })
+            }
         })
     })
     </script>

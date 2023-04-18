@@ -106,12 +106,16 @@ class Rate
         return $result."<script>
         function myfun(id){
             const resultBox = document.getElementById("."'resultbox'".");
-            axios.get("."'removereat/'"." + id)
+
+            let text = "."آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟".";
+            if (confirm(text) == true) {
+                axios.get("."'removereat/'"." + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
                     console.log(error);
                 })
+            }
         }
         </script>";   
     }
