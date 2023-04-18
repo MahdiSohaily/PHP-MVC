@@ -47,9 +47,9 @@ class Good
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
         if ($mode) {
-            $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
+            $sql="SELECT * FROM Nisha WHERE partnumber LIKE '".$key."%'";
         } else {
-            $sql="SELECT * FROM nisha WHERE partnumber LIKE '$key'";
+            $sql="SELECT * FROM Nisha WHERE partnumber LIKE '$key'";
         }
 
         $result = $conn->query($sql);
@@ -251,7 +251,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%'";
+        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '%".$patt."%'";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
@@ -288,7 +288,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM nisha WHERE id = '$id'";
+        $sql="SELECT * FROM Nisha WHERE id = '$id'";
 		 //check if insertion was successful
 		$good = $conn->query($sql)->fetch_assoc();
 
@@ -297,7 +297,7 @@ class Good
 	
 	public function update(int $id, $price, $weight, $mobis)
 	{
-        $servername = "localhost";
+		$servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "yadakinfo_price";
@@ -305,11 +305,13 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-		 //check if insertion was successful
-		$good = $conn->query($sql)->fetch_assoc();
+        $sql = "UPDATE nisha SET price='$price', weight='$weight',mobis='$mobis' WHERE id='$id'";
 
-        return $good;
+        if ($conn->query($sql) === TRUE) {
+           return $this->find($id);
+        } else {
+            return false;
+        }
 	}
 	
 	public function delete(int $id)
@@ -323,12 +325,12 @@ class Good
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
 		// sql to delete a record
-        $sql = "UPDATE MyGuests SET price='$price', weight='$weight',mobis='$mobis' WHERE id='$id'";
+        $sql = "DELETE FROM nisha WHERE id='$id'";
 
         if ($conn->query($sql) === TRUE) {
-           return true;
+            return $this->all();
         } else {
-            return false;
+            return "Error deleting record: " . $conn->error;
         }
         $conn->close();
 	}

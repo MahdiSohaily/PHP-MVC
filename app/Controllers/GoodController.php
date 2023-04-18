@@ -57,12 +57,10 @@ class GoodController
 			$weight= $_POST['weight'];
 			$mobis= $_POST['mobis'];
 
-			$result = $good->update($id, $price, $weight, $mobis);
+			$edit = $good->update($id, $price, $weight, $mobis);
 
-			if($result) {
+			if($edit) {
 				$message = 'Data edited successfuly';
-				// header('Location: search');
-				// exit;
 			} else {
 				$message = 'An Error occurred while saving data';
 			}
