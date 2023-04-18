@@ -290,7 +290,7 @@ class Good
 
         $sql="SELECT * FROM Nisha WHERE id = '$id";
 		 //check if insertion was successful
-		$good = $conn->query($sql)->fetch_assoc();
+		$good = $conn->query($sql);
 
         return $good;
     }

@@ -84,6 +84,7 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
 
+                        <input id="id" hidden type="text" placeholder="Part Number*" Name="id" value="<?php $edit['id'] ?>" required>
                         <input id="pname" type="text" placeholder="Part Number*" Name="pname" required>
                         <input id="price" type="text" placeholder="Price*" name="price" required>
                         <input id="weight" type="text" placeholder="Weight*" name="weight" required>

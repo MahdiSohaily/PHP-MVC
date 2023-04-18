@@ -9,10 +9,6 @@ class User
 	protected $email;
 	protected $password;
 
-    public function __construct(Type $var = null) {
-       
-    }
-
     public function login($email, $password)
     {
         $user = $this->checkUser($email,$password);
@@ -23,55 +19,7 @@ class User
         }
     }
 	
-    // GET METHODS
-	public function getId()
-	{
-		return $this->id;
-	}
-	
-	public function getName()
-	{
-		return $this->name;
-	}
-	
-	public function getLast_name()
-	{
-		return $this->last_name;
-	}
-	
-	public function getEmail()
-	{
-		return $this->email;
-	}
-	
-	public function getPassword()
-	{
-		return $this->password;
-	}
-	
-	
-    // SET METHODS
-    public function setName(string $name)
-	{
-		$this->name = $name;
-	}
-	
-	public function setLast_name(string $last_name)
-	{
-		$this->last_name = $last_name;
-	}
-	
-	public function setEmail(string $email)
-	{
-		$this->email = $email;
-	}
-	
-	public function setPassword(string $password)
-	{
-		$this->password = $password;
-	}
-	
-
+    
     // CRUD OPERATIONS
 	public function create(array $data)
 	{
