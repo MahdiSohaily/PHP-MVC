@@ -220,7 +220,21 @@ class Good
             $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
-        return $result;   
+        return $result"<script>
+        function deletefunc(id){
+            const resultBox = document.getElementById("."'resultbox'".");
+
+            let text = "."آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟".";
+            if (confirm(text) == true) {
+                axios.get("."'removereat/'"." + id)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+            }
+        }
+        </script>";   
     }
 
     public function searchGood($patt)
