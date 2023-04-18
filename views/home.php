@@ -119,8 +119,11 @@
 
         out.addEventListener('click', logout);
 
-        function closeSidebar() {
-            side.classList.remove('open');
+        function logout() {
+            let text = "آبا از سیستم خارج میشوید؟";
+            if (confirm(text) == true) {
+                axios.get('logout/');
+            }
         }
     });
 

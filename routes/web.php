@@ -13,7 +13,7 @@ $routes->add('login',
 );
 
 $routes->add('logout', 
-    new Route(constant('URL_SUBFOLDER') . '/', 
+    new Route(constant('URL_SUBFOLDER') . '/logout', 
     array('controller' => 'LoginController', 
     'method'=>'logout'), array())
 );
