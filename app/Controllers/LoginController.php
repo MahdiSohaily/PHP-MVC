@@ -10,6 +10,11 @@ class LoginController
     // Homepage action
 	public function login(RouteCollection $routes)
 	{
+		if(isset($_COOKIE['login-user'])) {
+			header('Location: search');
+				exit;
+		} else {
+			
 		$user = new User(); // user class instance for database interaction
 		$message = null;
 		$result = null;
@@ -20,7 +25,7 @@ class LoginController
 			$result = $user->login($email, $password);
 
 			if($result) {
-				$cookie_name = $result['name'];
+				$cookie_name = 'login-user';
 				$cookie_value = $result['email'];
 
 				setcookie($cookie_name, $cookie_value, time()+(86400*30),'/');
@@ -33,6 +38,7 @@ class LoginController
 		} else {
 			require_once APP_ROOT . '/views/login.php';
 		}
+	}
 	}
 
 	public function logout(RouteCollection $routes)
