@@ -135,7 +135,7 @@
             const id = e.target.getAttribute('data-delete');
             const resultBox = document.getElementById('resultbox')
 
-            let text = "Press a button!\nEither OK or Cancel.";
+            let text = "آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟";
             if (confirm(text) == true) {
                 axios.get('removegood/' + id)
                     .then(response => {
