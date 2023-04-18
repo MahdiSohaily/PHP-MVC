@@ -241,7 +241,7 @@ class Good
         </script>";   
     }
 
-    public function searchGood(string $patt, int $page)
+    public function searchGood(string $patt)
     {
         $servername = "localhost";
         $username = "root";
