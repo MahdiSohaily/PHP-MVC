@@ -13,7 +13,7 @@ class User
     {
         $user = $this->checkUser($email,$password);
         if($user) {
-			return true;
+			return $user;
         } else {
             return false;
         }
@@ -41,7 +41,7 @@ class User
 		$password = $user['password'];
 
         if (count($user)> 0 && $password === $pass) {
-			return true;
+			return $user;
           } else {
             return false;
           }

@@ -20,6 +20,10 @@ class LoginController
 			$result = $user->login($email, $password);
 
 			if($result) {
+				$cookie_name = $result['name'];
+				$cookie_value = $result['email'];
+
+				setcookie($cookie_name, $cookie_value, time()+(86400*30),'/');
 				header('Location: search');
 				exit;
 			} else {
