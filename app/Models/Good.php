@@ -326,9 +326,9 @@ class Good
         $sql = "UPDATE MyGuests SET price='$price', weight='$weight',mobis='$mobis' WHERE id='$id'";
 
         if ($conn->query($sql) === TRUE) {
-            return $this->all();
+           return true;
         } else {
-            return "Error deleting record: " . $conn->error;
+            return false;
         }
         $conn->close();
 	}
