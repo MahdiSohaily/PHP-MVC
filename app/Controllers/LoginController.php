@@ -33,6 +33,6 @@ class LoginController
 
 	public function logout(RouteCollection $routes)
 	{
-		require_once APP_ROOT . '/views/login.php';	
+		
 	}
 }

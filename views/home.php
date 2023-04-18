@@ -122,7 +122,12 @@
         function logout() {
             let text = "آیا از سیستم خارج میشوید؟";
             if (confirm(text) == true) {
-                axios.get('logout/');
+                axios.get('logout').
+                then(response => {
+                    window.location.assign('<?php echo URL_ROOT.URL_SUBFOLDER ?>')
+                }).catch(error => {
+                    console.log(error);
+                });
             }
         }
     });
