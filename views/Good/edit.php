@@ -133,6 +133,11 @@
             }
         });
 
+        const out = document.getElementById('out');
+
+        out.addEventListener('click', logout);
+
+
         function logout() {
             let text = "آیا از سیستم خارج میشوید؟";
             if (confirm(text) == true) {
