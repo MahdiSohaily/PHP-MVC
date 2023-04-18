@@ -84,10 +84,10 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
 
-                        <input id="pname" type="text" placeholder="Part Number*" Name="pname" required>
-                        <input id="price" type="text" placeholder="Price*" name="price" required>
-                        <input id="weight" type="text" placeholder="Weight*" name="weight" required>
-                        <input id="mobis" type="text" placeholder="Mobis" name="mobis">
+                        <input value="<?php ?>" id="pname" type="text" placeholder="Part Number*" name="pname" required>
+                        <input value="<?php ?>" id="price" type="text" placeholder="Price*" name="price" required>
+                        <input value="<?php ?>" id="weight" type="text" placeholder="Weight*" name="weight" required>
+                        <input value="<?php ?>" id="mobis" type="text" placeholder="Mobis" name="mobis">
                         <?php echo "<p class='message'>$message</p>" ?>
                         <input id="submit" type="submit" value="Submit" name="submit">
                     </form>

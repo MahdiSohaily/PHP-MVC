@@ -84,7 +84,7 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
 
-                        <input id="pname" type="text" placeholder="Part Number*" Name="pname" required>
+                        <input id="pname" type="text" placeholder="Part Number*" name="pname" required>
                         <input id="price" type="text" placeholder="Price*" name="price" required>
                         <input id="weight" type="text" placeholder="Weight*" name="weight" required>
                         <input id="mobis" type="text" placeholder="Mobis" name="mobis">
