@@ -10,18 +10,28 @@ class SearchController
     // Homepage action
 	public function index($key,$mode, RouteCollection $routes)
 	{
-		$good = new Good();
-		$rate = new Rate();
+		if(isset($_COOKIE['login-user'])) {
+			$good = new Good();
+			$rate = new Rate();
 
-		$rates = $rate->getRates();
+			$rates = $rate->getRates();
 
-		$result = $good->search($key, $mode, $rates);
+			$result = $good->search($key, $mode, $rates);
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
 	}
 
 	public function search($value, RouteCollection $routes)
 	{
-		$good = new Good();
+		if(isset($_COOKIE['login-user'])) {
+			$good = new Good();
 
-		$result = $good->searchGood($value);
+			$result = $good->searchGood($value);
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
 	}
 }
