@@ -30,7 +30,7 @@
         <nav>
             <ul class="nav">
                 <li class="nav-link">
-                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/search">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
