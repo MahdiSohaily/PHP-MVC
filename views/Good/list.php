@@ -72,6 +72,7 @@ td {
     background-color:brown;
     display:flex;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 </style>
@@ -150,7 +151,9 @@ td {
                 </table>
 
                 <ul class='page'>
-                    <li class="page-item"><<</li>
+                    <li class="page-item">
+                    <i class="material-icons">fast_rewind</i>
+                    </li>
                     <li class="page-item">1</li>
                     <li class="page-item">2</li>
                     <li class="page-item">3</li>
@@ -161,7 +164,9 @@ td {
                     <li class="page-item">8</li>
                     <li class="page-item">9</li>
                     <li class="page-item">10</li>
-                    <li class="page-item">>></li>
+                    <li class="page-item">
+                    <i class="material-icons">fast_forward</i>
+                    </li>
                 </ul>
             </div>
         </section>
