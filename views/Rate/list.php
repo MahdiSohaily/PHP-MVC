@@ -86,9 +86,7 @@
                     <thead>
                         <th>Rate</th>
                         <th>status</th>
-                        <th>
-                            operation
-                        </th>
+                        <th>Operation</th>
                     </thead>
                     <tbody id="resultbox">
                         <?php echo $data ?>
