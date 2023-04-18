@@ -211,7 +211,8 @@ class Good
                     <td>".$row['weight']."</td>
                     <td>".$row['mobis']."</td>
                     <td>
-                    <i class='delete material-icons' data-delete='".$row['id']."'>delete</i>
+                    <i class='delete material-icons' data-delete='".$row['id']."'
+                    onclick='deletefunc(".$row['id'].")>delete</i>
                     </td>
                 </tr>
                 ";
