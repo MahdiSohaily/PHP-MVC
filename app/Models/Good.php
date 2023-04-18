@@ -277,6 +277,21 @@ class Good
         $conn->close();
         echo $result;   
     }
+
+    public function find(int $id)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '%".$patt."%'";
+		 //check if insertion was successful
+		$rates = $conn->query($sql)->fetch_assoc();
+    }
 	
 	public function update(int $id, array $data)
 	{
