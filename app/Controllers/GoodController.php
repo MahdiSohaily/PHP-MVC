@@ -47,6 +47,8 @@ class GoodController
 
 	public function edit($id, RouteCollection $routes)
 	{
-		
+		$good = new Good();
+		$edit = $good->find($id);
+		require_once APP_ROOT . '/views/Good/edit.php';
 	}
 }
