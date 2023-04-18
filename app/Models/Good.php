@@ -225,9 +225,9 @@ class Good
         function deletefunc(id){
             const resultBox = document.getElementById("."'resultbox'".");
 
-            let text = "."آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟".";
+            let text = "."'آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'".";
             if (confirm(text) == true) {
-                axios.get("."'removereat/'"." + id)
+                axios.get("."'removegood/'"." + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
