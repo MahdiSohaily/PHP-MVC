@@ -79,7 +79,7 @@
 
                 <div id="subscribeBox">
                     <h2><span class="thin">Register</span> Goods</h2>
-                    <p>Please fill out the following information inorder to trgister a new good in the database.</p>
+                    <p>Please fill out the following information inorder to rrgister a new good in the database.</p>
 
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
