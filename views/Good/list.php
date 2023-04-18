@@ -147,7 +147,7 @@
                         <th>Weight</th>
                         <th>Mobis</th>
                         <th>
-                            operation
+                            Operation
                         </th>
                     </thead>
                     <tbody id="resultbox">

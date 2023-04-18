@@ -85,7 +85,7 @@
                 <table>
                     <thead>
                         <th>Rate</th>
-                        <th>status</th>
+                        <th>Status</th>
                         <th>Operation</th>
                     </thead>
                     <tbody id="resultbox">
