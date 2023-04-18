@@ -10,12 +10,12 @@ table {
 }
 
 th {
-    padding-block: 1rem;
+    padding-block: 0.5rem;
     background-color: seagreen;
 }
 
 td {
-    padding-block: 1rem;
+    padding-block: 0.5rem;
     text-align: center;
 }
 
@@ -23,14 +23,35 @@ tr:nth-child(odd) {
     background-color: rgb(243, 243, 243);
 }
 
+#serial {
+    padding: 0.5rem 1rem;
+    width: 300px;
+    text-align: center;
+}
+
+.message {
+    color: green !important;
+    font-size: 16px !important;
+}
+
+.delete {
+    color: rgb(161, 19, 19)!important;;
+    padding-inline:0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
+.edit i{
+    color: rgb(93, 95, 194)!important;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
 
 @media screen and (min-width: 600px) {
     table {
         width: 700px;
     }
-}
-
-.edit i{
-    color: rgb(118, 182, 207)!important;
-    background-color: hsla(0, 0%, 0%, 0.8);
 }

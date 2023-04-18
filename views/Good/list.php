@@ -14,33 +14,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
-<style>
-#serial {
-    padding: 0.5rem 1rem;
-    width: 300px;
-    text-align: center;
-}
-
-.message {
-    color: green !important;
-    font-size: 16px !important;
-}
-
-.delete {
-    color: red;
-    padding-inline:0.5rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 0.2rem;
-    padding: 0.2rem;
-}
-
-.edit i{
-    color: rgb(118, 182, 207)!important;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 0.2rem;
-    padding: 0.2rem;
-}
-</style>
 
 <body>
     <aside id="side">
