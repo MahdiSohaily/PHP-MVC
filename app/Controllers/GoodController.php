@@ -49,6 +49,7 @@ class GoodController
 	{
 		$good = new Good();
 		$edit = $good->find($id);
+		$message = null;
 		require_once APP_ROOT . '/views/Good/edit.php';
 	}
 }

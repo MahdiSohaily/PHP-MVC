@@ -9,8 +9,8 @@
     <meta name="author" content="Mahdi Rezaei">
     <link rel="shortcut icon" href="./public/img/YadakShop.png">
     <title>Yadak Shop</title>
-    <link rel="stylesheet" href="./public/css/styles.css">
-    <link rel="stylesheet" href="./public/css/partials/good.css">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>./public/css/styles.css">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.URL_SUBFOLDER ?>./public/css/partials/good.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
@@ -30,31 +30,31 @@
         <nav>
             <ul class="nav">
                 <li class="nav-link">
-                    <a href="">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>">
                         <i class="material-icons">search</i>
                         <span>Search</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goods">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/goods">
                         <i class="material-icons">book</i>
                         <span>Register Goods</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="goodslist">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/goodslist">
                         <i class="material-icons">format_list_bulleted</i>
                         <span>Goods List</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rates">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/rates">
                         <i class="material-icons">monetization_on</i>
                         <span>Register Rates</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="rateslist">
+                    <a href="<?php echo URL_ROOT.URL_SUBFOLDER ?>/rateslist">
                         <i class="material-icons">filter_list</i>
                         <span>Rates List</span>
                     </a>
@@ -76,7 +76,7 @@
         <section class="main-content">
 
             <div id="wrapper">
-
+                
                 <div id="subscribeBox">
                     <h2><span class="thin">Register</span> Goods</h2>
                     <p>Please fill out the following information inorder to trgister a new good in the database.</p>
@@ -84,7 +84,6 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
 
-                        <input id="id" hidden type="text" placeholder="Part Number*" Name="id" value="<?php $edit['id'] ?>" required>
                         <input id="pname" type="text" placeholder="Part Number*" Name="pname" required>
                         <input id="price" type="text" placeholder="Price*" name="price" required>
                         <input id="weight" type="text" placeholder="Weight*" name="weight" required>
@@ -99,7 +98,6 @@
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./public/js/index.js"></script>
     <script>
     const side = document.getElementById('side'); /**sidebar instance */
     const open = document.getElementById('open'); /**open sidebar button instance */
