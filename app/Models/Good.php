@@ -47,9 +47,9 @@ class Good
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
         if ($mode) {
-            $sql="SELECT * FROM Nisha WHERE partnumber LIKE '".$key."%'";
+            $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
         } else {
-            $sql="SELECT * FROM Nisha WHERE partnumber LIKE '$key'";
+            $sql="SELECT * FROM nisha WHERE partnumber LIKE '$key'";
         }
 
         $result = $conn->query($sql);
@@ -251,7 +251,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '%".$patt."%'";
+        $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%'";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
@@ -288,7 +288,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE id = '$id'";
+        $sql="SELECT * FROM nisha WHERE id = '$id'";
 		 //check if insertion was successful
 		$good = $conn->query($sql)->fetch_assoc();
 
@@ -305,7 +305,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE id = '$id'";
+        $sql="UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 		 //check if insertion was successful
 		$good = $conn->query($sql)->fetch_assoc();
 
