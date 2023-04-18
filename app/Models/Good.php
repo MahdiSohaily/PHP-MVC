@@ -221,8 +221,8 @@ class Good
             $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
-        return $result"<script>
-        function deletefunc(id){
+        return $result."<script>
+        function myfun(id){
             const resultBox = document.getElementById("."'resultbox'".");
 
             let text = "."آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟".";
