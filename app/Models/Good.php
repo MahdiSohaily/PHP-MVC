@@ -295,9 +295,21 @@ class Good
         return $good;
     }
 	
-	public function update(int $id, array $data)
+	public function update(int $id, $price, $weight, $mobis)
 	{
-		
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql="SELECT * FROM Nisha WHERE id = '$id'";
+		 //check if insertion was successful
+		$good = $conn->query($sql)->fetch_assoc();
+
+        return $good;
 	}
 	
 	public function delete(int $id)
