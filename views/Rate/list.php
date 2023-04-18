@@ -84,7 +84,7 @@
             <div id="wrapper">
                 <table>
                     <thead>
-                        <th>Pate</th>
+                        <th>Rate</th>
                         <th>status</th>
                         <th>
                             operation
