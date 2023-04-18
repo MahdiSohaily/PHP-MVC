@@ -213,6 +213,9 @@ class Good
                     <td>
                     <i class='delete material-icons' data-delete='".$row['id']."'
                     onclick='deletefunc(".$row['id'].")'>delete</i>
+                    <a href='editgood/".$row['id']."'>
+                    <i class='edit material-icons'>create</i>
+                    </a>
                     </td>
                 </tr>
                 ";
