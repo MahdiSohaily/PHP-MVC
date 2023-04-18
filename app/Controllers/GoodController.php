@@ -61,6 +61,8 @@ class GoodController
 
 			if($result) {
 				$message = 'Data edited successfuly';
+				// header('Location: search');
+				// exit;
 			} else {
 				$message = 'An Error occurred while saving data';
 			}
