@@ -66,7 +66,7 @@
     <main class="login-page">
         <section class="content-nav">
             <i class="material-icons" id="open">menu</i>
-            <i class="material-icons">power_settings_new</i>
+            <i class="material-icons" id="out">power_settings_new</i>
         </section>
         <section class="main-content">
             <form action="" method="post" class='search-form'>
@@ -115,15 +115,13 @@
             side.classList.remove('open');
         }
 
-        $('input').on('focusin', function() {
-            $(this).parent().find('label').addClass('active');
-        });
+        const out = document.getElementById('out');
 
-        $('input').on('focusout', function() {
-            if (!this.value) {
-                $(this).parent().find('label').removeClass('active');
-            }
-        });
+        out.addEventListener('click', logout);
+
+        function closeSidebar() {
+            side.classList.remove('open');
+        }
     });
 
     function search(val) {
