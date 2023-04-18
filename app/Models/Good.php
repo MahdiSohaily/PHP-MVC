@@ -186,7 +186,7 @@ class Good
         return $result;
     }
 
-    public function all(int $page)
+    public function all()
     {
         $servername = "localhost";
         $username = "root";
@@ -196,7 +196,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql = "SELECT * FROM nisha";
+        $sql = "SELECT * FROM nisha LIMIT 10";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 

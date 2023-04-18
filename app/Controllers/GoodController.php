@@ -31,11 +31,11 @@ class GoodController
 		require_once APP_ROOT . '/views/Good/show.php';
 	}
 
-	public function list($page=1, RouteCollection $routes)
+	public function list(RouteCollection $routes)
 	{
-		echo $page;
 		$good = new Good();
 		$data = $good->all();
+		$pages = $goods->count();
 		require_once APP_ROOT . '/views/Good/list.php';
 	}
 
