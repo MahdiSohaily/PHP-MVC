@@ -5,14 +5,14 @@ use Symfony\Component\Routing\RouteCollection;
 
 // Routes system
 $routes = new RouteCollection();
-// $routes->add('login', 
-//     new Route(constant('URL_SUBFOLDER') . '/', 
-//     array('controller' => 'LoginController', 
-//     'method'=>'index'), array())
-// );
+$routes->add('login', 
+    new Route(constant('URL_SUBFOLDER') . '/', 
+    array('controller' => 'LoginController', 
+    'method'=>'index'), array())
+);
 
 $routes->add('homepage', 
-    new Route(constant('URL_SUBFOLDER') . '/', 
+    new Route(constant('URL_SUBFOLDER') . '/search', 
     array('controller' => 'PageController', 
     'method'=>'index'), array())
 );
