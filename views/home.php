@@ -124,30 +124,30 @@
                 $(this).parent().find('label').removeClass('active');
             }
         });
-
-        function search(val) {
-            let pattern = val;
-            let supermode = 0;
-            const resultBox = document.getElementById('s-result')
-
-
-            if (document.getElementById('mode').checked) {
-                supermode = 1;
-            }
-
-            if (pattern.length > 4) {
-                resultBox.innerHTML = "";
-                axios.get('getdata/' + pattern + '/' + supermode)
-                    .then(response => {
-                        resultBox.innerHTML = response.data;
-                    }).catch(error => {
-                        console.log(error);
-                    })
-            } else {
-                resultBox.innerHTML = "";
-            }
-        }
     });
+
+    function search(val) {
+        let pattern = val;
+        let supermode = 0;
+        const resultBox = document.getElementById('s-result')
+
+
+        if (document.getElementById('mode').checked) {
+            supermode = 1;
+        }
+
+        if (pattern.length > 4) {
+            resultBox.innerHTML = "";
+            axios.get('getdata/' + pattern + '/' + supermode)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+        } else {
+            resultBox.innerHTML = "";
+        }
+    }
     </script>
 </body>
 
