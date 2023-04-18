@@ -105,7 +105,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/axios.js"></script>
     <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
         const side = document.getElementById('side'); /**sidebar instance */
         const open = document.getElementById('open'); /**open sidebar button instance */
         const close = document.getElementById('close'); /**close sidebar button instance */

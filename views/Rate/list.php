@@ -95,32 +95,33 @@
         </section>
     </main>
     <script>
-    const side = document.getElementById('side'); /**sidebar instance */
-    const open = document.getElementById('open'); /**open sidebar button instance */
-    const close = document.getElementById('close'); /**close sidebar button instance */
-
-    // Event Listeners to toggle between open and close
-    open.addEventListener('click', openSidebar);
-    close.addEventListener('click', closeSidebar);
-
-    function openSidebar() {
-        side.classList.add('open');
-    }
-
-    function closeSidebar() {
-        side.classList.remove('open');
-    }
-
-    $('input').on('focusin', function() {
-        $(this).parent().find('label').addClass('active');
-    });
-
-    $('input').on('focusout', function() {
-        if (!this.value) {
-            $(this).parent().find('label').removeClass('active');
-        }
-    });
     $(document).ready(function() {
+        const side = document.getElementById('side'); /**sidebar instance */
+        const open = document.getElementById('open'); /**open sidebar button instance */
+        const close = document.getElementById('close'); /**close sidebar button instance */
+
+        // Event Listeners to toggle between open and close
+        open.addEventListener('click', openSidebar);
+        close.addEventListener('click', closeSidebar);
+
+        function openSidebar() {
+            side.classList.add('open');
+        }
+
+        function closeSidebar() {
+            side.classList.remove('open');
+        }
+
+        $('input').on('focusin', function() {
+            $(this).parent().find('label').addClass('active');
+        });
+
+        $('input').on('focusout', function() {
+            if (!this.value) {
+                $(this).parent().find('label').removeClass('active');
+            }
+        });
+        
         // $('.delete').on('click', function(e) {
         //     const id = e.target.getAttribute('data-delete');
         //     const resultBox = document.getElementById('resultbox')
@@ -135,7 +136,7 @@
         //             })
         //     }
         // })
-    })
+    });
     </script>
 </body>
 
