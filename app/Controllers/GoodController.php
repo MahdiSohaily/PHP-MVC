@@ -44,4 +44,9 @@ class GoodController
 		$data = $good->delete($id);
 		echo $data;
 	}
+
+	public function edit($id, RouteCollection $routes)
+	{
+		
+	}
 }
