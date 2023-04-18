@@ -213,8 +213,8 @@ class Good
                     <td>
                     <i class='delete material-icons' data-delete='".$row['id']."'
                     onclick='deletefunc(".$row['id'].")'>delete</i>
-                    <a href='editgood/".$row['id']."'>
-                    <i class='edit material-icons'>create</i>
+                    <a class='edit' href='editgood/".$row['id']."'>
+                    <i class='material-icons'>create</i>
                     </a>
                     </td>
                 </tr>
@@ -266,7 +266,11 @@ class Good
                     <td>".$row['weight']."</td>
                     <td>".$row['mobis']."</td>
                     <td>
-                    <i class='delete material-icons' data-delete='".$row['id']."'>delete</i>
+                    <i class='delete material-icons' data-delete='".$row['id']."'
+                    onclick='deletefunc(".$row['id'].")'>delete</i>
+                    <a class='edit' href='editgood/".$row['id']."'>
+                    <i class='material-icons'>create</i>
+                    </a>
                     </td>
                 </tr>
                 ";
@@ -275,7 +279,21 @@ class Good
             $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
-        echo $result;   
+        echo $result."<script>
+        function deletefunc(id){
+            const resultBox = document.getElementById("."'resultbox'".");
+
+            let text = "."'آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'".";
+            if (confirm(text) == true) {
+                axios.get("."'removegood/'"." + id)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+            }
+        }
+        </script>"; ;   
     }
 
     public function find(int $id)

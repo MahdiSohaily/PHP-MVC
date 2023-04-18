@@ -29,3 +29,7 @@ tr:nth-child(odd) {
         width: 700px;
     }
 }
+
+.edit {
+    color: yellowgreen !important;
+}
