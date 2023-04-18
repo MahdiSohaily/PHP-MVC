@@ -212,7 +212,7 @@ class Good
                     <td>".$row['mobis']."</td>
                     <td>
                     <i class='delete material-icons' data-delete='".$row['id']."'
-                    onclick='deletefunc(".$row['id'].")>delete</i>
+                    onclick='deletefunc(".$row['id'].")'>delete</i>
                     </td>
                 </tr>
                 ";
@@ -222,7 +222,7 @@ class Good
         }
         $conn->close();
         return $result."<script>
-        function myfun(id){
+        function deletefunc(id){
             const resultBox = document.getElementById("."'resultbox'".");
 
             let text = "."آبا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟".";
