@@ -20,7 +20,8 @@ class LoginController
 			$result = $user->login($email, $password);
 
 			if($result) {
-				require_once APP_ROOT . '/views/home.php';
+				header('Location: search');
+				exit;
 			} else {
 				$message = 'Either your email or password are incorrenct!';
 				require_once APP_ROOT . '/views/login.php';
