@@ -5,10 +5,17 @@ use Symfony\Component\Routing\RouteCollection;
 
 // Routes system
 $routes = new RouteCollection();
+
 $routes->add('login', 
     new Route(constant('URL_SUBFOLDER') . '/', 
     array('controller' => 'LoginController', 
-    'method'=>'index'), array())
+    'method'=>'login'), array())
+);
+
+$routes->add('logout', 
+    new Route(constant('URL_SUBFOLDER') . '/', 
+    array('controller' => 'LoginController', 
+    'method'=>'logout'), array())
 );
 
 $routes->add('homepage', 
