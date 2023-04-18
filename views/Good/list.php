@@ -21,67 +21,67 @@
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
 
     <style>
-table {
-    margin-block: 1rem;
-    width: 100%;
-}
+    table {
+        margin-block: 1rem;
+    }
 
-th {
-    padding-block: 0.5rem;
-    background-color: seagreen;
-}
+    th {
+        padding-block: 0.5rem;
+        background-color: seagreen;
+    }
 
-td {
-    padding-block: 0.5rem;
-    text-align: center;
-}
+    td {
+        padding-block: 0.5rem;
+        text-align: center;
+    }
 
-#serial {
-    padding: 0.5rem 1rem;
-    width: 300px;
-    text-align: center;
-}
+    #serial {
+        padding: 0.5rem 1rem;
+        width: 300px;
+        text-align: center;
+    }
 
-.message {
-    color: green !important;
-    font-size: 16px !important;
-}
+    .message {
+        color: green !important;
+        font-size: 16px !important;
+    }
 
-.delete {
-    color: rgb(161, 19, 19) !important;
-    ;
-    padding-inline: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 0.2rem;
-    padding: 0.2rem;
-}
+    .delete {
+        color: rgb(161, 19, 19) !important;
+        ;
+        padding-inline: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+    }
 
-.edit i {
-    color: rgb(93, 95, 194) !important;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 0.2rem;
-    padding: 0.2rem;
-}
+    .edit i {
+        color: rgb(93, 95, 194) !important;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+    }
 
-.page {
-    display: flex;
-}
+    .page {
+        display: flex;
+    }
 
-.page-item {
-    width: 15px;
-    height: 15px;
-    padding: 0.5rem;
-    margin: 0.2rem;
-    border-radius: 0.3rem;
-    background-color: brown;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-</style>
+    .page-item {
+        width: 15px;
+        height: 15px;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        border-radius: 0.3rem;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    </style>
 
 </head>
+
 <body>
     <aside id="side">
         <div class="logo">
