@@ -239,8 +239,10 @@
 
         $('.look').on('click', function(e) {
             const clicked = e.target.getAttribute('data-page');
-
-            alert($('#serial').val());
+            const pattern = $('#serial').val();
+            if (pattern == '') {
+                pattern = null;
+            }
             switch (clicked) {
                 case null:
                     current--;
@@ -248,7 +250,7 @@
                         prev.classList.add('hidden');
                         next.classList.remove('hidden');
                     }
-                    getPage(current);
+                    getPage(current, pattern);
                     break;
                 case 'next':
                     current++;
@@ -257,12 +259,12 @@
                     } else {
                         prev.classList.remove('hidden');
                     }
-                    getPage(current);
+                    getPage(current, pattern);
                     break;
             }
         });
 
-        function getPage(index = 0) {
+        function getPage(index = 0, pattern) {
             const resultBox = document.getElementById('resultbox');
             axios.get('getpage/' + index)
                 .then(response => {
