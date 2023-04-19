@@ -62,17 +62,16 @@ class RateController
 	public function edit($id, RouteCollection $routes)
 	{
 		if(isset($_COOKIE['login-user'])) {
-			$good = new Good();
-			$edit = $good->find($id);
+			$rate = new Rate();
+			$edit = $rate->find($id);
 			$message = null;
 
 			if(isset($_POST['submit'])){ // Check if form was submitted
 				$id = $_POST['id'];
-				$price = $_POST['price'];
-				$weight= $_POST['weight'];
-				$mobis= $_POST['mobis'];
+				$amount = $_POST['amount'];
+				$status= $_POST['status'];
 
-				$edit = $good->update($id, $price, $weight, $mobis);
+				$edit = $rate->update($id, $amount, $status);
 
 				if($edit) {
 					$message = 'Data edited successfuly';
@@ -81,7 +80,7 @@ class RateController
 				}
 			}
 
-			require_once APP_ROOT . '/views/Good/edit.php';
+			require_once APP_ROOT . '/views/Rate /edit.php';
 		} else {
 			header('Location: /yadak');
 			exit;
