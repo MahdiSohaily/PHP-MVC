@@ -160,11 +160,11 @@
                 </table>
 
                 <ul class='page'>
-                    <li class="page-item hidden" data-page="prev">
+                    <li id="prev" class="page-item hidden">
                         <i class="material-icons">fast_rewind</i>
                     </li>
-                    <li class="page-item">
-                        <i class="material-icons" data-page="next">fast_forward</i>
+                    <li id="next" class="page-item">
+                        <i class="material-icons">fast_forward</i>
                     </li>
                 </ul>
             </div>
@@ -233,6 +233,7 @@
         const total = $('#count').attr('data-count');
         const pages = Math.ceil( Number(total)/10);
         let current = 1;
+
 
     });
     </script>
