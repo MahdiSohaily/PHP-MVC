@@ -266,7 +266,7 @@
 
         function getPage(index = 0, pattern) {
             const resultBox = document.getElementById('resultbox');
-            axios.get('getpage/' + index)
+            axios.get('getpage/' + index+'/'+pattern)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
