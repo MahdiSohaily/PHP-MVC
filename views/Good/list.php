@@ -80,7 +80,7 @@
     }
 
     .hidden {
-        display: none;
+        visibility: hidden;
     }
     </style>
 
@@ -240,15 +240,14 @@
         $('.look').on('click', function(e) {
             const clicked = e.target.getAttribute('data-page');
 
+            alert($('#serial').val());
             switch (clicked) {
-                case 'prev':
-                    alert('prev')
+                case null:
                     current--;
                     if (current < 1) {
                         prev.classList.add('hidden');
                         next.classList.remove('hidden');
                     }
-                    alert(current)
                     getPage(current);
                     break;
                 case 'next':
