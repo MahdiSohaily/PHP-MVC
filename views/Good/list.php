@@ -248,6 +248,7 @@
                         prev.classList.add('hidden');
                         next.classList.remove('hidden');
                     }
+                    alert(current)
                     getPage(current);
                     break;
                 case 'next':
