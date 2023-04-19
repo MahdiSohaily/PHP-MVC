@@ -12,9 +12,8 @@ PHP 7.1.20 Apache
 
 ## Installation
 ```
-git clone https://github.com/gmaccario/simple-mvc-php-framework.git
+git clone https://github.com/MahdiSohaily/PHP-MVC.git
 ```
-Or download the package from [Github](https://github.com/gmaccario/simple-mvc-php-framework).
 
 ## Composer
 After the installation on your local or container, run the following command:
