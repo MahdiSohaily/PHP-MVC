@@ -254,6 +254,7 @@
                     current++;
                     if (current > pages) {
                         next.classList.add('hidden');
+                    } else {
                         prev.classList.remove('hidden');
                     }
                     getPage(current);
