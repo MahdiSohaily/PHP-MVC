@@ -37,7 +37,7 @@ $routes->add('goodslist',
 );
 
 $routes->add('getpage',
-    new Route(constant('URL_SUBFOLDER') . '/goodslist/{index}',
+    new Route(constant('URL_SUBFOLDER') . '/getpage/{index}',
     array('controller' => 'GoodController',
     'method'=>'page'), array('index' => '[0-9]+'))
 );

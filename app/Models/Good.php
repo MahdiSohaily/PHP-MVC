@@ -251,7 +251,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM Nisha WHERE partnumber LIKE '%".$patt."%'";
+        $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%'";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
@@ -346,6 +346,61 @@ class Good
             return false;
         }
 	}
+
+    public function page(int $index)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $start = 10 * $index;
+        $sql = "SELECT * FROM nisha LIMIT $start,10";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
+        $result = '';
+        if ($rates->num_rows > 0) {
+            // output data of each row
+            while($row = $rates->fetch_assoc()) {
+                $result.="
+                <tr>
+                    <td>".$row['partnumber']."</td>
+                    <td>".$row['price']."</td>
+                    <td>".$row['weight']."</td>
+                    <td>".$row['mobis']."</td>
+                    <td>
+                    <i class='delete material-icons' data-delete='".$row['id']."'
+                    onclick='deletefunc(".$row['id'].")'>delete</i>
+                    <a class='edit' href='editgood/".$row['id']."'>
+                    <i class='material-icons'>create</i>
+                    </a>
+                    </td>
+                </tr>
+                ";
+            }
+        } else {
+            $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
+        }
+        $conn->close();
+        return $result."<script>
+        function deletefunc(id){
+            const resultBox = document.getElementById("."'resultbox'".");
+
+            let text = "."'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'".";
+            if (confirm(text) == true) {
+                axios.get("."'removegood/'"." + id)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+            }
+        }
+        </script>";   
+    }
 	
 	public function delete(int $id)
 	{

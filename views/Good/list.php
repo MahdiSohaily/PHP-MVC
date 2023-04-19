@@ -233,37 +233,40 @@
         const total = $('#count').attr('data-count');
         const pages = Math.ceil(Number(total) / 10);
 
-        const prev = $('#prev');
-        const next = $('#next');
-        let current = 1;
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        let current = 0;
 
         $('.look').on('click', function(e) {
             const clicked = e.target.getAttribute('data-page');
 
             switch (clicked) {
                 case 'prev':
+                    alert('prev')
                     current--;
-                    if (current < 2) {
+                    if (current < 1) {
                         prev.classList.add('hidden');
                         next.classList.remove('hidden');
-                        getPage(current);
                     }
+                    getPage(current);
                     break;
                 case 'next':
                     current++;
                     if (current > pages) {
                         next.classList.add('hidden');
                         prev.classList.remove('hidden');
-                        getPage(current);
                     }
+                    getPage(current);
                     break;
             }
         });
 
-        function getPage(index = 1) {
+        function getPage(index = 0) {
+            const resultBox = document.getElementById('resultbox');
             axios.get('getpage/' + index)
                 .then(response => {
                     resultBox.innerHTML = response.data;
+                    alert(response.data);
                 }).catch(error => {
                     console.log(error);
                 })
