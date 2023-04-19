@@ -215,7 +215,16 @@
             }
         }
 
+        const total = $('#count').attr('data-count');
+        const pages = Math.ceil(Number(total) / 10);
+
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        let current = 0;
+
+
         $('#serial').on('keyup', function(e) {
+            current = 0;
             const value = e.target.value;
             const resultBox = document.getElementById('resultbox')
 
@@ -228,14 +237,6 @@
                     })
             }
         });
-
-
-        const total = $('#count').attr('data-count');
-        const pages = Math.ceil(Number(total) / 10);
-
-        const prev = document.getElementById('prev');
-        const next = document.getElementById('next');
-        let current = 0;
 
         $('.look').on('click', function(e) {
             const clicked = e.target.getAttribute('data-page');
