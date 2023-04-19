@@ -240,7 +240,7 @@
 
         $('.look').on('click', function(e) {
             const clicked = e.target.getAttribute('data-page');
-            const pattern = $('#serial').val();
+            let pattern = $('#serial').val();
             if (pattern == '') {
                 pattern = null;
             }
