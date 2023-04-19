@@ -144,7 +144,7 @@
                 <form action="" method="post" class='search-form'>
                     <input type="text" name="serial" id="serial" class="fa" placeholder="... کد فنی قطعه را وارد کنید">
                 </form>
-                <table>
+                <table id='count' data-count='<?php echo $pages ?>'>
                     <thead>
                         <th>Part Number</th>
                         <th>Price</th>
@@ -228,6 +228,12 @@
                     })
             }
         });
+
+
+        const total = $('#count').attr('data-count');
+        const pages = Math.ceil( Number(total)/10);
+        let current = 1;
+
     });
     </script>
 </body>
