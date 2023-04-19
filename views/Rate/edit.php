@@ -84,12 +84,13 @@
             <div id="wrapper">
 
                 <div id="subscribeBox">
-                    <h2><span class="thin">Register</span> Rate</h2>
-                    <p>Please fill out the following information inorder to trgister a new Rate in the database.</p>
+                    <h2><span class="thin">Edit</span> Rate</h2>
+                    <p>Please fill out the following information inorder to Edit the specified rate.</p>
 
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
-                        <input id="rate" type="text" placeholder="Rate*" name="rate" required>
+                        <input id="id" value="<?php echo $edit['id'] ?>" type="text" name="id" required hidden>
+                        <input id="rate" value="<?php echo $edit['amount'] ?>" type="text" placeholder="Rate*" name="rate" required>
                         <select id="status" name="status" required>
                             <option value="A">A</option>
                             <option value="B">B</option>
