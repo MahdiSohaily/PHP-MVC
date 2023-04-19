@@ -21,67 +21,67 @@
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
 
     <style>
-        table {
-            margin-block: 1rem;
-        }
+    table {
+        margin-block: 1rem;
+    }
 
-        th {
-            padding-block: 0.5rem;
-            background-color: seagreen;
-        }
+    th {
+        padding-block: 0.5rem;
+        background-color: seagreen;
+    }
 
-        td {
-            padding-block: 0.5rem;
-            text-align: center;
-        }
+    td {
+        padding-block: 0.5rem;
+        text-align: center;
+    }
 
-        #serial {
-            padding: 0.5rem 1rem;
-            width: 300px;
-            text-align: center;
-        }
+    #serial {
+        padding: 0.5rem 1rem;
+        width: 300px;
+        text-align: center;
+    }
 
-        .message {
-            color: green !important;
-            font-size: 16px !important;
-        }
+    .message {
+        color: green !important;
+        font-size: 16px !important;
+    }
 
-        .delete {
-            color: rgb(161, 19, 19) !important;
-            ;
-            padding-inline: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 0.2rem;
-            padding: 0.2rem;
-        }
+    .delete {
+        color: rgb(161, 19, 19) !important;
+        ;
+        padding-inline: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+    }
 
-        .edit i {
-            color: rgb(93, 95, 194) !important;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 0.2rem;
-            padding: 0.2rem;
-        }
+    .edit i {
+        color: rgb(93, 95, 194) !important;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+    }
 
-        .page {
-            display: flex;
-        }
+    .page {
+        display: flex;
+    }
 
-        .page-item {
-            width: 15px;
-            height: 15px;
-            padding: 0.5rem;
-            margin: 0.2rem;
-            border-radius: 0.3rem;
-            background-color: brown;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
+    .page-item {
+        width: 15px;
+        height: 15px;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        border-radius: 0.3rem;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
 
-        .hidden {
-            display: none;
-        }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
@@ -160,11 +160,11 @@
                 </table>
 
                 <ul class='page'>
-                    <li id="prev" class="page-item hidden">
+                    <li id="prev" class="page-item look hidden" data-page="prev">
                         <i class="material-icons">fast_rewind</i>
                     </li>
-                    <li id="next" class="page-item">
-                        <i class="material-icons">fast_forward</i>
+                    <li id="next" class="page-item look">
+                        <i class="material-icons" data-page="next">fast_forward</i>
                     </li>
                 </ul>
             </div>
@@ -231,9 +231,32 @@
 
 
         const total = $('#count').attr('data-count');
-        const pages = Math.ceil( Number(total)/10);
+        const pages = Math.ceil(Number(total) / 10);
+
+        const prev = $('#prev');
+        const next = $('#next');
         let current = 1;
 
+        $('.look').on('click', function(e) {
+            const clicked = e.target.getAttribute('data-page');
+
+            switch (clicked) {
+                case 'prev':
+                    current--;
+                    if (current < 2) {
+                        prev.classList.add('hidden');
+                        next.classList.remove('hidden');
+                    }
+                    break;
+                case 'next':
+                    current++;
+                    if (current > pages) {
+                        next.classList.add('hidden');
+                        prev.classList.remove('hidden');
+                    }
+                    break;
+            }
+        });
 
     });
     </script>
