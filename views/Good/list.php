@@ -266,7 +266,6 @@
             axios.get('getpage/' + index)
                 .then(response => {
                     resultBox.innerHTML = response.data;
-                    alert(response.data);
                 }).catch(error => {
                     console.log(error);
                 })
