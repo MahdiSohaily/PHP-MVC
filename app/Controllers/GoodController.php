@@ -61,11 +61,11 @@ class GoodController
 		}
 	}
 	
-	public function page($index, RouteCollection $routes)
+	public function page($index, $pat, RouteCollection $routes)
 	{
 		if(isset($_COOKIE['login-user'])) {
 			$good = new Good();
-			$data = $good->page($index);
+			$data = $good->page($index, $pat);
 			echo $data;
 		} else {
 			header('Location: /yadak');
