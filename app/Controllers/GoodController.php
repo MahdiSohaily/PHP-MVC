@@ -60,6 +60,20 @@ class GoodController
 			exit;
 		}
 	}
+	
+	public function page($index, RouteCollection $routes)
+	{
+		if(isset($_COOKIE['login-user'])) {
+			$good = new Good();
+			$data = $good->page($index);
+			echo $data;
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
+	}
+
+
 
 	public function edit($id, RouteCollection $routes)
 	{
