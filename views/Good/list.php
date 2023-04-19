@@ -258,6 +258,15 @@
             }
         });
 
+        function getPage(index = 1) {
+            axios.get('getpage/' + index)
+                .then(response => {
+                    resultBox.innerHTML = response.data;
+                }).catch(error => {
+                    console.log(error);
+                })
+        }
+
     });
     </script>
 </body>
