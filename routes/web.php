@@ -36,6 +36,12 @@ $routes->add('goodslist',
     'method'=>'list'), array())
 );
 
+$routes->add('getpage',
+    new Route(constant('URL_SUBFOLDER') . '/goodslist/{index}',
+    array('controller' => 'GoodController',
+    'method'=>'page'), array('index' => '[0-9]+'))
+);
+
 $routes->add('editgood',
     new Route(constant('URL_SUBFOLDER') . '/editgood/{id}',
     array('controller' => 'GoodController',
