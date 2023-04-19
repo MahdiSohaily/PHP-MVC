@@ -120,10 +120,22 @@ class Rate
         </script>";   
     }
 	
-	public function checkUser($email, $pass)
-	{
-        
-	}
+    public function find(int $id)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql="SELECT * FROM rates WHERE id = '$id'";
+		 //check if insertion was successful
+		$rate = $conn->query($sql)->fetch_assoc();
+
+        return $rate;
+    }
 
 	public function update(int $id, array $data)
 	{
