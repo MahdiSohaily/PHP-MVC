@@ -246,6 +246,7 @@
                     if (current < 2) {
                         prev.classList.add('hidden');
                         next.classList.remove('hidden');
+                        getPage(current);
                     }
                     break;
                 case 'next':
@@ -253,6 +254,7 @@
                     if (current > pages) {
                         next.classList.add('hidden');
                         prev.classList.remove('hidden');
+                        getPage(current);
                     }
                     break;
             }
