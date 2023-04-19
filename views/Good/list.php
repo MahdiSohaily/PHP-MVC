@@ -78,6 +78,9 @@
         align-items: center;
         cursor: pointer;
     }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
@@ -156,21 +159,11 @@
                 </table>
 
                 <ul class='page'>
-                    <li class="page-item">
+                    <li class="page-item hidden" data-page="prev">
                         <i class="material-icons">fast_rewind</i>
                     </li>
-                    <li class="page-item">1</li>
-                    <li class="page-item">2</li>
-                    <li class="page-item">3</li>
-                    <li class="page-item">4</li>
-                    <li class="page-item">5</li>
-                    <li class="page-item">6</li>
-                    <li class="page-item">7</li>
-                    <li class="page-item">8</li>
-                    <li class="page-item">9</li>
-                    <li class="page-item">10</li>
                     <li class="page-item">
-                        <i class="material-icons">fast_forward</i>
+                        <i class="material-icons" data-page="next">fast_forward</i>
                     </li>
                 </ul>
             </div>
