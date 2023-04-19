@@ -90,16 +90,16 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
                         <input id="id" value="<?php echo $edit['id'] ?>" type="text" name="id" required hidden>
-                        <input id="rate" value="<?php echo $edit['amount'] ?>" type="text" placeholder="Rate*" name="rate" required>
+                        <input id="rate" value="<?php echo $edit['amount'] ?>" type="text" placeholder="Rate*" name="amount" required>
                         <select id="status" name="status" required>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                            <option value="F">F</option>
-                            <option value="G">G</option>
-                            <option value="N" selected>N</option>
+                            <option <?php if($edit['status'] =='A') echo 'selected' ?> value="A">A</option>
+                            <option <?php if($edit['status'] =='B') echo 'selected' ?> value="B">B</option>
+                            <option <?php if($edit['status'] =='C') echo 'selected' ?> value="C">C</option>
+                            <option <?php if($edit['status'] =='D') echo 'selected' ?> value="D">D</option>
+                            <option <?php if($edit['status'] =='E') echo 'selected' ?> value="E">E</option>
+                            <option <?php if($edit['status'] =='F') echo 'selected' ?> value="F">F</option>
+                            <option <?php if($edit['status'] =='G') echo 'selected' ?> value="G">G</option>
+                            <option <?php if($edit['status'] =='N') echo 'selected' ?> value="N">N</option>
                         </select>
                         <?php echo "<p class='message'>$message</p>" ?>
                         <input id="submit" type="submit" value="Submit" name="submit">
