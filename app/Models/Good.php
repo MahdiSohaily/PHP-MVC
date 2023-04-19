@@ -251,7 +251,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%'";
+        $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%' LIMIT 10";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
