@@ -37,9 +37,9 @@ $routes->add('goodslist',
 );
 
 $routes->add('getpage',
-    new Route(constant('URL_SUBFOLDER') . '/getpage/{index}',
+    new Route(constant('URL_SUBFOLDER') . '/getpage/{index}/{pat}',
     array('controller' => 'GoodController',
-    'method'=>'page'), array('index' => '[0-9]+'))
+    'method'=>'page'), array('index' => '[0-9]+', 'pat'=> '[a-zA-Z0-9]+'))
 );
 
 $routes->add('editgood',
