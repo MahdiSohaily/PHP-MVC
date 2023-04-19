@@ -140,9 +140,23 @@ class Rate
         return $rate;
     }
 
-	public function update(int $id, array $data)
+	public function update(int $id, $amount, $status)
 	{
-		
+		$servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "UPDATE rates SET amount='$amount', status='$status' WHERE id='$id'";
+
+        if ($conn->query($sql) === TRUE) {
+           return $this->find($id);
+        } else {
+            return false;
+        }
 	}
 	
 	public function delete(int $id)
