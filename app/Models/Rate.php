@@ -95,6 +95,9 @@ class Rate
                     <i class='delete material-icons' data-delete='".$row['id']."' 
                         onclick='myfun(".$row['id'].")'>
                     delete</i>
+                    <a class='edit' href='editrate/".$row['id']."'>
+                    <i class='material-icons'>create</i>
+                    </a>
                     </td>
                 </tr>
                 ";
