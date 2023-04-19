@@ -347,7 +347,7 @@ class Good
         }
 	}
 
-    public function page(int $index)
+    public function page(int $index, $pat)
     {
         $servername = "localhost";
         $username = "root";
@@ -357,7 +357,7 @@ class Good
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
         $start = 10 * $index;
-        $sql = "SELECT * FROM nisha LIMIT $start,10";
+        $sql = "SELECT * FROM nisha LIMIT partnumber LIKE '%".$pat."%' $start,10";
 		 //check if insertion was successful
 		$rates = $conn->query($sql);
 
