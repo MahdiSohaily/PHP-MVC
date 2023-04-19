@@ -61,6 +61,12 @@ $routes->add('rateslist',
     'method'=>'list'), array())
 );
 
+$routes->add('editrate',
+    new Route(constant('URL_SUBFOLDER') . '/editrate/{id}',
+    array('controller' => 'RateController',
+    'method'=>'edit'), array('id' => '[0-9]+'))
+);
+
 $routes->add('removereat',
     new Route(constant('URL_SUBFOLDER') . '/removereat/{id}',
     array('controller' => 'RateController',
