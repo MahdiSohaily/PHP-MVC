@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "https://yadak.center";
 $username = "yadakcenter2";
 $password = "vZun$2*04Bo]";
 $dbname = "yadakcenter2_yadakinfo_price";
