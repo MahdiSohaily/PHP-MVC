@@ -93,7 +93,9 @@ td:nth-child(3) {
   background-color: seagreen;
 }
 
-.NO-Price,
+.NO-Price {
+  background-color: black; 
+}
 .NO-Mobis {
   background-color: red; 
 }

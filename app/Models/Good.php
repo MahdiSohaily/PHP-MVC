@@ -72,13 +72,12 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='https://yadakinfo.com/projects/price/mobis-get.php?q=$partnumber'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s NO-Price' target='_self' href='https://yadakinfo.com/projects/price/mobis-get.php?q=$partnumber'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_self' href='https://yadakinfo.com/projects/price/mobis-get.php?q=$partnumber'>x</a>";
                 }
-
 
                 $template.="$partnumber</div></td>
                 <td >".round($avgprice*1.1)."</td>
