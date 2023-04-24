@@ -43,7 +43,8 @@ class SearchController
 
 
 			$good = new Good();
-			$mobi = $good->mobie($value);
+			$all_rates = $rate->getRates();
+			$mobi = $good->mobie($value, $all_rates);
 
 			require_once APP_ROOT . '/views/mobis.php';
 		} else {
