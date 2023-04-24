@@ -427,10 +427,36 @@ class Good
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
         $sql="SELECT * FROM nisha WHERE partnumber = '$serial'";
-		 //check if insertion was successful
-		$good = $conn->query($sql)->fetch_assoc();
 
-        return $good;
+        $item = $conn->query($sql);
+
+        if ($item->num_rows > 0) {
+            while($row = $item->fetch_assoc()) {
+                $mobis = $row['mobis'];
+                
+                if($this->get_http_response_code("https://partsmotors.com/products/$serial") != "200"){
+                    echo "این قطعه موبیز ندارد";
+                    $mobis_sql="UPDATE nisha SET mobis='-' WHERE partnumber='$serial'";
+                    $conn->query($mobis_sql);
+                }
+                else{
+                    $html = file_get_contents("https://partsmotors.com/products/$serial", false, $context);
+                    $html = str_get_html($html);
+                    foreach($html->find('meta[property=og:price:amount]') as $element)
+                    $partnumber = $serial;
+                    $price = $element->content;
+                    $price = str_replace(",","",$price);
+                    $avgprice = round($price*100/243.5*1.1);
+                    $mobis_sql="UPDATE nisha SET mobis='$price' WHERE partnumber='$serial'";
+                    $conn->query($mobis_sql);
+                }
+            }
+        }
+    }
+
+    public function get_http_response_code($url) {
+        $headers = get_headers($url);
+        return substr($headers[0], 9, 3);
     }
 	
 	public function update(int $id, $price, $weight, $mobis)
