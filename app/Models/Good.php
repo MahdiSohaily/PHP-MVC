@@ -13,7 +13,7 @@ class Good
 	public function create($partnumber, $price, $weight, $mobis)
 	{
 		$servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -39,7 +39,7 @@ class Good
     public function search($key, $mode,$rates)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -135,7 +135,7 @@ class Good
     public function getPrice($avgprice)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -162,7 +162,7 @@ class Good
     public function getPriceMobis($avgprice)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -189,7 +189,7 @@ class Good
     public function all()
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -244,7 +244,7 @@ class Good
     public function searchGood(string $patt)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -299,7 +299,7 @@ class Good
     public function count()
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -314,7 +314,7 @@ class Good
     public function find(int $id)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -331,7 +331,7 @@ class Good
 	public function update(int $id, $price, $weight, $mobis)
 	{
 		$servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -350,7 +350,7 @@ class Good
     public function page(int $index, $pat)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
@@ -409,7 +409,7 @@ class Good
 	public function delete(int $id)
 	{
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakinfo_price";
 
