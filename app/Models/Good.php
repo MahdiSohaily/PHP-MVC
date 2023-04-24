@@ -129,7 +129,7 @@ class Good
         $conn->close();
     }
 
-    public function mobie($value)
+    public function mobie($value,$rates)
     {
         $servername = "localhost";
         $username = "root";
