@@ -80,7 +80,7 @@ class RateController
 				}
 			}
 
-			require_once APP_ROOT . '/views/Rate /edit.php';
+			require_once APP_ROOT . '/views/Rate/edit.php';
 		} else {
 			header('Location: /yadak');
 			exit;
