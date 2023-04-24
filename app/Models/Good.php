@@ -72,11 +72,11 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_self' href='https://yadakinfo.com/projects/price/mobis-get.php?q=$partnumber'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_self' href='https://yadakinfo.com/projects/price/mobis-get.php?q=$partnumber'>!</a>";
+                    $template .= " <a class='link-s NO-Price' target='_self' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_self' href='https://yadakinfo.com/projects/price/mobis-get.php?q=$partnumber'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>x</a>";
                 }
 
                 $template.="$partnumber</div></td>
@@ -163,11 +163,11 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Price' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>!</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>x</a>";
                 }
 
 
@@ -410,6 +410,23 @@ class Good
         $conn = mysqli_connect($servername, $username, $password,$dbname);
 
         $sql="SELECT * FROM nisha WHERE id = '$id'";
+		 //check if insertion was successful
+		$good = $conn->query($sql)->fetch_assoc();
+
+        return $good;
+    }
+    
+    public function findWithSerial($serial)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql="SELECT * FROM nisha WHERE partnumber = '$serial'";
 		 //check if insertion was successful
 		$good = $conn->query($sql)->fetch_assoc();
 

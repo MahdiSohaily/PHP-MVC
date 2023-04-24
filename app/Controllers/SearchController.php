@@ -40,10 +40,11 @@ class SearchController
 		if(isset($_COOKIE['login-user'])) {
 			$rate = new Rate();
 			$rates = $rate->all();
+			$all_rates = $rate->getRates();
 
 
 			$good = new Good();
-			$all_rates = $rate->getRates();
+			$item = $good->findWithSerial($value);
 			$mobi = $good->mobie($value, $all_rates);
 
 			require_once APP_ROOT . '/views/mobis.php';
