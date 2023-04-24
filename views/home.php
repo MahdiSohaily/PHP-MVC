@@ -18,9 +18,15 @@
     <!-- js -->
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/jquery.js"></script>
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
+
+    <style>
+    .center {
+        display: inline-block;
+        margin-inline: auto;
+        background-color: black;
+    }
+    </style>
 </head>
-<style>
-</style>
 
 <body>
     <aside id="side">
@@ -76,6 +82,7 @@
         </section>
         <section class="main-content">
             <form action="" method="post" class='search-form'>
+                <input type="hidden" name="hidden" autocomplete="false">
                 <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)"
                     placeholder="... کد فنی قطعه را وارد کنید">
                 <div class="input-controll">
@@ -147,7 +154,8 @@
         }
 
         if (((pattern.length > 5) && (supermode == 1)) || ((pattern.length > 7) && (supermode == 0))) {
-            resultBox.innerHTML = "";
+            resultBox.innerHTML =
+                "<img class='center' src='<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
             axios.get('getdata/' + pattern + '/' + supermode)
                 .then(response => {
                     resultBox.innerHTML = response.data;
