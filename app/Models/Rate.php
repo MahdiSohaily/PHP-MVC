@@ -13,7 +13,7 @@ class Rate
 		$servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -32,7 +32,7 @@ class Rate
 		$servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -57,7 +57,7 @@ class Rate
 		$servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -74,7 +74,7 @@ class Rate
         $servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -128,7 +128,7 @@ class Rate
         $servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -145,7 +145,7 @@ class Rate
 		$servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -164,7 +164,7 @@ class Rate
         $servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
