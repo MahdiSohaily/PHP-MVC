@@ -28,7 +28,7 @@ class User
 	
 	public function checkUser($email, $pass)
 	{
-        $servername = "https://yadak.center";
+        $servername = "localhost";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
