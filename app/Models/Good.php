@@ -12,10 +12,10 @@ class Good
     // CRUD OPERATIONS
 	public function create($partnumber, $price, $weight, $mobis)
 	{
-		$servername = "https://yadak.center";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+		$servername = "";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -39,9 +39,9 @@ class Good
     public function search($key, $mode,$rates)
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -49,7 +49,7 @@ class Good
         if ($mode) {
             $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
         } else {
-            $sql="SELECT * FROM nisha WHERE partnumber LIKE '$key'";
+            $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
         }
 
         $result = $conn->query($sql);
@@ -135,9 +135,9 @@ class Good
     public function getPrice($avgprice)
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -162,9 +162,9 @@ class Good
     public function getPriceMobis($avgprice)
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -189,9 +189,9 @@ class Good
     public function all()
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -244,9 +244,9 @@ class Good
     public function searchGood(string $patt)
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -299,9 +299,9 @@ class Good
     public function count()
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -314,9 +314,9 @@ class Good
     public function find(int $id)
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -331,9 +331,9 @@ class Good
 	public function update(int $id, $price, $weight, $mobis)
 	{
 		$servername = "https://yadak.center";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -350,9 +350,9 @@ class Good
     public function page(int $index, $pat)
     {
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -409,9 +409,9 @@ class Good
 	public function delete(int $id)
 	{
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
