@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "yadakcenter2";
-$password = "";
+$password = "vZun$2*04Bo]";
 $dbname = "yadakinfo_price";
 
 // Create connection
