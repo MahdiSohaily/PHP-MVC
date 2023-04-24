@@ -38,9 +38,14 @@ class SearchController
 	public function mobis($value, RouteCollection $routes)
 	{
 		if(isset($_COOKIE['login-user'])) {
-			$good = new Good();
+			$rate = new Rate();
+			$rates = $rate->all();
 
-			$result = $good->searchGood($value);
+
+			$good = new Good();
+			$mobi = $good->mobie($value);
+
+			require_once APP_ROOT . '/views/mobis.php';
 		} else {
 			header('Location: /yadak');
 			exit;
