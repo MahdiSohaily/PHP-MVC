@@ -178,13 +178,13 @@ class Good
                 $template .="
                 <td class='action'>
                     <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
-                    <img class='social' src='./public/img/google.png' alt='google'>
+                    <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
-                    <img class='social' src='./public/img/tel.png' alt='part'>
+                    <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/tel.png' alt='part'>
                     </a>
                     <a target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
-                    <img class='social' src='./public/img/part.png' alt='part'>
+                    <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/part.png' alt='part'>
                     </a>
                 </td>
                 <td class='kg'>

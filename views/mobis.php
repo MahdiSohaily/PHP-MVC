@@ -101,7 +101,8 @@
                             <th class="txt-white fa action">عملیات</th>
                             <th class="txt-white kg"></th>
                         </thead>
-                        <tbody id="s-result">
+                        <tbody>
+                            <?php echo 	$mobi  ?>
                         </tbody>
                     </table>
                 </div>
@@ -153,7 +154,7 @@
             supermode = 1;
         }
 
-        if (((pattern.length > 5) && (supermode == 1)) || ((pattern.length > 7) && (supermode == 0))) {
+        if (((pattern.length > 5) && (supermode == 1)) || ((pattern.length > 6) && (supermode == 0))) {
             resultBox.innerHTML =
                 "<img style='display: inline-block; margin-inline: auto;' src='<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
             axios.get('getdata/' + pattern + '/' + supermode)
