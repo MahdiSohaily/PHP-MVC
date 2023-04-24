@@ -10,7 +10,7 @@ class GoodController
     // Homepage action
 	public function index(RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user'])) {
+		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
 		$good = new Good();
 		$message = null;
 
