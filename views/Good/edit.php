@@ -25,6 +25,9 @@
     color: green !important;
     font-size: 16px !important;
 }
+.mt-4 {
+    padding-top:2rem !important;
+}
 </style>
 
 <body>
@@ -90,12 +93,16 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
                         <input value="<?php echo $edit['id'] ?>" id="id" type="text" name="id" required hidden>
+                        <label for="price">Price:</label>
                         <input value="<?php echo $edit['price'] ?>" id="price" type="text" placeholder="Price*"
                             name="price" required>
-                        <input value="<?php echo $edit['weight'] ?>" id="weight" type="text" placeholder="Weight*"
+                        <input value="<?php echo $edit['weight'] ?>" id="weight" type="hidden" placeholder="Weight*"
                             name="weight" required>
+                        <div class='mt-4'>
+                        <label for="price">Mobis:</label>
                         <input value="<?php echo $edit['mobis'] ?>" id="mobis" type="text" placeholder="Mobis"
                             name="mobis">
+                        </div>
                         <?php echo "<p class='message'>$message</p>" ?>
                         <input id="submit" type="submit" value="Submit" name="submit">
                     </form>
