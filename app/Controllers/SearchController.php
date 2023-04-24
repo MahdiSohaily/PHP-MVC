@@ -34,4 +34,16 @@ class SearchController
 			exit;
 		}
 	}
+
+	public function mobis($value, RouteCollection $routes)
+	{
+		if(isset($_COOKIE['login-user'])) {
+			$good = new Good();
+
+			$result = $good->searchGood($value);
+		} else {
+			header('Location: /yadak');
+			exit;
+		}
+	}
 }
