@@ -72,11 +72,11 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 }
 
 
@@ -87,13 +87,13 @@ class Good
                 $template.=$this->getPrice($avgprice,$rates);
                 $template .="
                 <td class='action'>
-                    <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='./public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
                     <img class='social' src='./public/img/tel.png' alt='part'>
                     </a>
-                    <a target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
+                    <a target='_self' href='https://partsouq.com/en/search/all?q=$partnumber'>
                     <img class='social' src='./public/img/part.png' alt='part'>
                     </a>
                 </td>
@@ -162,11 +162,11 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 }
 
 
@@ -177,13 +177,13 @@ class Good
                 $template.=$this->getPrice($avgprice,$rates);
                 $template .="
                 <td class='action'>
-                    <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/tel.png' alt='part'>
                     </a>
-                    <a target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
+                    <a target='_self' href='https://partsouq.com/en/search/all?q=$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/part.png' alt='part'>
                     </a>
                 </td>
