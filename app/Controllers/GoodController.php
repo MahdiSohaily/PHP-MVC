@@ -10,7 +10,7 @@ class GoodController
     // Homepage action
 	public function index(RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
+		if(isset($_COOKIE['login-user'])) {
 		$good = new Good();
 		$message = null;
 
@@ -38,7 +38,7 @@ class GoodController
 
 	public function list(RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
+		if(isset($_COOKIE['login-user'])) {
 			$good = new Good();
 			$data = $good->all();
 			$pages = $good->count();
@@ -51,7 +51,7 @@ class GoodController
 
 	public function delete($id, RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
+		if(isset($_COOKIE['login-user'])) {
 			$good = new Good();
 			$data = $good->delete($id);
 			echo $data;
@@ -63,7 +63,7 @@ class GoodController
 	
 	public function page($index, $pat, RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
+		if(isset($_COOKIE['login-user'])) {
 			$good = new Good();
 			$data = $good->page($index, $pat);
 			echo $data;
