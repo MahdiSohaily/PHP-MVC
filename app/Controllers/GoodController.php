@@ -77,7 +77,7 @@ class GoodController
 
 	public function edit($id, RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
+		if(isset($_COOKIE['login-user'])) {
 			$good = new Good();
 			$edit = $good->find($id);
 			$message = null;

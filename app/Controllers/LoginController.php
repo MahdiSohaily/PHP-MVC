@@ -10,7 +10,7 @@ class LoginController
     // Homepage action
 	public function login(RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
+		if(isset($_COOKIE['login-user'])) {
 			header('Location: search');
 				exit;
 		} else {
