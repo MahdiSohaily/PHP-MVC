@@ -10,7 +10,7 @@ class Rate
     // CRUD OPERATIONS
 	public function create($amount, $status)
 	{
-		$servername = "localhost";
+		$servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
@@ -29,7 +29,7 @@ class Rate
 
 	public function all()
 	{
-		$servername = "localhost";
+		$servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
@@ -54,7 +54,7 @@ class Rate
 
 	public function getRates()
 	{
-		$servername = "localhost";
+		$servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
@@ -71,7 +71,7 @@ class Rate
 
 	public function allRates()
     {
-        $servername = "localhost";
+        $servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
@@ -125,7 +125,7 @@ class Rate
 	
     public function find(int $id)
     {
-        $servername = "localhost";
+        $servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
@@ -142,7 +142,7 @@ class Rate
 
 	public function update(int $id, $amount, $status)
 	{
-		$servername = "localhost";
+		$servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
@@ -161,7 +161,7 @@ class Rate
 	
 	public function delete(int $id)
 	{
-        $servername = "localhost";
+        $servername = "https://yadak.center";
         $username = "yadakcenter2";
         $password = "vZun$2*04Bo]";
         $dbname = "yadakcenter2_yadakinfo_price";
