@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "yadakcenter2";
 $password = "";
 $dbname = "yadakinfo_price";
 
