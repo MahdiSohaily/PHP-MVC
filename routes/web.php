@@ -96,3 +96,9 @@ $routes->add('searchGood',
     array('controller' => 'SearchController', 'method'=>'search'),
     array('value' => '[a-zA-Z0-9]+'))
 );
+
+$routes->add('mobis',
+    new Route(constant('URL_SUBFOLDER') .'/mobis/{value}',
+    array('controller' => 'SearchController', 'method'=>'mobis'),
+    array('value' => '[a-zA-Z0-9]+'))
+);
