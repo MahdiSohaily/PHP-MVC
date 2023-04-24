@@ -164,9 +164,9 @@ class Good
                 if($status == "Requset") {
                     $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s NO-Price' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>x</a>";
                 }
 
 
