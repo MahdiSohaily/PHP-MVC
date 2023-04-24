@@ -11,7 +11,7 @@ class Rate
 	public function create($amount, $status)
 	{
 		$servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
@@ -30,7 +30,7 @@ class Rate
 	public function all()
 	{
 		$servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
@@ -55,7 +55,7 @@ class Rate
 	public function getRates()
 	{
 		$servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
@@ -72,7 +72,7 @@ class Rate
 	public function allRates()
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
@@ -126,7 +126,7 @@ class Rate
     public function find(int $id)
     {
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
@@ -143,7 +143,7 @@ class Rate
 	public function update(int $id, $amount, $status)
 	{
 		$servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
@@ -162,7 +162,7 @@ class Rate
 	public function delete(int $id)
 	{
         $servername = "localhost";
-        $username = "root";
+        $username = "yadakcenter2";
         $password = "";
         $dbname = "yadakcenter2_yadakinfo_price";
 
