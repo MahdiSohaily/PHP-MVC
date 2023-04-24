@@ -206,7 +206,7 @@ class Good
                 $template .= "
                 <td></td>
                 <td></td>
-            </tr>";
+                </tr>";
             }
 
             return $template;
@@ -430,14 +430,14 @@ class Good
 
         $item = $conn->query($sql);
 
+        $template = '';
         if ($item->num_rows > 0) {
             while($row = $item->fetch_assoc()) {
-                $mobis = $row['mobis'];
                 
                 if($this->get_http_response_code("https://partsmotors.com/products/$serial") != "200"){
-                    echo "این قطعه موبیز ندارد";
                     $mobis_sql="UPDATE nisha SET mobis='-' WHERE partnumber='$serial'";
                     $conn->query($mobis_sql);
+                    $template .= "<tr class='mobis'><td>این قطعه موبیز ندارد</td></tr>";
                 }
                 else{
                     $html = file_get_contents("https://partsmotors.com/products/$serial", false, $context);
@@ -449,9 +449,18 @@ class Good
                     $avgprice = round($price*100/243.5*1.1);
                     $mobis_sql="UPDATE nisha SET mobis='$price' WHERE partnumber='$serial'";
                     $conn->query($mobis_sql);
+
+                    $template .= "<tr class='mobis'>
+                    <td class='part text-white'> $partnumber-M</td>
+                    <td class='bold'>".round($avgprice)."</td>
+                    <td>".round($avgprice*1.1)."</td>";
+                    $template .= $this-> getPriceMobis($avgprice, $rates);
+                    $template .= "<td></td><td></td></tr>";
                 }
             }
         }
+
+        return $template;
     }
 
     public function get_http_response_code($url) {
