@@ -153,9 +153,11 @@ class Good
                 $avgprice = round($price*110/243.5);
                 $mobis = $row['mobis'];
 
-                if($mobis=="0.00"){$status = "NO-Price";}
-                elseif ($mobis=="-"){$status = "NO-Mobis";}
-                elseif ($mobis==NULL){
+                if($mobis == "0.00"){
+                    $status = "NO-Price";
+                } elseif ($mobis == "-"){
+                    $status = "NO-Mobis";
+                } elseif ($mobis == NULL){
                     $status = "Requset";
                 }
                 else {$status = "YES-Mobis";}
@@ -164,9 +166,9 @@ class Good
                 if($status == "Requset") {
                     $template .= " <a class='link-s Requset' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>!</a>";
+                    $template .= " <a class='link-s NO-Price' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>x</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_self' href='". URL_ROOT.URL_SUBFOLDER ."/mobis/".$partnumber."'>!</a>";
                 }
 
 
