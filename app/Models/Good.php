@@ -416,7 +416,7 @@ class Good
         return $good;
     }
     
-    public function findWithSerial($serial)
+    public function findWithSerial($serial, $count)
     {
         $servername = "localhost";
         $username = "root";
@@ -437,7 +437,7 @@ class Good
                 if($this->get_http_response_code("https://partsmotors.com/products/$serial") != "200"){
                     $mobis_sql="UPDATE nisha SET mobis='-' WHERE partnumber='$serial'";
                     $conn->query($mobis_sql);
-                    $template .= "<tr class='mobis'><td>این قطعه موبیز ندارد</td></tr>";
+                    $template .= "<tr class='mobis'><td colspan='".$count + 5 ."'>این قطعه موبیز ندارد</td></tr>";
                 }
                 else{
                     $html = file_get_contents("https://partsmotors.com/products/$serial", false, $context);

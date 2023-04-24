@@ -42,10 +42,8 @@ class SearchController
 			$rates = $rate->all();
 			$all_rates = $rate->getRates();
 
-
 			$good = new Good();
-			$item = $good->findWithSerial($value);
-			$mobi = $good->mobie($value, $all_rates);
+			$item = $good->findWithSerial($value,$all_rates->num_rows);
 
 			require_once APP_ROOT . '/views/mobis.php';
 		} else {

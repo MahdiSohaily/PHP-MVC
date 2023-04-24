@@ -93,7 +93,7 @@
                             <th class="txt-white kg"></th>
                         </thead>
                         <tbody>
-                            <?php echo 	$mobi  ?>
+                            <?php echo 	$item  ?>
                         </tbody>
                     </table>
                 </div>
