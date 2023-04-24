@@ -10,7 +10,7 @@ class LoginController
     // Homepage action
 	public function login(RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user'])) {
+		if(isset($_COOKIE['login-user']) && !count($_SESSION)) {
 			header('Location: search');
 				exit;
 		} else {
@@ -28,7 +28,7 @@ class LoginController
 				$cookie_name = 'login-user';
 				$cookie_value = $result['email'];
 
-				setcookie($cookie_name, $cookie_value, time()+(86400*30),'/');
+				setcookie($cookie_name, $cookie_value, time()+(60*60*24),'/');
 				header('Location: search');
 				exit;
 			} else {
