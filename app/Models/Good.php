@@ -437,8 +437,13 @@ class Good
 
             $context = stream_context_create(array("http" => array("header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36")));
 
+            function get_http_response_code($url) {
+                ini_set('user_agent', 'Mozilla/5.0');
+                $headers = get_headers($url);
+                return substr($headers[0], 9, 3);
+            }
             
-            if($this->get_http_response_code("https://partsmotors.com/products/$q") != "200"){
+            if(get_http_response_code("https://partsmotors.com/products/$q") != "200"){
                 $sql="UPDATE nisha SET mobis='-' WHERE partnumber='$q'";
                 $result = mysqli_query($con,$sql);
                 $template .= "<tr class='mobis'><td colspan='".$count + 5 ."'>این قطعه موبیز ندارد</td></tr>";
