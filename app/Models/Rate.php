@@ -51,6 +51,31 @@ class Rate
 		}
 		 return $result;
 	}
+	
+    public function all_for_mobis()
+	{
+		$servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM rates ORDER BY amount";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+		$result = '';
+
+		 
+		if ($rates->num_rows > 0) {
+            // output data of each row
+            while($item = $rates->fetch_assoc()) {
+				$result .= "<th class='txt-white'>".$item['amount']."</th>";
+			}
+		}
+		 return $result;
+	}
 
 	public function getRates()
 	{
