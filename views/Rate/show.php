@@ -19,13 +19,41 @@
     <!-- js -->
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/jquery.js"></script>
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
+    <style>
+    .message {
+        color: green !important;
+        font-size: 16px !important;
+    }
+
+    .A {
+        background-color: brown;
+    }
+
+    .B {
+        background-color: red;
+    }
+
+    .C {
+        background-color: #b68f3a;
+    }
+
+    .D {
+        background-color: #b63a95;
+    }
+
+    .E {
+        background-color: #3a86b6;
+    }
+
+    .F {
+        background-color: #de6ffa;
+    }
+
+    .G {
+        background-color: #fc8ea0;
+    }
+    </style>
 </head>
-<style>
-.message {
-    color: green !important;
-    font-size: 16px !important;
-}
-</style>
 
 <body>
     <aside id="side">
@@ -91,14 +119,14 @@
                     <form class="subscribeForm" method="post" action="#">
                         <input id="rate" type="text" placeholder="Rate*" name="rate" required>
                         <select id="status" name="status" required>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                            <option value="F">F</option>
-                            <option value="G">G</option>
-                            <option value="N" selected>N</option>
+                            <option class='A' value="A">A</option>
+                            <option class='B' value="B">B</option>
+                            <option class='C' value="C">C</option>
+                            <option class='D' value="D">D</option>
+                            <option class='E' value="E">E</option>
+                            <option class='F' value="F">F</option>
+                            <option class='G' value="G">G</option>
+                            <option class='N' value="N" selected>N</option>
                         </select>
                         <?php echo "<p class='message'>$message</p>" ?>
                         <input id="submit" type="submit" value="Submit" name="submit">
@@ -140,7 +168,7 @@
         const out = document.getElementById('out');
 
         out.addEventListener('click', logout);
-        
+
         function logout() {
             let text = "آیا از سیستم خارج میشوید؟";
             if (confirm(text) == true) {
