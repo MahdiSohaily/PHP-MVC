@@ -273,6 +273,33 @@ class Good
         $conn->close();
         return $result;
     }
+    
+    public function getPriceMobisPage($avgprice)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
+
+        $sql = "SELECT * FROM rates ORDER BY amount";
+		 //check if insertion was successful
+		$rates = $conn->query($sql);
+
+        $result = '';
+        if ($rates->num_rows > 0) {
+            // output data of each row
+            while($row = $rates->fetch_assoc()) {
+                $result.="
+                <td> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+                ";
+            }
+        }
+        $conn->close();
+        return $result;
+    }
 
     public function all()
     {
@@ -460,11 +487,11 @@ class Good
                 $sql="UPDATE nisha SET mobis='$price' WHERE partnumber='$q'";
                 $result = mysqli_query($con,$sql);
                 $template .= "<tr class='mobis'>
-                    <td class='part text-white'> $partnumber-M</td>
+                    <td class='part text-white bold'> $partnumber-M</td>
                     <td>".round($avgprice/1.1)."</td>
                     <td class='bold'>".round($avgprice)."</td>
                     <td>".round($avgprice*1.1)."</td>";
-                    $template .= $this-> getPriceMobis($avgprice);
+                    $template .= $this-> getPriceMobisPage($avgprice);
                     $template .= "<td class='action'>
                     <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/google.png' alt='google'>
