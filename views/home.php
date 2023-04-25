@@ -25,6 +25,11 @@
         margin-inline: auto;
         background-color: black;
     }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        border-right: 2px solid black;
+    }
     </style>
 </head>
 
