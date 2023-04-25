@@ -19,13 +19,42 @@
     <!-- js -->
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/jquery.js"></script>
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
+    <style>
+    .message {
+        color: green !important;
+        font-size: 16px !important;
+    }
+
+    .A {
+        background-color: brown;
+    }
+
+    .B {
+        background-color: red;
+    }
+
+    .C {
+        background-color: #b68f3a;
+    }
+
+    .D {
+        background-color: #b63a95;
+    }
+
+    .E {
+        background-color: #3a86b6;
+    }
+
+    .F {
+        background-color: #de6ffa;
+    }
+
+    .G {
+        background-color: #fc8ea0;
+    }
+    </style>
+
 </head>
-<style>
-.message {
-    color: green !important;
-    font-size: 16px !important;
-}
-</style>
 
 <body>
     <aside id="side">
@@ -90,16 +119,25 @@
                     <!-- Start Here: Web Form tutorial -->
                     <form class="subscribeForm" method="post" action="#">
                         <input id="id" value="<?php echo $edit['id'] ?>" type="text" name="id" required hidden>
-                        <input id="rate" value="<?php echo $edit['amount'] ?>" type="text" placeholder="Rate*" name="amount" required>
+                        <input id="rate" value="<?php echo $edit['amount'] ?>" type="text" placeholder="Rate*"
+                            name="amount" required>
                         <select id="status" name="status" required>
-                            <option <?php if($edit['status'] =='A') echo 'selected' ?> value="A">A</option>
-                            <option <?php if($edit['status'] =='B') echo 'selected' ?> value="B">B</option>
-                            <option <?php if($edit['status'] =='C') echo 'selected' ?> value="C">C</option>
-                            <option <?php if($edit['status'] =='D') echo 'selected' ?> value="D">D</option>
-                            <option <?php if($edit['status'] =='E') echo 'selected' ?> value="E">E</option>
-                            <option <?php if($edit['status'] =='F') echo 'selected' ?> value="F">F</option>
-                            <option <?php if($edit['status'] =='G') echo 'selected' ?> value="G">G</option>
-                            <option <?php if($edit['status'] =='N') echo 'selected' ?> value="N">N</option>
+                            <option class="A"
+                                <?php if($edit['status'] =='A') echo 'selected' ?> value="A">A</option>
+                            <option class="B"
+                                <?php if($edit['status'] =='B') echo 'selected' ?> value="B">B</option>
+                            <option class="C"
+                                <?php if($edit['status'] =='C') echo 'selected' ?> value="C">C</option>
+                            <option class="D"
+                                <?php if($edit['status'] =='D') echo 'selected' ?> value="D">D</option>
+                            <option class="E"
+                                <?php if($edit['status'] =='E') echo 'selected' ?> value="E">E</option>
+                            <option class="F"
+                                <?php if($edit['status'] =='F') echo 'selected' ?> value="F">F</option>
+                            <option class="G"
+                                <?php if($edit['status'] =='G') echo 'selected' ?> value="G">G</option>
+                            <option class="N"
+                                <?php if($edit['status'] =='N') echo 'selected' ?> value="N">N</option>
                         </select>
                         <?php echo "<p class='message'>$message</p>" ?>
                         <input id="submit" type="submit" value="Submit" name="submit">
@@ -141,7 +179,7 @@
         const out = document.getElementById('out');
 
         out.addEventListener('click', logout);
-        
+
         function logout() {
             let text = "آیا از سیستم خارج میشوید؟";
             if (confirm(text) == true) {
