@@ -31,6 +31,10 @@
         border-right: 2px solid black;
     }
 
+    tr:nth-child(even):not(tr[class='mobis']) {
+        background-color: rgb(241, 245, 247);
+    }
+
     #s-result {
         position: relative;
         width: 100% !important;
