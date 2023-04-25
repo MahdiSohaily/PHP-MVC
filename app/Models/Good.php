@@ -423,9 +423,9 @@ class Good
         $avgprice = null;
 
         $servername = "localhost";
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
+        $username = "root";
+        $password = "";
+        $dbname = "yadakinfo_price";
 
         // Create connection
         $con = mysqli_connect($servername, $username, $password,$dbname);
