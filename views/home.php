@@ -30,6 +30,25 @@
     td:nth-child(3) {
         border-right: 2px solid black;
     }
+
+    #s-result {
+        position: relative;
+        width: 100% !important;
+        height: 30px;
+    }
+
+    #loading {
+        position: absolute;
+        left:50%;
+        transform: translate(-50%, 0px);
+        width: 400px;
+        height: 300px;
+        object-fit: contain;
+    }
+
+    a{
+        text-decoration: none;
+    }
     </style>
 </head>
 
@@ -160,7 +179,7 @@
 
         if (((pattern.length > 4) && (supermode == 1)) || ((pattern.length > 6) && (supermode == 0))) {
             resultBox.innerHTML =
-                "<img style='display: inline-block; margin-inline: auto;' src='<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
+                "<img id='loading' src='<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
             axios.get('getdata/' + pattern + '/' + supermode)
                 .then(response => {
                     resultBox.innerHTML = response.data;
