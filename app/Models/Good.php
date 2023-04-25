@@ -461,10 +461,18 @@ class Good
                 $result = mysqli_query($con,$sql);
                 $template .= "<tr class='mobis'>
                     <td class='part text-white'> $partnumber-M</td>
+                    <td class='bold'>".round($avgprice/1.1)."</td>
                     <td class='bold'>".round($avgprice)."</td>
                     <td>".round($avgprice*1.1)."</td>";
-                    $template .= $this-> getPriceMobis($avgprice, $rates);
-                    $template .= "<td></td><td></td></tr>";
+                    $template .= $this-> getPriceMobis($avgprice);
+                    $template .= "<td class='action'>
+                    <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/google.png' alt='google'>
+                    </a>
+                    <a target='_self' href='https://api.telegram.org/bot1681398960:AAGykdRX-71G0PcK2X_yf3uVQOFWKVNMxoc/sendMessage?chat_id=-522041592&text=$partnumber Mobis'>
+                    <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/tel.png' alt='part'>
+                    </a>
+                </td></tr>"; 
             }
         }
         mysqli_close($con);     
