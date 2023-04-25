@@ -461,7 +461,7 @@ class Good
                 $result = mysqli_query($con,$sql);
                 $template .= "<tr class='mobis'>
                     <td class='part text-white'> $partnumber-M</td>
-                    <td class='bold'>".round($avgprice/1.1)."</td>
+                    <td>".round($avgprice/1.1)."</td>
                     <td class='bold'>".round($avgprice)."</td>
                     <td>".round($avgprice*1.1)."</td>";
                     $template .= $this-> getPriceMobis($avgprice);

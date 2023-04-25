@@ -35,7 +35,7 @@
 }
 
 thead {
-  background-color: green;
+  background-color: rgb(73, 158, 73);
 }
 
 th,
@@ -50,11 +50,11 @@ td {
 }
 
 .black {
-  background-color: black;
+  background-color: rgb(8, 8, 8);
 }
 
 .blue {
-  background-color: blue;
+  background-color: rgb(46, 46, 192);
   font-weight: bold;
   color: white;
 }
