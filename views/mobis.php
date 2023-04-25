@@ -30,6 +30,10 @@
     td:nth-child(4) {
         border-right: 2px solid black;
     }
+
+    a {
+        text-decoration: none; !important;
+    }
     </style>
 </head>
 
