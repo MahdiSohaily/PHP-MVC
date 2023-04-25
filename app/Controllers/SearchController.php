@@ -43,6 +43,7 @@ class SearchController
 			$all_rates = $rate->getRates();
 
 			$good = new Good();
+			$item = $good->findWithSerial($value,$all_rates);
 
 			require_once APP_ROOT . '/views/mobis.php';
 		} else {
