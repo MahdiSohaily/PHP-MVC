@@ -449,6 +449,7 @@ class Good
                 $template .= "<tr class='mobis'><td colspan='".$count + 5 ."'>این قطعه موبیز ندارد</td></tr>";
             }
             else{
+                require_once '../../views/simple_html_dom.php';
                 $html = file_get_contents("https://partsmotors.com/products/$q", false, $context);
                 $html = str_get_html($html);
                 foreach($html->find('meta[property=og:price:amount]') as $element)
