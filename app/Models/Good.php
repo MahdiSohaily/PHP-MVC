@@ -418,6 +418,45 @@ class Good
     
     public function findWithSerial($serial, $count)
     {
+        $q = $value;
+        $partnumber = null;
+        $avgprice = null;
+
+        $servername = "localhost";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
+
+        // Create connection
+        $con = mysqli_connect($servername, $username, $password,$dbname);
+        $sql="SELECT * FROM nisha WHERE partnumber = '$q'";
+        $result = $con->query($sql);
+
+        if ($result->num_rows > 0) {
+    
+            include_once('../../views/simple_html_dom.php');
+
+            $context = stream_context_create(array("http" => array("header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36")));
+            
+            
+            if($this->get_http_response_code("https://partsmotors.com/products/$q") != "200"){
+                echo "این قطعه موبیز ندارد";
+                $sql="UPDATE nisha SET mobis='-' WHERE partnumber='$q'";
+                $result = mysqli_query($con,$sql);
+            }
+            else{
+                $html = file_get_contents("https://partsmotors.com/products/$q", false, $context);
+                $html = str_get_html($html);
+                foreach($html->find('meta[property=og:price:amount]') as $element)
+                $price = $element->content;
+                $partnumber = $q;
+                $price = str_replace(",","",$price);
+                $avgprice = round($price*100/243.5*1.1);
+                $sql="UPDATE nisha SET mobis='$price' WHERE partnumber='$q'";
+                $result = mysqli_query($con,$sql);
+    }
+}
+mysqli_close($con);     
         $servername = "localhost";
         $username = "root";
         $password = "";

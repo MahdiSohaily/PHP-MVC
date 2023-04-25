@@ -45,6 +45,9 @@ class SearchController
 			$good = new Good();
 			$item = $good->findWithSerial($value,$all_rates->num_rows);
 
+
+			
+
 			require_once APP_ROOT . '/views/mobis.php';
 		} else {
 			header('Location: /yadak');
