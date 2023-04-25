@@ -17,7 +17,6 @@
 
     <!-- js -->
     <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/jquery.js"></script>
-    <script src="<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/js/axios.js"></script>
 
     <style>
     .center {
@@ -32,7 +31,8 @@
     }
 
     a {
-        text-decoration: none; !important;
+        text-decoration: none;
+         !important;
     }
     </style>
 </head>
@@ -143,30 +143,6 @@
             }
         }
     });
-
-    function search(val) {
-        let pattern = val;
-        let supermode = 0;
-        const resultBox = document.getElementById('s-result')
-
-
-        if (document.getElementById('mode').checked) {
-            supermode = 1;
-        }
-
-        if (((pattern.length > 4) && (supermode == 1)) || ((pattern.length > 6) && (supermode == 0))) {
-            resultBox.innerHTML =
-                "<img style='display: inline-block; margin-inline: auto;' src='<?php echo URL_ROOT.URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
-            axios.get('getdata/' + pattern + '/' + supermode)
-                .then(response => {
-                    resultBox.innerHTML = response.data;
-                }).catch(error => {
-                    console.log(error);
-                })
-        } else {
-            resultBox.innerHTML = "";
-        }
-    }
     </script>
 </body>
 
