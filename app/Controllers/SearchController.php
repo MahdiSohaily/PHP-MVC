@@ -39,7 +39,7 @@ class SearchController
 	{
 		if(isset($_COOKIE['login-user'])) {
 			$rate = new Rate();
-			$rates = $rate->all();
+			$rates = $rate->all_for_mobis();
 			$all_rates = $rate->getRates();
 
 			$good = new Good();
