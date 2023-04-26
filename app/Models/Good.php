@@ -168,6 +168,8 @@ class Good
                     $template .= " <a class='link-s NO-Price' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
                     $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>x</a>";
+                } elseif ($status == "YES-Mobis") {
+                    $template .= " <div class='empty'></div>";
                 }
 
 
@@ -198,7 +200,7 @@ class Good
                 $price = str_replace(",","",$price);
                 $avgprice = round($price*110/243.5);
                 $template .= "<tr class='mobis'>
-                <td class='part text-white'> $partnumber-M</td>
+                <td class='part text-white left'> $partnumber-M</td>
                 <td class='bold'>".round($avgprice)."</td>
                 <td>".round($avgprice*1.1)."</td>
                 ";
@@ -514,7 +516,7 @@ class Good
 	
 	public function update(int $id, $price, $weight, $mobis)
 	{
-		$servername = "https://yadak.center";
+		$servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "yadakinfo_price";
