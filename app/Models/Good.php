@@ -12,11 +12,6 @@ class Good
     // CRUD OPERATIONS
 	public function create($partnumber, $price, $weight, $mobis)
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($mobis) {
@@ -38,11 +33,6 @@ class Good
 
     public function search($key, $mode,$rates)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -130,11 +120,6 @@ class Good
 
     public function mobie($value,$rates)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -224,11 +209,6 @@ class Good
 
     public function getPrice($avgprice)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -251,11 +231,6 @@ class Good
     
     public function getPriceMobis($avgprice)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -278,11 +253,6 @@ class Good
     
     public function getPriceMobisPage($avgprice)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -305,11 +275,6 @@ class Good
 
     public function all()
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -360,11 +325,6 @@ class Good
 
     public function searchGood(string $patt)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -415,11 +375,6 @@ class Good
 
     public function count()
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -430,11 +385,6 @@ class Good
 
     public function find(int $id)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -450,11 +400,6 @@ class Good
         $q = $serial;
         $partnumber = null;
         $avgprice = null;
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
 
         // Create connection
         $con = mysqli_connect($servername, $username, $password,$dbname);
@@ -516,11 +461,6 @@ class Good
 	
 	public function update(int $id, $price, $weight, $mobis)
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -535,11 +475,6 @@ class Good
 
     public function page(int $index, $pat)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         $start = 10 * $index;
@@ -594,11 +529,6 @@ class Good
 	
 	public function delete(int $id)
 	{
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
          $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
