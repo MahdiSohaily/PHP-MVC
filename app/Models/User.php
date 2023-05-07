@@ -29,15 +29,9 @@ class User
 	public function checkUser($email, $pass)
 	{
         $servername = "localhost";
-<<<<<<< HEAD
-        $username = "yadakcenter2";
-        $password = "vZun$2*04Bo]";
-        $dbname = "yadakcenter2_yadakinfo_price";
-=======
         $username = "root";
         $password = "";
         $dbname = "yadak";
->>>>>>> bd3e23c2c3d19d08996d9e7bab358a0550b40fec
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
