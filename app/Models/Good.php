@@ -93,7 +93,7 @@ class Good
                 $price = str_replace(",","",$price);
                 $avgprice = round($price*110/243.5);
                 $template .= "<tr class='mobis'>
-                <td class='part text-white'> $partnumber-M</td>
+                <td class='part text-white fix'><span class='spacer'></span> $partnumber-M</td>
                 <td class='bold'>".round($avgprice)."</td>
                 <td>".round($avgprice*1.1)."</td>
                 ";
@@ -143,7 +143,7 @@ class Good
                 }
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
-                <td class='blue part'> <div class='fix'> <span class='spacer'></span>";
+                <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
                     $template .= " <a class='link-s Requset' target='_blank' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
