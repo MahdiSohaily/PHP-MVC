@@ -106,13 +106,13 @@
             <form action="" method="post" class='search-form'>
                 <input type="hidden" name="hidden" autocomplete="false">
                 <input type="text" name="serial" id="serial" class="fa" onkeyup="search(this.value)" placeholder="... کد فنی قطعه را وارد کنید">
-                <div class="input-control">
+                <div class="input-controll">
                     <input type="checkbox" name="super" id="mode">
                     <label for="mode">Super Mode</label>
                 </div>
             </form>
             <div class="con-wrap">
-                <div class="responsive">
+                <div class="resposive">
                     <table class="search-table">
                         <thead>
                             <th class="fa txt-white black txt-white part">شماره فنی</th>

@@ -54,13 +54,16 @@ class Good
                 }
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
-                <td class='blue part'> <div class='fix'>";
+                <td class='blue part'>
+                <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_blank' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>!</a>";
+                    $template .= " <a class='link-s NO-Price' target='_blank' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_blank' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>x</a>";
+                } else {
+                    $template .="<span class='spacer'></span>";
                 }
 
                 $template.="$partnumber</div></td>
@@ -140,11 +143,11 @@ class Good
                 }
                 else {$status = "YES-Mobis";}
                 $template = "<tr>
-                <td class='blue part'> <div class='fix'>";
+                <td class='blue part'> <div class='fix'> <span class='spacer'></span>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_blank' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
+                    $template .= " <a class='link-s NO-Price' target='_blank' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
                     $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>x</a>";
                 } elseif ($status == "YES-Mobis") {
@@ -159,13 +162,13 @@ class Good
                 $template.=$this->getPrice($avgprice,$rates);
                 $template .="
                 <td class='action'>
-                    <a target='_blanck' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/tel.png' alt='part'>
                     </a>
-                    <a target='_blanck' href='https://partsouq.com/en/search/all?q=$partnumber'>
+                    <a target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/part.png' alt='part'>
                     </a>
                 </td>
@@ -434,10 +437,10 @@ class Good
                     <td>".round($avgprice*1.1)."</td>";
                     $template .= $this-> getPriceMobisPage($avgprice);
                     $template .= "<td class='action'>
-                    <a target='_blanck' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/google.png' alt='google'>
                     </a>
-                    <a target='_blanck' href='https://api.telegram.org/bot1681398960:AAGykdRX-71G0PcK2X_yf3uVQOFWKVNMxoc/sendMessage?chat_id=-522041592&text=$partnumber Mobis'>
+                    <a target='_blank' href='https://api.telegram.org/bot1681398960:AAGykdRX-71G0PcK2X_yf3uVQOFWKVNMxoc/sendMessage?chat_id=-522041592&text=$partnumber Mobis'>
                     <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/tel.png' alt='part'>
                     </a>
                 </td></tr>"; 
