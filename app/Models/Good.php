@@ -18,7 +18,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($mobis) {
             $sql = "INSERT INTO nisha (partnumber, price, weight, mobis) 
             VALUES ('$partnumber', '$price', '$weight', '$mobis')";
@@ -44,7 +44,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         if ($mode) {
             $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
@@ -136,7 +136,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql="SELECT * FROM nisha WHERE partnumber = '$value'";
         
@@ -230,7 +230,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -257,7 +257,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -284,7 +284,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -311,7 +311,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM nisha LIMIT 10";
 		 //check if insertion was successful
@@ -366,7 +366,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%' LIMIT 10";
 		 //check if insertion was successful
@@ -421,7 +421,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql="SELECT COUNT(id) as sum FROM nisha";
 		$goods = $conn->query($sql)->fetch_assoc();
@@ -436,7 +436,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql="SELECT * FROM nisha WHERE id = '$id'";
 		 //check if insertion was successful
@@ -522,7 +522,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "UPDATE nisha SET price='$price', weight='$weight',mobis='$mobis' WHERE id='$id'";
 
@@ -541,7 +541,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         $start = 10 * $index;
         if ($pat != 'null') {
             $sql = "SELECT * FROM nisha WHERE partnumber LIKE '%".$pat."%' LIMIT  $start,10";
@@ -600,7 +600,7 @@ class Good
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 		// sql to delete a record
         $sql = "DELETE FROM nisha WHERE id='$id'";
