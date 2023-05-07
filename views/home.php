@@ -94,12 +94,6 @@
                         <span>Rates List</span>
                     </a>
                 </li>
-                <!-- <li class="nav-link">
-                    <a href="profile">
-                        <i class="material-icons">person</i>
-                        <span>User Account</span>
-                    </a>
-                </li> -->
             </ul>
         </nav>
     </aside>
