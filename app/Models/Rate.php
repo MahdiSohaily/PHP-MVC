@@ -10,11 +10,6 @@ class Rate
     // CRUD OPERATIONS
 	public function create($amount, $status)
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -29,11 +24,6 @@ class Rate
 
 	public function all()
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -54,11 +44,6 @@ class Rate
 	
     public function all_for_mobis()
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -79,11 +64,6 @@ class Rate
 
 	public function getRates()
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -95,12 +75,7 @@ class Rate
 	}
 
 	public function allRates()
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
+    
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -149,12 +124,7 @@ class Rate
     }
 	
     public function find(int $id)
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
+    
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -167,11 +137,6 @@ class Rate
 
 	public function update(int $id, $amount, $status)
 	{
-		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -185,12 +150,7 @@ class Rate
 	}
 	
 	public function delete(int $id)
-	{
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
+	
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
