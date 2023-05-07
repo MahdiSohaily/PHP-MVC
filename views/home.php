@@ -179,6 +179,8 @@
                     "<img id='loading' src='<?php echo URL_ROOT . URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
 
                 pattern = pattern.replace(/e/ig, "Z");
+                pattern = pattern.replace(' ', "");
+                pattern = pattern.replace(/[^a-zA-Z ]/g, "");
                 axios.get('getdata/' + pattern.toString() + '/' + supermode)
                     .then(response => {
                         resultBox.innerHTML = response.data;
