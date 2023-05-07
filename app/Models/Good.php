@@ -15,7 +15,7 @@ class Good
 		$servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -41,7 +41,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -133,7 +133,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -227,7 +227,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -254,7 +254,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -281,7 +281,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -308,7 +308,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -363,7 +363,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -418,7 +418,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -433,7 +433,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -454,7 +454,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $con = mysqli_connect($servername, $username, $password,$dbname);
@@ -519,7 +519,7 @@ class Good
 		$servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -538,7 +538,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -597,7 +597,7 @@ class Good
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "yadakinfo_price";
+        $dbname = "yadak";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
