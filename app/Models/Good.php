@@ -3,12 +3,6 @@ namespace App\Models;
 
 class Good
 {
-	protected $id;
-	protected $partnumber;
-	protected $price;
-	protected $weight;
-	protected $mobis;
-
     // CRUD OPERATIONS
 	public function create($partnumber, $price, $weight, $mobis)
 	{
