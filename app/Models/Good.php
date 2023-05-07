@@ -396,7 +396,7 @@ class Good
         $avgprice = null;
 
         // Create connection
-        $con = mysqli_connect($servername, $username, $password,$dbname);
+        $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         $sql="SELECT * FROM nisha WHERE partnumber = '$q'";
         $result = $con->query($sql);
 

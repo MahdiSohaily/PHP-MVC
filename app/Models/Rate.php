@@ -75,7 +75,7 @@ class Rate
 	}
 
 	public function allRates()
-    
+    {
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -124,7 +124,7 @@ class Rate
     }
 	
     public function find(int $id)
-    
+    {
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -150,7 +150,7 @@ class Rate
 	}
 	
 	public function delete(int $id)
-	
+	{
         // Create connection
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 

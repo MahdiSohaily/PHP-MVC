@@ -181,6 +181,7 @@
                 pattern = pattern.replace(/e/ig, "Z");
                 pattern = pattern.replace(' ', "");
                 pattern = pattern.replace(/[^a-zA-Z ]/g, "");
+                alert(pattern);
                 axios.get('getdata/' + pattern.toString() + '/' + supermode)
                     .then(response => {
                         resultBox.innerHTML = response.data;
