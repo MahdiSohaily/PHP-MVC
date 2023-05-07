@@ -22,7 +22,7 @@
   padding-block: 2rem;
 }
 
-.resposive {
+.responsive {
   width: 1250px;
 }
 @media screen and (max-width: 1000px) {
@@ -103,12 +103,12 @@ td:not(td[class='big']) {
   color: white;
 }
 
-.input-controll {
+.input-control {
   display: flex;
   justify-content: center;
 }
 
-.input-controll label {
+.input-control label {
   padding-inline: 0.5rem;
 }
 
