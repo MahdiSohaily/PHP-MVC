@@ -16,7 +16,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "INSERT INTO rates (amount, status) VALUES ('$amount', '$status')";
 		 //check if insertion was successful
@@ -35,7 +35,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -60,7 +60,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -85,7 +85,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -102,7 +102,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
 		 //check if insertion was successful
@@ -156,7 +156,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql="SELECT * FROM rates WHERE id = '$id'";
 		 //check if insertion was successful
@@ -173,7 +173,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "UPDATE rates SET amount='$amount', status='$status' WHERE id='$id'";
 
@@ -192,7 +192,7 @@ class Rate
         $dbname = "yadak";
 
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 		// sql to delete a record
         $sql = "DELETE FROM rates WHERE id='$id'";
