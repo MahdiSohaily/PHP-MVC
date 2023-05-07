@@ -180,7 +180,7 @@
 
                 pattern = pattern.replace(/e/ig, "Z");
                 pattern = pattern.replace(/\s/g, '');
-                pattern = pattern.replace(/[^a-zA-Z ]/g, "");
+                pattern = pattern.replace(/[^a-zA-Z0-9]/g, "");
                 alert(pattern);
                 axios.get('getdata/' + pattern.toString() + '/' + supermode)
                     .then(response => {
