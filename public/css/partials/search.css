@@ -39,7 +39,7 @@ thead {
 }
 
 th,
-td {
+td:not(td[class='big']) {
   padding-block: 0.6rem;
   text-align: center;
   vertical-align: middle;
@@ -119,7 +119,7 @@ td {
 }
 
 .mobis {
-  background-color: rgb(150, 147, 147);
+  background-color: rgb(190, 187, 187);
 }
 
 #error {

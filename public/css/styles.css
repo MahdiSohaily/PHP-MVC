@@ -23,6 +23,7 @@ aside {
   overflow: hidden;
   transition: all 0.5s ease;
   box-shadow: 2px 2px 5px black;
+  z-index: 100000;
 }
 
 .open {

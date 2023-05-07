@@ -13,9 +13,9 @@ class Good
 	public function create($partnumber, $price, $weight, $mobis)
 	{
 		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -39,9 +39,9 @@ class Good
     public function search($key, $mode,$rates)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -72,11 +72,11 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_self' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_self' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>!</a>";
+                    $template .= " <a class='link-s NO-Price' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>x</a>";
                 }
 
                 $template.="$partnumber</div></td>
@@ -86,13 +86,13 @@ class Good
                 $template.=$this->getPrice($avgprice,$rates);
                 $template .="
                 <td class='action'>
-                    <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='./public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
                     <img class='social' src='./public/img/tel.png' alt='part'>
                     </a>
-                    <a target='_self' href='https://partsouq.com/en/search/all?q=$partnumber'>
+                    <a target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
                     <img class='social' src='./public/img/part.png' alt='part'>
                     </a>
                 </td>
@@ -131,9 +131,9 @@ class Good
     public function mobie($value,$rates)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -163,11 +163,13 @@ class Good
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
                 if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
+                    $template .= " <a class='link-s Requset' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
                 } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
+                    $template .= " <a class='link-s NO-Price' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_blanck' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>x</a>";
+                } elseif ($status == "YES-Mobis") {
+                    $template .= " <div class='empty'></div>";
                 }
 
 
@@ -178,13 +180,13 @@ class Good
                 $template.=$this->getPrice($avgprice,$rates);
                 $template .="
                 <td class='action'>
-                    <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_blanck' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/tel.png' alt='part'>
                     </a>
-                    <a target='_self' href='https://partsouq.com/en/search/all?q=$partnumber'>
+                    <a target='_blanck' href='https://partsouq.com/en/search/all?q=$partnumber'>
                     <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/part.png' alt='part'>
                     </a>
                 </td>
@@ -198,7 +200,7 @@ class Good
                 $price = str_replace(",","",$price);
                 $avgprice = round($price*110/243.5);
                 $template .= "<tr class='mobis'>
-                <td class='part text-white'> $partnumber-M</td>
+                <td class='part text-white left'> $partnumber-M</td>
                 <td class='bold'>".round($avgprice)."</td>
                 <td>".round($avgprice*1.1)."</td>
                 ";
@@ -223,9 +225,9 @@ class Good
     public function getPrice($avgprice)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -250,9 +252,9 @@ class Good
     public function getPriceMobis($avgprice)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -277,9 +279,9 @@ class Good
     public function getPriceMobisPage($avgprice)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -304,9 +306,9 @@ class Good
     public function all()
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -359,9 +361,9 @@ class Good
     public function searchGood(string $patt)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -414,9 +416,9 @@ class Good
     public function count()
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -429,9 +431,9 @@ class Good
     public function find(int $id)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -450,9 +452,9 @@ class Good
         $avgprice = null;
 
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $con = mysqli_connect($servername, $username, $password,$dbname);
@@ -493,10 +495,10 @@ class Good
                     <td>".round($avgprice*1.1)."</td>";
                     $template .= $this-> getPriceMobisPage($avgprice);
                     $template .= "<td class='action'>
-                    <a target='_self' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
+                    <a target='_blanck' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/google.png' alt='google'>
                     </a>
-                    <a target='_self' href='https://api.telegram.org/bot1681398960:AAGykdRX-71G0PcK2X_yf3uVQOFWKVNMxoc/sendMessage?chat_id=-522041592&text=$partnumber Mobis'>
+                    <a target='_blanck' href='https://api.telegram.org/bot1681398960:AAGykdRX-71G0PcK2X_yf3uVQOFWKVNMxoc/sendMessage?chat_id=-522041592&text=$partnumber Mobis'>
                     <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/tel.png' alt='part'>
                     </a>
                 </td></tr>"; 
@@ -514,10 +516,10 @@ class Good
 	
 	public function update(int $id, $price, $weight, $mobis)
 	{
-		$servername = "https://yadak.center";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+		$servername = "localhost";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -534,9 +536,9 @@ class Good
     public function page(int $index, $pat)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -593,9 +595,9 @@ class Good
 	public function delete(int $id)
 	{
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);

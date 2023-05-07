@@ -11,9 +11,9 @@ class Rate
 	public function create($amount, $status)
 	{
 		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -30,9 +30,9 @@ class Rate
 	public function all()
 	{
 		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -55,9 +55,9 @@ class Rate
     public function all_for_mobis()
 	{
 		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -80,9 +80,9 @@ class Rate
 	public function getRates()
 	{
 		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -97,9 +97,9 @@ class Rate
 	public function allRates()
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -151,9 +151,9 @@ class Rate
     public function find(int $id)
     {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -168,9 +168,9 @@ class Rate
 	public function update(int $id, $amount, $status)
 	{
 		$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -187,9 +187,9 @@ class Rate
 	public function delete(int $id)
 	{
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadakinfo_price";
+        $username = "yadakcenter2";
+        $password = "vZun$2*04Bo]";
+        $dbname = "yadakcenter2_yadakinfo_price";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password,$dbname);

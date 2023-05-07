@@ -104,7 +104,7 @@
                             name="mobis">
                         </div>
                         <?php echo "<p class='message'>$message</p>" ?>
-                        <input id="submit" type="submit" value="Submit" name="submit">
+                       <input id="submit" type="submit" value="Submit" name="submit">
                     </form>
 
                 </div>

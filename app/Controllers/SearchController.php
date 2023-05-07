@@ -10,6 +10,7 @@ class SearchController
     // Homepage action
 	public function index($key,$mode, RouteCollection $routes)
 	{
+		$key = str_replace('Z', 'e', $key);
 		if(isset($_COOKIE['login-user'])) {
 			$good = new Good();
 			$rate = new Rate();
