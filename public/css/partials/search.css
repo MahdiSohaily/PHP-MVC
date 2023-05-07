@@ -58,12 +58,6 @@ td:not(td[class='big']) {
   font-weight: bold;
   color: white;
 }
-
-.fix {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .weight {
   background-color: rgb(107, 106, 106);
   display: inline-block;
