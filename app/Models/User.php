@@ -28,13 +28,8 @@ class User
 	
 	public function checkUser($email, $pass)
 	{
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "yadak";
-
         // Create connection
-        $conn = mysqli_connect($servername, $username, $password,$dbname);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM users WHERE email='$email'";
 		$user = $conn->query($sql)->fetch_assoc();
@@ -45,15 +40,5 @@ class User
           } else {
             return false;
           }
-	}
-
-	public function update(int $id, array $data)
-	{
-		
-	}
-	
-	public function delete(int $id)
-	{
-		
 	}
 }
