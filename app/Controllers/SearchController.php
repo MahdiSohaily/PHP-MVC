@@ -14,7 +14,6 @@ class SearchController
 		if (substr($key, 0, 1) == 'X') {
 			$key = '0' . substr($key, 1);
 		}
-		echo $key;
 		$key = str_replace('Z', 'e', $key);
 		if (isset($_COOKIE['login-user'])) {
 			$good = new Good();

@@ -180,7 +180,6 @@
                 if (pattern.charAt(0) == 0) {
                     pattern = 'X' + pattern.substr(1);
                 }
-                alert(pattern);
                 pattern = pattern.replace(/e/ig, "Z");
                 pattern = pattern.replace(/\s/g, '');
                 pattern = pattern.replace(/[^a-zA-Z0-9]/g, "");
