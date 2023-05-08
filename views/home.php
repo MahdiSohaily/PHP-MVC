@@ -177,7 +177,10 @@
             if (((pattern.length > 4) && (supermode == 1)) || ((pattern.length > 6) && (supermode == 0))) {
                 resultBox.innerHTML =
                     "<img id='loading' src='<?php echo URL_ROOT . URL_SUBFOLDER ?>/public/img/loading.gif' alt=''>";
-
+                if (pattern.charAt(0) == 0) {
+                    pattern = 'X' + pattern.substr(1);
+                }
+                alert(pattern);
                 pattern = pattern.replace(/e/ig, "Z");
                 pattern = pattern.replace(/\s/g, '');
                 pattern = pattern.replace(/[^a-zA-Z0-9]/g, "");

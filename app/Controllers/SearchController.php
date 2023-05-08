@@ -1,17 +1,22 @@
-<?php 
+<?php
 
 namespace App\Controllers;
+
 use App\Models\Good;
 use App\Models\Rate;
 use Symfony\Component\Routing\RouteCollection;
 
 class SearchController
 {
-    // Homepage action
-	public function index($key,$mode, RouteCollection $routes)
+	// Homepage action
+	public function index($key, $mode, RouteCollection $routes)
 	{
+		if (substr($key, 0, 1) === 'X') {
+			$key = '0' . substr($key, 1);
+		}
+		echo $key;
 		$key = str_replace('Z', 'e', $key);
-		if(isset($_COOKIE['login-user'])) {
+		if (isset($_COOKIE['login-user'])) {
 			$good = new Good();
 			$rate = new Rate();
 
@@ -26,7 +31,7 @@ class SearchController
 
 	public function search($value, RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user'])) {
+		if (isset($_COOKIE['login-user'])) {
 			$good = new Good();
 
 			$result = $good->searchGood($value);
@@ -38,13 +43,13 @@ class SearchController
 
 	public function mobis($value, RouteCollection $routes)
 	{
-		if(isset($_COOKIE['login-user'])) {
+		if (isset($_COOKIE['login-user'])) {
 			$rate = new Rate();
 			$rates = $rate->all_for_mobis();
 			$all_rates = $rate->getRates();
 
 			$good = new Good();
-			$item = $good->findWithSerial($value,$all_rates);
+			$item = $good->findWithSerial($value, $all_rates);
 
 			require_once APP_ROOT . '/views/mobis.php';
 		} else {
