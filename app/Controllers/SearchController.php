@@ -11,7 +11,7 @@ class SearchController
 	// Homepage action
 	public function index($key, $mode, RouteCollection $routes)
 	{
-		if (substr($key, 0, 1) === 'X') {
+		if (substr($key, 0, 1) == 'X') {
 			$key = '0' . substr($key, 1);
 		}
 		echo $key;
