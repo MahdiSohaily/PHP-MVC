@@ -1,13 +1,14 @@
-<?php 
+<?php
+
 namespace App\Models;
 
 class Good
 {
     // CRUD OPERATIONS
-	public function create($partnumber, $price, $weight, $mobis)
-	{
+    public function create($partnumber, $price, $weight, $mobis)
+    {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($mobis) {
             $sql = "INSERT INTO nisha (partnumber, price, weight, mobis) 
             VALUES ('$partnumber', '$price', '$weight', '$mobis')";
@@ -17,61 +18,64 @@ class Good
         }
 
         //check if insertion was successful
-		if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === TRUE) {
             return true;
-          } else {
+        } else {
             return false;
-          }
-          $conn->close();
-	}
+        }
+        $conn->close();
+    }
 
-    public function search($key, $mode,$rates)
+    public function search($key, $mode, $rates)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         if ($mode) {
-            $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
+            $sql = "SELECT * FROM nisha WHERE partnumber LIKE '" . $key . "%'";
         } else {
-            $sql="SELECT * FROM nisha WHERE partnumber LIKE '".$key."%'";
+            $sql = "SELECT * FROM nisha WHERE partnumber LIKE '" . $key . "%'";
         }
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 $partnumber = $row['partnumber'];
                 $price = $row['price'];
-                $Weight =  round($row['weight'],2);
-                $avgprice = round($price*110/243.5);
+                $Weight =  round($row['weight'], 2);
+                $avgprice = round($price * 110 / 243.5);
                 $mobis = $row['mobis'];
 
-                if($mobis=="0.00"){$status = "NO-Price";}
-                elseif ($mobis=="-"){$status = "NO-Mobis";}
-                elseif ($mobis==NULL){
+                if ($mobis == "0.00") {
+                    $status = "NO-Price";
+                } elseif ($mobis == "-") {
+                    $status = "NO-Mobis";
+                } elseif ($mobis == NULL) {
                     $status = "Requset";
+                } else {
+                    $status = "YES-Mobis";
                 }
-                else {$status = "YES-Mobis";}
                 $template = "<tr>
                 <td class='blue part'>
                 <div class='fix'>";
-                if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>?</a>";
-                } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_blank' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>!</a>";
+                if ($status == "Requset") {
+                    $template .= " <a class='link-s Requset' target='_blank' href='" . URL_ROOT . URL_SUBFOLDER . '/mobis/' . $partnumber . "'>?</a>";
+                } elseif ($status == "NO-Price") {
+                    $template .= " <a class='link-s NO-Price' target='_blank' href='" . URL_ROOT . URL_SUBFOLDER . '/mobis/' . $partnumber . "'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_blank' href='".URL_ROOT.URL_SUBFOLDER .'/mobis/'.$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_blank' href='" . URL_ROOT . URL_SUBFOLDER . '/mobis/' . $partnumber . "'>x</a>";
                 } else {
-                    $template .="<span class='spacer'></span>";
+                    $template .= "<span class='spacer'></span>";
                 }
 
-                $template.="$partnumber</div></td>
-                <td >".round($avgprice*1.1)."</td>
-                <td class='orange' >".round($avgprice*1.2)."</td>";
+                $template .= "$partnumber</div></td>
+                <td >" . round($avgprice * 1.1) . "</td>
+                <td class='orange' >" . round($avgprice * 1.2) . "</td>";
 
-                $template.=$this->getPrice($avgprice,$rates);
-                $template .="
+                $template .= $this->getPrice($avgprice, $rates);
+                $template .= "
                 <td class='action'>
                     <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
                     <img class='social' src='./public/img/google.png' alt='google'>
@@ -88,88 +92,89 @@ class Good
                 </td>
             </tr> ";
 
-            if($status == "YES-Mobis"){
-                $price = $row['mobis'];
-                $price = str_replace(",","",$price);
-                $avgprice = round($price*110/243.5);
-                $template .= "<tr class='mobis'>
+                if ($status == "YES-Mobis") {
+                    $price = $row['mobis'];
+                    $price = str_replace(",", "", $price);
+                    $avgprice = round($price * 110 / 243.5);
+                    $template .= "<tr class='mobis'>
                 <td class='part text-white fix'><span class='spacer'></span> $partnumber-M</td>
-                <td class='bold'>".round($avgprice)."</td>
-                <td>".round($avgprice*1.1)."</td>
+                <td class='bold'>" . round($avgprice) . "</td>
+                <td>" . round($avgprice * 1.1) . "</td>
                 ";
-                $template .= $this-> getPriceMobis($avgprice, $rates);
-                $template .= "
+                    $template .= $this->getPriceMobis($avgprice, $rates);
+                    $template .= "
                 <td></td>
                 <td></td>
             </tr>";
-            }
+                }
 
-            echo $template;
+                echo $template;
             }
         } else {
             echo '<tr id="error">
                 <td colspan="15 fa">کد فنی اشتباه یا ناقص می باشد</td>
             </tr>';
         }
-          
+
         $conn->close();
     }
 
-    public function mobie($value,$rates)
+    public function mobie($value, $rates)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-        $sql="SELECT * FROM nisha WHERE partnumber = '$value'";
-        
+        $sql = "SELECT * FROM nisha WHERE partnumber = '$value'";
+
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 $partnumber = $row['partnumber'];
                 $price = $row['price'];
-                $Weight =  round($row['weight'],2);
-                $avgprice = round($price*110/243.5);
+                $Weight =  round($row['weight'], 2);
+                $avgprice = round($price * 110 / 243.5);
                 $mobis = $row['mobis'];
 
-                if($mobis == "0.00"){
+                if ($mobis == "0.00") {
                     $status = "NO-Price";
-                } elseif ($mobis == "-"){
+                } elseif ($mobis == "-") {
                     $status = "NO-Mobis";
-                } elseif ($mobis == NULL){
+                } elseif ($mobis == NULL) {
                     $status = "Requset";
+                } else {
+                    $status = "YES-Mobis";
                 }
-                else {$status = "YES-Mobis";}
                 $template = "<tr>
                 <td class='blue part'> <div class='fix'>";
-                if($status == "Requset") {
-                    $template .= " <a class='link-s Requset' target='_blank' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>?</a>";
-                } elseif($status == "NO-Price") {
-                    $template .= " <a class='link-s NO-Price' target='_blank' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>!</a>";
+                if ($status == "Requset") {
+                    $template .= " <a class='link-s Requset' target='_blank' href='" . URL_ROOT . URL_SUBFOLDER . "'/mobis/'" . $partnumber . "'>?</a>";
+                } elseif ($status == "NO-Price") {
+                    $template .= " <a class='link-s NO-Price' target='_blank' href='" . URL_ROOT . URL_SUBFOLDER . "'/mobis/'" . $partnumber . "'>!</a>";
                 } elseif ($status == "NO-Mobis") {
-                    $template .= " <a class='link-s NO-Mobis' target='_self' href='".URL_ROOT.URL_SUBFOLDER."'/mobis/'".$partnumber."'>x</a>";
+                    $template .= " <a class='link-s NO-Mobis' target='_self' href='" . URL_ROOT . URL_SUBFOLDER . "'/mobis/'" . $partnumber . "'>x</a>";
                 } elseif ($status == "YES-Mobis") {
                     $template .= " <div class='empty'></div>";
                 }
 
 
-                $template.="$partnumber</div></td>
-                <td >".round($avgprice*1.1)."</td>
-                <td class='orange' >".round($avgprice*1.2)."</td>";
+                $template .= "$partnumber</div></td>
+                <td >" . round($avgprice * 1.1) . "</td>
+                <td class='orange' >" . round($avgprice * 1.2) . "</td>";
 
-                $template.=$this->getPrice($avgprice,$rates);
-                $template .="
+                $template .= $this->getPrice($avgprice, $rates);
+                $template .= "
                 <td class='action'>
                     <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
-                    <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/google.png' alt='google'>
+                    <img class='social' src='" . URL_ROOT . URL_SUBFOLDER . "/public/img/google.png' alt='google'>
                     </a>
                     <a msg='$partnumber'>
-                    <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/tel.png' alt='part'>
+                    <img class='social' src='" . URL_ROOT . URL_SUBFOLDER . "/public/img/tel.png' alt='part'>
                     </a>
                     <a target='_blank' href='https://partsouq.com/en/search/all?q=$partnumber'>
-                    <img class='social' src='". URL_ROOT.URL_SUBFOLDER ."/public/img/part.png' alt='part'>
+                    <img class='social' src='" . URL_ROOT . URL_SUBFOLDER . "/public/img/part.png' alt='part'>
                     </a>
                 </td>
                 <td class='kg'>
@@ -177,92 +182,92 @@ class Good
                 </td>
             </tr> ";
 
-            if($status == "YES-Mobis"){
-                $price = $row['mobis'];
-                $price = str_replace(",","",$price);
-                $avgprice = round($price*110/243.5);
-                $template .= "<tr class='mobis'>
+                if ($status == "YES-Mobis") {
+                    $price = $row['mobis'];
+                    $price = str_replace(",", "", $price);
+                    $avgprice = round($price * 110 / 243.5);
+                    $template .= "<tr class='mobis'>
                 <td class='part text-white left'> $partnumber-M</td>
-                <td class='bold'>".round($avgprice)."</td>
-                <td>".round($avgprice*1.1)."</td>
+                <td class='bold'>" . round($avgprice) . "</td>
+                <td>" . round($avgprice * 1.1) . "</td>
                 ";
-                $template .= $this-> getPriceMobis($avgprice, $rates);
-                $template .= "
+                    $template .= $this->getPriceMobis($avgprice, $rates);
+                    $template .= "
                 <td></td>
                 <td></td>
                 </tr>";
-            }
+                }
 
-            return $template;
+                return $template;
             }
         } else {
             echo '<tr id="error">
                 <td colspan="15 fa">کد فنی اشتباه یا ناقص می باشد</td>
             </tr>';
         }
-          
+
         $conn->close();
     }
 
     public function getPrice($avgprice)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
-		 //check if insertion was successful
-		$rates = $conn->query($sql);
+        //check if insertion was successful
+        $rates = $conn->query($sql);
 
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
-            while($row = $rates->fetch_assoc()) {
-                $result.="
-                <td class='".$row['status']."'> ".round($avgprice*$row['amount']*1.2*1.2*1.3)."</td>
+            while ($row = $rates->fetch_assoc()) {
+                $result .= "
+                <td class='" . $row['status'] . "'> " . round($avgprice * $row['amount'] * 1.2 * 1.2 * 1.3) . "</td>
                 ";
             }
         }
         $conn->close();
         return $result;
     }
-    
+
     public function getPriceMobis($avgprice)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
-		 //check if insertion was successful
-		$rates = $conn->query($sql);
+        //check if insertion was successful
+        $rates = $conn->query($sql);
 
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
-            while($row = $rates->fetch_assoc()) {
-                $result.="
-                <td class='b-".$row['status']."'> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+            while ($row = $rates->fetch_assoc()) {
+                $result .= "
+                <td class='b-" . $row['status'] . "'> " . round($avgprice * $row['amount'] * 1.25 * 1.3) . "</td>
                 ";
             }
         }
         $conn->close();
         return $result;
     }
-    
+
     public function getPriceMobisPage($avgprice)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM rates ORDER BY amount";
-		 //check if insertion was successful
-		$rates = $conn->query($sql);
+        //check if insertion was successful
+        $rates = $conn->query($sql);
 
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
-            while($row = $rates->fetch_assoc()) {
-                $result.="
-                <td> ".round($avgprice*$row['amount']*1.25*1.3)."</td>
+            while ($row = $rates->fetch_assoc()) {
+                $result .= "
+                <td> " . round($avgprice * $row['amount'] * 1.25 * 1.3) . "</td>
                 ";
             }
         }
@@ -273,26 +278,26 @@ class Good
     public function all()
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "SELECT * FROM nisha LIMIT 10";
-		 //check if insertion was successful
-		$rates = $conn->query($sql);
+        //check if insertion was successful
+        $rates = $conn->query($sql);
 
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
-            while($row = $rates->fetch_assoc()) {
-                $result.="
+            while ($row = $rates->fetch_assoc()) {
+                $result .= "
                 <tr>
-                    <td>".$row['partnumber']."</td>
-                    <td>".$row['price']."</td>
-                    <td>".$row['weight']."</td>
-                    <td>".$row['mobis']."</td>
+                    <td>" . $row['partnumber'] . "</td>
+                    <td>" . $row['price'] . "</td>
+                    <td>" . $row['weight'] . "</td>
+                    <td>" . $row['mobis'] . "</td>
                     <td>
-                    <i class='delete material-icons' data-delete='".$row['id']."'
-                    onclick='deletefunc(".$row['id'].")'>delete</i>
-                    <a class='edit' href='editgood/".$row['id']."'>
+                    <i class='delete material-icons' data-delete='" . $row['id'] . "'
+                    onclick='deletefunc(" . $row['id'] . ")'>delete</i>
+                    <a class='edit' href='editgood/" . $row['id'] . "'>
                     <i class='material-icons'>create</i>
                     </a>
                     </td>
@@ -303,13 +308,13 @@ class Good
             $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
-        return $result."<script>
+        return $result . "<script>
         function deletefunc(id){
-            const resultBox = document.getElementById("."'resultbox'".");
+            const resultBox = document.getElementById(" . "'resultbox'" . ");
 
-            let text = "."'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'".";
+            let text = " . "'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'" . ";
             if (confirm(text) == true) {
-                axios.get("."'removegood/'"." + id)
+                axios.get(" . "'removegood/'" . " + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
@@ -317,32 +322,32 @@ class Good
                 })
             }
         }
-        </script>";   
+        </script>";
     }
 
     public function searchGood(string $patt)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-        $sql="SELECT * FROM nisha WHERE partnumber LIKE '%".$patt."%' LIMIT 10";
-		 //check if insertion was successful
-		$rates = $conn->query($sql);
+        $sql = "SELECT * FROM nisha WHERE partnumber LIKE '%" . $patt . "%' LIMIT 10";
+        //check if insertion was successful
+        $rates = $conn->query($sql);
 
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
-            while($row = $rates->fetch_assoc()) {
-                $result.="
+            while ($row = $rates->fetch_assoc()) {
+                $result .= "
                 <tr>
-                    <td>".$row['partnumber']."</td>
-                    <td>".$row['price']."</td>
-                    <td>".$row['weight']."</td>
-                    <td>".$row['mobis']."</td>
+                    <td>" . $row['partnumber'] . "</td>
+                    <td>" . $row['price'] . "</td>
+                    <td>" . $row['weight'] . "</td>
+                    <td>" . $row['mobis'] . "</td>
                     <td>
-                    <i class='delete material-icons' data-delete='".$row['id']."'
-                    onclick='deletefunc(".$row['id'].")'>delete</i>
-                    <a class='edit' href='editgood/".$row['id']."'>
+                    <i class='delete material-icons' data-delete='" . $row['id'] . "'
+                    onclick='deletefunc(" . $row['id'] . ")'>delete</i>
+                    <a class='edit' href='editgood/" . $row['id'] . "'>
                     <i class='material-icons'>create</i>
                     </a>
                     </td>
@@ -353,13 +358,13 @@ class Good
             $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
-        echo $result."<script>
+        echo $result . "<script>
         function deletefunc(id){
-            const resultBox = document.getElementById("."'resultbox'".");
+            const resultBox = document.getElementById(" . "'resultbox'" . ");
 
-            let text = "."'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'".";
+            let text = " . "'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'" . ";
             if (confirm(text) == true) {
-                axios.get("."'removegood/'"." + id)
+                axios.get(" . "'removegood/'" . " + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
@@ -367,31 +372,31 @@ class Good
                 })
             }
         }
-        </script>"; ;   
+        </script>";;
     }
 
     public function count()
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-        $sql="SELECT COUNT(id) as sum FROM nisha";
-		$goods = $conn->query($sql)->fetch_assoc();
+        $sql = "SELECT COUNT(id) as sum FROM nisha";
+        $goods = $conn->query($sql)->fetch_assoc();
         return $goods['sum'];
     }
 
     public function find(int $id)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-        $sql="SELECT * FROM nisha WHERE id = '$id'";
-		 //check if insertion was successful
-		$good = $conn->query($sql)->fetch_assoc();
+        $sql = "SELECT * FROM nisha WHERE id = '$id'";
+        //check if insertion was successful
+        $good = $conn->query($sql)->fetch_assoc();
 
         return $good;
     }
-    
+
     public function findWithSerial($serial, $rates)
     {
         $q = $serial;
@@ -400,7 +405,7 @@ class Good
 
         // Create connection
         $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        $sql="SELECT * FROM nisha WHERE partnumber = '$q'";
+        $sql = "SELECT * FROM nisha WHERE partnumber = '$q'";
         $result = $con->query($sql);
 
         $template = '';
@@ -408,95 +413,96 @@ class Good
 
             $context = stream_context_create(array("http" => array("header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36")));
 
-            function get_http_response_code($url) {
+            function get_http_response_code($url)
+            {
                 ini_set('user_agent', 'Mozilla/5.0');
                 $headers = get_headers($url);
                 return substr($headers[0], 9, 3);
             }
-            
-            if(get_http_response_code("https://partsmotors.com/products/$q") != "200"){
-                $sql="UPDATE nisha SET mobis='-' WHERE partnumber='$q'";
-                $result = mysqli_query($con,$sql);
-                $template .= "<tr class='mobis'><td colspan='".$rates->num_rows + 5 ."'>این قطعه موبیز ندارد</td></tr>";
-            }
-            else{
+
+            if (get_http_response_code("https://partsmotors.com/products/$q") != "200") {
+                $sql = "UPDATE nisha SET mobis='-' WHERE partnumber='$q'";
+                $result = mysqli_query($con, $sql);
+                $template .= "<tr class='mobis'><td colspan='" . $rates->num_rows + 5 . "'>این قطعه موبیز ندارد</td></tr>";
+            } else {
                 require_once 'simple_html_dom.php';
                 $html = file_get_contents("https://partsmotors.com/products/$q", false, $context);
                 $html = str_get_html($html);
-                foreach($html->find('meta[property=og:price:amount]') as $element)
-                $price = $element->content;
+                foreach ($html->find('meta[property=og:price:amount]') as $element)
+                    $price = $element->content;
                 $partnumber = $q;
-                $price = str_replace(",","",$price);
-                $avgprice = round($price*100/243.5*1.1);
-                $sql="UPDATE nisha SET mobis='$price' WHERE partnumber='$q'";
-                $result = mysqli_query($con,$sql);
+                $price = str_replace(",", "", $price);
+                $avgprice = round($price * 100 / 243.5 * 1.1);
+                $sql = "UPDATE nisha SET mobis='$price' WHERE partnumber='$q'";
+                $result = mysqli_query($con, $sql);
                 $template .= "<tr class='mobis'>
                     <td class='part text-white bold'> $partnumber-M</td>
-                    <td>".round($avgprice/1.1)."</td>
-                    <td class='bold'>".round($avgprice)."</td>
-                    <td>".round($avgprice*1.1)."</td>";
-                    $template .= $this-> getPriceMobisPage($avgprice);
-                    $template .= "<td class='action'>
+                    <td>" . round($avgprice / 1.1) . "</td>
+                    <td class='bold'>" . round($avgprice) . "</td>
+                    <td>" . round($avgprice * 1.1) . "</td>";
+                $template .= $this->getPriceMobisPage($avgprice);
+                $template .= "<td class='action'>
                     <a target='_blank' href='https://www.google.com/search?tbm=isch&q=$partnumber'>
-                    <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/google.png' alt='google'>
+                    <img class='social' src='" . URL_ROOT . URL_SUBFOLDER . "/public/img/google.png' alt='google'>
                     </a>
                     <a target='_blank' href='https://api.telegram.org/bot1681398960:AAGykdRX-71G0PcK2X_yf3uVQOFWKVNMxoc/sendMessage?chat_id=-522041592&text=$partnumber Mobis'>
-                    <img class='social' src='".URL_ROOT.URL_SUBFOLDER."/public/img/tel.png' alt='part'>
+                    <img class='social' src='" . URL_ROOT . URL_SUBFOLDER . "/public/img/tel.png' alt='part'>
                     </a>
-                </td></tr>"; 
+                </td></tr>";
             }
         }
-        mysqli_close($con);     
+        mysqli_close($con);
 
         return $template;
     }
 
-    public function get_http_response_code($url) {
+    public function get_http_response_code($url)
+    {
         $headers = get_headers($url);
         return substr($headers[0], 9, 3);
     }
-	
-	public function update(int $id, $price, $weight, $mobis)
-	{
+
+    public function update(int $id, $price, $weight, $mobis)
+    {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
         $sql = "UPDATE nisha SET price='$price', weight='$weight',mobis='$mobis' WHERE id='$id'";
 
         if ($conn->query($sql) === TRUE) {
-           return $this->find($id);
+            return $this->find($id);
         } else {
             return false;
         }
-	}
+    }
 
     public function page(int $index, $pat)
     {
         // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         $start = 10 * $index;
         if ($pat != 'null') {
-            $sql = "SELECT * FROM nisha WHERE partnumber LIKE '%".$pat."%' LIMIT  $start,10";
+            $sql = "SELECT * FROM nisha WHERE partnumber LIKE '%" . $pat . "%' LIMIT  $start,10";
         } else {
             $sql = "SELECT * FROM nisha LIMIT  $start,10";
         }
-		 //check if insertion was successful
-		$rates = $conn->query($sql);
+        //check if insertion was successful
+        $rates = $conn->query($sql);
 
         $result = '';
         if ($rates->num_rows > 0) {
             // output data of each row
-            while($row = $rates->fetch_assoc()) {
-                $result.="
+            while ($row = $rates->fetch_assoc()) {
+                $result .= "
                 <tr>
-                    <td>".$row['partnumber']."</td>
-                    <td>".$row['price']."</td>
-                    <td>".$row['weight']."</td>
-                    <td>".$row['mobis']."</td>
+                    <td>" . $row['partnumber'] . "</td>
+                    <td>" . $row['price'] . "</td>
+                    <td>" . $row['weight'] . "</td>
+                    <td>" . $row['mobis'] . "</td>
                     <td>
-                    <i class='delete material-icons' data-delete='".$row['id']."'
-                    onclick='deletefunc(".$row['id'].")'>delete</i>
-                    <a class='edit' href='editgood/".$row['id']."'>
+                    <i class='delete material-icons' data-delete='" . $row['id'] . "'
+                    onclick='deletefunc(" . $row['id'] . ")'>delete</i>
+                    <a class='edit' href='editgood/" . $row['id'] . "'>
                     <i class='material-icons'>create</i>
                     </a>
                     </td>
@@ -507,13 +513,13 @@ class Good
             $result .= "<tr><td colspan='5'>Nothing to show</td></tr>";
         }
         $conn->close();
-        return $result."<script>
+        return $result . "<script>
         function deletefunc(id){
-            const resultBox = document.getElementById("."'resultbox'".");
+            const resultBox = document.getElementById(" . "'resultbox'" . ");
 
-            let text = "."'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'".";
+            let text = " . "'آیا مطمئن هستید که میخواهید اطلاعات مورد نظر را حذف نمائید؟'" . ";
             if (confirm(text) == true) {
-                axios.get("."'removegood/'"." + id)
+                axios.get(" . "'removegood/'" . " + id)
                 .then(response => {
                     resultBox.innerHTML = response.data;
                 }).catch(error => {
@@ -521,15 +527,15 @@ class Good
                 })
             }
         }
-        </script>";   
+        </script>";
     }
-	
-	public function delete(int $id)
-	{
-        // Create connection
-         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-		// sql to delete a record
+    public function delete(int $id)
+    {
+        // Create connection
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        // sql to delete a record
         $sql = "DELETE FROM nisha WHERE id='$id'";
 
         if ($conn->query($sql) === TRUE) {
@@ -538,5 +544,5 @@ class Good
             return "Error deleting record: " . $conn->error;
         }
         $conn->close();
-	}
+    }
 }

@@ -33,10 +33,14 @@ class User
 
         $sql = "SELECT * FROM users WHERE email='$email'";
 		$user = $conn->query($sql)->fetch_assoc();
-		$password = $user['password'];
+		
 
-        if (count($user)> 0 && $password === $pass) {
-			return $user;
+        if (count($user)> 0) {
+            $password = $user['password'];
+            if($password === $pass) {
+                return $user;
+            }
+            return false;
           } else {
             return false;
           }
