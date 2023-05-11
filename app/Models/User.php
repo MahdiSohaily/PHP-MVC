@@ -35,7 +35,7 @@ class User
 		$user = $conn->query($sql)->fetch_assoc();
 		
 
-        if (count($user)> 0) {
+        if ($user) {
             $password = $user['password'];
             if($password === $pass) {
                 return $user;
